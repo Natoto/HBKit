@@ -4,20 +4,11 @@
 * 用法最简单的创建tableview新框架 
 
 
-##用法
+## 用法
 >* 添加主工程
 * pod 'HBKit'
 * pod 'HBKitRefresh'  #添加上下拉刷新
-* pod 'HBKitWatchDog' #添加watchdog 实时刷新
-* OR
-* pod "HBKit", :git=>'https://github.com/Natoto/HBFastTableViewCotroller.git',:tag=>'0.6.32'
-* 添加拓展插件
-* pod "HBKitRefresh", :git=>'https://github.com/Natoto/HBFastTableViewCotroller.git',:tag=>'0.6.32'
-* pod "HBKitWatchDog", :git=>'https://github.com/Natoto/HBFastTableViewCotroller.git',:tag=>'0.6.32'
-* OR
-* pod 'HBKit', :git => 'https://github.com/Natoto/HBFastTableViewCotroller.git'
-
-
+* pod 'HBKitWatchDog' #添加watchdog 实时刷新 
 ![HBKit 示例](https://github.com/Natoto/HBOKit/blob/master/sgdir.gif?raw=true)
 
 ###从json中加载
