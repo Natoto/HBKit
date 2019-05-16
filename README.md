@@ -12,6 +12,7 @@
 ![HBKit 示例](https://github.com/Natoto/HBOKit/blob/master/sgdir.gif?raw=true)
 
 ###从json中加载
+
 ```objc
  
 - (void)viewDidLoad {
@@ -46,61 +47,63 @@ GET_CELL_STRUCT_WITH(refresh, HBTABLE-上下拉)
 //step 3
 GET_CELL_SELECT_ACTION(cellstruct)
 {
-if(cellstruct == self.cell_struct_sys)
-{
-SystyleviewController * ctr = [[SystyleviewController alloc] init];
-[self.navigationController pushViewController:ctr animated:YES];
-}
-else if(cellstruct == self.cell_struct_xib)
-{
-TESTXIBViewController * ctr = [[TESTXIBViewController alloc] init];
-[self.navigationController pushViewController:ctr animated:YES];
-}
+	if(cellstruct == self.cell_struct_sys)
+	{
+		SystyleviewController * ctr = [[SystyleviewController alloc] init];
+		[self.navigationController pushViewController:ctr animated:YES];
+	}
+	else if(cellstruct == self.cell_struct_xib)
+	{
+		TESTXIBViewController * ctr = [[TESTXIBViewController alloc] init];
+		[self.navigationController pushViewController:ctr animated:YES];
+	}
 }
 //step4 OK
 ```
 ##系统风格
 ```javascript
 - (void)viewDidLoad {
-[super viewDidLoad];
-self.title = @"系统TABLE STYLE";
-for (int index = 0; index < 10; index ++) {
 
-NSString * title = [NSString stringWithFormat:@"cell %d",index];
-NSString * detail = [NSString stringWithFormat:@"detail cell %d",index];
+	[super viewDidLoad];
+	self.title = @"系统TABLE STYLE";
+	for (int index = 0; index < 10; index ++) {
 
-CELL_STRUCT * cellstruct = [CELL_STRUCT_Common cell_x_x_struct:title detailvalue:detail target:self selectAction:@selector(cellselect:)];
-cellstruct.sectionheight = 40;
-cellstruct.sectioncolor = value_cellstruct_blue;
-cellstruct.sectiontitle = @"SECTION 0";
+	NSString * title = [NSString stringWithFormat:@"cell %d",index];
+	NSString * detail = [NSString stringWithFormat:@"detail cell %d",index];
 
-cellstruct.cellheight = 60;
-cellstruct.picture = @"profile";
-cellstruct.CellStyleValue = index%3;
-cellstruct.accessory = index%2;
-cellstruct.selectionStyle = index%2;
-[cellstruct.dictionary setObject:HBRandomColor forKey:key_cellstruct_background];
-[self.dataDictionary setObject:cellstruct forKey:KEY_INDEXPATH(0, index)];
+	CELL_STRUCT * cellstruct = [CELL_STRUCT_Common cell_x_x_struct:title detailvalue:detail target:self selectAction:@selector(cellselect:)];
+	cellstruct.sectionheight = 40;
+	cellstruct.sectioncolor = value_cellstruct_blue;
+	cellstruct.sectiontitle = @"SECTION 0";
+
+	cellstruct.cellheight = 60;
+	cellstruct.picture = @"profile";
+	cellstruct.CellStyleValue = index%3;
+	cellstruct.accessory = index%2;
+	cellstruct.selectionStyle = index%2;
+	[cellstruct.dictionary setObject:HBRandomColor forKey:key_cellstruct_background];
+	[self.dataDictionary setObject:cellstruct forKey:KEY_INDEXPATH(0, index)];
 }
 
-for (int index = 0; index < 10; index ++) {
+	for (int index = 0; index < 10; index ++) {
 
-NSString * title = [NSString stringWithFormat:@"cell %d",index];
-NSString * detail = [NSString stringWithFormat:@"detail cell %d",index];
+		NSString * title = [NSString stringWithFormat:@"cell %d",index];
+		NSString * detail = [NSString stringWithFormat:@"detail cell %d",index];
 
-CELL_STRUCT * cellstruct = [CELL_STRUCT_Common cell_x_x_struct:title detailvalue:detail target:self selectAction:@selector(cellselect:)];
-cellstruct.cellheight = 60;
-cellstruct.sectionheight = 30;
-cellstruct.sectiontitle = @"SECTION 1";
-cellstruct.picture = @"profile";
-cellstruct.CellStyleValue = index%3;
-cellstruct.accessory = index%2;
-cellstruct.selectionStyle = index%2;
-[cellstruct.dictionary setObject:HBRandomColor forKey:key_cellstruct_background];
-[self.dataDictionary setObject:cellstruct forKey:KEY_INDEXPATH(1, index)];
-} 
-// Do any additional setup after loading the view.
-}
+		CELL_STRUCT * cellstruct = [CELL_STRUCT_Common cell_x_x_struct:title detailvalue:detail target:self selectAction:@selector(cellselect:)];
+		cellstruct.cellheight = 60;
+		cellstruct.sectionheight = 30;
+		cellstruct.sectiontitle = @"SECTION 1";
+		cellstruct.picture = @"profile";
+		cellstruct.CellStyleValue = index%3;
+		cellstruct.accessory = index%2;
+		cellstruct.selectionStyle = index%2;
+		[cellstruct.dictionary setObject:HBRandomColor forKey:key_cellstruct_background];
+		[self.dataDictionary setObject:cellstruct forKey:KEY_INDEXPATH(1, index)];
+		} 
+		// Do any additional setup after loading the view.
+	}
+
 ```
 
 
