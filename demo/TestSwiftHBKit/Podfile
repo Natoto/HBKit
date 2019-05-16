@@ -3,14 +3,14 @@ use_frameworks!
 
 #pre_install do |installer|
  	 # Do something fancy!
- 	$LOCALPATH = "/Users/boo/Documents/fenda_ios/branches/fenda1025/LocalPod"
+# 	$LOCALPATH = "/Users/boo/Documents/fenda_ios/branches/fenda1025/LocalPod"
 #end
 
 target 'TestSwiftHBKit' do
  
- pod 'MJRefresh'
- pod 'HBKit' 
- pod 'HBKitRefresh' 
- pod 'HBKitWatchDog' 
+ pod 'MJRefresh','3.2.0'
+ pod 'HBKit',:path=> '../../HBKit.podspec'
+# pod 'HBKitRefresh' 
+ pod 'HBKitWatchDog',:path=>'../../HBKitWatchDog.podspec'
 end
 #注释

@@ -93,18 +93,19 @@
 
 - (void)loadjsonfileConfig:(NSString *)jsonfilename filepath:(NSString *)filepath
 {
+    __weak __typeof(self)weakSelf = self;
     [self.datamodel loadjsonfileConfig:jsonfilename filepath:filepath configViewblock:^(CELL_STRUCT_ARRAY *vclist) {
         NSString *title = vclist.title;
         if (title && [[title class] isSubclassOfClass:[NSString class]]) {
-            self.title = title;
+            weakSelf.title = title;
         }
         NSString *backgroundcolor = vclist.backgroundcolor;
         if (backgroundcolor && [[backgroundcolor class] isSubclassOfClass:[NSString class]]) {
-            self.view.backgroundColor = [CELL_STRUCT_Common colorWithStructKey:backgroundcolor];
+            weakSelf.view.backgroundColor = [CELL_STRUCT_Common colorWithStructKey:backgroundcolor];
         }
         NSString *backgroundimage  = vclist.backgroundimage;
         if (backgroundimage && [[backgroundimage class] isSubclassOfClass:[NSString class]]) {
-            [self changeBackGroundWithBackImage:[UIImage imageNamed:backgroundimage]];
+            [weakSelf changeBackGroundWithBackImage:[UIImage imageNamed:backgroundimage]];
         }
     }];
     

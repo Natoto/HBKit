@@ -8,7 +8,21 @@
 
 #import <HBKit/HBKit.h>
 
-@interface HBBaseViewController(DirWatchDog)
+@protocol HBBaseViewControllerDirWatchDogProtocol <NSObject>
+
+@required
+/**
+ *  从plist文件中加载配置信息,实时刷新
+ */
+- (void)loadplistConfig:(NSString *)plistname watch_directory:(NSString *)directory;
+/**
+ *  从json文件中加载配置信息,实时刷新
+ */
+- (void)loadjsonfileConfig:(NSString *)jsonname watch_directory:(NSString *)directory;
+
+@end
+
+@interface HBBaseViewController(DirWatchDog)<HBBaseViewControllerDirWatchDogProtocol>
 
 /**
  *  从plist,json等文件中加载配置信息
@@ -35,29 +49,11 @@
 
 @end
 
-@interface HBBaseTableViewController(DirWatchDog) 
-
-/**
- *  从plist文件中加载配置信息,实时刷新
- */
-- (void)loadplistConfig:(NSString *)plistname watch_directory:(NSString *)directory;
-/**
- *  从json文件中加载配置信息,实时刷新
- */
-- (void)loadjsonfileConfig:(NSString *)jsonname watch_directory:(NSString *)directory;
+@interface HBBaseTableViewController(DirWatchDog) <HBBaseViewControllerDirWatchDogProtocol>
 
 @end
 
 
 @interface  HBBaseCollectionViewController(DirWatchDog)
-
-/**
- *  从plist文件中加载配置信息,实时刷新
- */
-- (void)loadplistConfig:(NSString *)plistname watch_directory:(NSString *)directory;
-/**
- *  从json文件中加载配置信息,实时刷新
- */
-- (void)loadjsonfileConfig:(NSString *)jsonname watch_directory:(NSString *)directory;
-
+ 
 @end

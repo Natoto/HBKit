@@ -1,24 +1,29 @@
 PODS:
-  - HBKit (0.6.32)
-  - HBKitRefresh (0.6.32):
+  - HBKit (1.0.4)
+  - HBKitWatchDog (1.0.2):
     - HBKit
-    - MJRefresh
-  - HBKitWatchDog (0.6.32):
-    - HBKit
-  - MJRefresh (3.1.12)
+  - MJRefresh (3.2.0)
 
 DEPENDENCIES:
-  - HBKit
-  - HBKitRefresh
-  - HBKitWatchDog
-  - MJRefresh
+  - HBKit (from `../../HBKit.podspec`)
+  - HBKitWatchDog (from `../../HBKitWatchDog.podspec`)
+  - MJRefresh (= 3.2.0)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - MJRefresh
+
+EXTERNAL SOURCES:
+  HBKit:
+    :path: "../../HBKit.podspec"
+  HBKitWatchDog:
+    :path: "../../HBKitWatchDog.podspec"
 
 SPEC CHECKSUMS:
-  HBKit: 9a745bcd732af27364ffb5d5255796aaca3d83c5
-  HBKitRefresh: 7ab9018da522e9dd672b594d16fccc721dddbb70
-  HBKitWatchDog: e5102210a34badd18c337d32d0f6581c415eadc0
-  MJRefresh: b96cdb21c4aa75a7b07654311ab2f315c497e806
+  HBKit: 9273a38dabfaada57204ea47eee1ec14dea19e32
+  HBKitWatchDog: efda3cef31d3fdf1a2528c8081a68e9369680fa8
+  MJRefresh: ed450d6eb9d3346a2cb033ab7eb6de090aeef437
 
-PODFILE CHECKSUM: 61e7458564630e20fdfff8a1b64e35d97f3cc15d
+PODFILE CHECKSUM: 96257fbc8a6e5366eb5a31848e16b6adfaa58478
 
-COCOAPODS: 1.1.1
+COCOAPODS: 1.6.1

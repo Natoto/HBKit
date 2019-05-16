@@ -1,0 +1,801 @@
+        <!DOCTYPE html>
+        <html>
+        <head>
+        <title>Scan Report</title>
+        <style type='text/css'>                             .priority1, .priority2, .priority3,          .cmplr-error, .cmplr-warning, .checker-bug {     font-weight: bold;                           text-align: center;                      }                                            .priority1, .priority2, .priority3 {             color: #BF0A30;                          }                                            .priority1 { background-color: #FFC200; }    .priority2 { background-color: #FFD3A6; }    .priority3 { background-color: #FFEEB5; }    .cmplr-error, .cmplr-warning {                   background-color: #BF0A30;               }                                            .cmplr-error { color: #FFC200; }             .cmplr-warning { color: #FFD3A6; }           .checker-bug {                                   background-color: #002868;                   color: white;                            }                                            table {                                          border: 2px solid gray;                      border-collapse: collapse;                   -moz-box-shadow: 3px 3px 4px #AAA;           -webkit-box-shadow: 3px 3px 4px #AAA;        box-shadow: 3px 3px 4px #AAA;            }                                            td, th {                                         border: 1px solid #D3D3D3;                   padding: 4px 20px 4px 20px;              }                                            th {                                             text-shadow: 2px 2px 2px white;              border-bottom: 1px solid gray;               background-color: #E9F4FF;               }</style>
+        </head>
+        <body>
+        <h1>Scan Report</h1>
+        <hr />
+        <h2>Summary</h2>
+        <table>
+        <thead>
+        <tr>
+        <th>Total Files</th>
+        <th>Files with Violations</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+        <td>134</td>
+        <td>31</td>
+        </tr>
+        </tbody>
+        </table>
+        <hr />
+        <table>
+        <thead>
+        <tr>
+        <th>File</th>
+        <th>Line Number</th>
+        <th>Rule Name</th>
+        <th>Message</th>
+        </tr>
+        </thead>
+        <tbody><tr>
+    <td>/Users/boob/Documents/demos/HBKit/demo/HBTesterKitDemo/TestHBKitDemo/files/ex/NSObject+FBKVOController.m</td>
+    <td>39</td>
+    <td>extensionMethodPrefix</td>
+    <td>Method declared in class extension must have a prefix followed by a underscore</td>
+</tr><tr>
+    <td>/Users/boob/Documents/demos/HBKit/demo/HBTesterKitDemo/TestHBKitDemo/files/ex/NSObject+FBKVOController.m</td>
+    <td>56</td>
+    <td>extensionMethodPrefix</td>
+    <td>Method declared in class extension must have a prefix followed by a underscore</td>
+</tr><tr>
+    <td>/Users/boob/Documents/demos/HBKit/demo/HBTesterKitDemo/TestHBKitDemo/files/ex/FBKVOController.m</td>
+    <td>21</td>
+    <td>globalFunctionNaming</td>
+    <td>Global function name must be capitalized.</td>
+</tr><tr>
+    <td>/Users/boob/Documents/demos/HBKit/demo/HBTesterKitDemo/TestHBKitDemo/files/ex/FBKVOController.m</td>
+    <td>43</td>
+    <td>globalFunctionNaming</td>
+    <td>Global function name must be capitalized.</td>
+</tr><tr>
+    <td>/Users/boob/Documents/demos/HBKit/demo/HBTesterKitDemo/TestHBKitDemo/files/ex/FBKVOController.m</td>
+    <td>53</td>
+    <td>globalFunctionNaming</td>
+    <td>Global function name must be capitalized.</td>
+</tr><tr>
+    <td>/Users/boob/Documents/demos/HBKit/demo/HBTesterKitDemo/TestHBKitDemo/files/ex/FBKVOController.m</td>
+    <td>71</td>
+    <td>globalFunctionNaming</td>
+    <td>Global function name must be capitalized.</td>
+</tr><tr>
+    <td>/Users/boob/Documents/demos/HBKit/demo/HBTesterKitDemo/TestHBKitDemo/files/controllers/RootViewController.m</td>
+    <td>144</td>
+    <td>emptyCodeBlock</td>
+    <td>Empty if statement</td>
+</tr><tr>
+    <td>/Users/boob/Documents/demos/HBKit/demo/HBTesterKitDemo/TestHBKitDemo/files/controllers/RootViewController.m</td>
+    <td>148</td>
+    <td>emptyCodeBlock</td>
+    <td>Empty if statement</td>
+</tr><tr>
+    <td>/Users/boob/Documents/demos/HBKit/demo/HBTesterKitDemo/TestHBKitDemo/files/controllers/TestSystyleviewController.m</td>
+    <td>14</td>
+    <td>defineStatement</td>
+    <td>#define should be named with uppercase</td>
+</tr><tr>
+    <td>/Users/boob/Documents/demos/HBKit/tools/HBKitWatchDog/HBBaseViewController+DirWatchDog.m</td>
+    <td>20</td>
+    <td>defineStatement</td>
+    <td>#define should be named with uppercase</td>
+</tr><tr>
+    <td>/Users/boob/Documents/demos/HBKit/tools/HBKitWatchDog/HBBaseViewController+DirWatchDog.m</td>
+    <td>28</td>
+    <td>defineStatement</td>
+    <td>#define should be named with uppercase</td>
+</tr><tr>
+    <td>/Users/boob/Documents/demos/HBKit/tools/HBKitWatchDog/HBBaseViewController+DirWatchDog.m</td>
+    <td>60</td>
+    <td>extensionMethodPrefix</td>
+    <td>Method declared in class extension must have a prefix followed by a underscore</td>
+</tr><tr>
+    <td>/Users/boob/Documents/demos/HBKit/tools/HBKitWatchDog/HBBaseViewController+DirWatchDog.m</td>
+    <td>110</td>
+    <td>extensionMethodPrefix</td>
+    <td>Method declared in class extension must have a prefix followed by a underscore</td>
+</tr><tr>
+    <td>/Users/boob/Documents/demos/HBKit/tools/HBKitWatchDog/HBBaseViewController+DirWatchDog.m</td>
+    <td>125</td>
+    <td>extensionMethodPrefix</td>
+    <td>Method declared in class extension must have a prefix followed by a underscore</td>
+</tr><tr>
+    <td>/Users/boob/Documents/demos/HBKit/tools/HBKitWatchDog/HBBaseViewController+DirWatchDog.m</td>
+    <td>144</td>
+    <td>extensionMethodPrefix</td>
+    <td>Method declared in class extension must have a prefix followed by a underscore</td>
+</tr><tr>
+    <td>/Users/boob/Documents/demos/HBKit/tools/HBKitWatchDog/HBBaseViewController+DirWatchDog.m</td>
+    <td>159</td>
+    <td>extensionMethodPrefix</td>
+    <td>Method declared in class extension must have a prefix followed by a underscore</td>
+</tr><tr>
+    <td>/Users/boob/Documents/demos/HBKit/tools/HBKitWatchDog/HBBaseViewController+DirWatchDog.h</td>
+    <td>30</td>
+    <td>extensionMethodPrefix</td>
+    <td>Method declared in class extension must have a prefix followed by a underscore</td>
+</tr><tr>
+    <td>/Users/boob/Documents/demos/HBKit/tools/HBKitWatchDog/HBBaseViewController+DirWatchDog.h</td>
+    <td>43</td>
+    <td>extensionMethodPrefix</td>
+    <td>Method declared in class extension must have a prefix followed by a underscore</td>
+</tr><tr>
+    <td>/Users/boob/Documents/demos/HBKit/tools/HBKitWatchDog/HBBaseViewController+DirWatchDog.h</td>
+    <td>47</td>
+    <td>extensionMethodPrefix</td>
+    <td>Method declared in class extension must have a prefix followed by a underscore</td>
+</tr><tr>
+    <td>/Users/boob/Documents/demos/HBKit/tools/HBKitWatchDog/HBBaseViewController+DirWatchDog.h</td>
+    <td>57</td>
+    <td>extensionMethodPrefix</td>
+    <td>Method declared in class extension must have a prefix followed by a underscore</td>
+</tr><tr>
+    <td>/Users/boob/Documents/demos/HBKit/tools/HBKitWatchDog/HBBaseViewController+DirWatchDog.h</td>
+    <td>61</td>
+    <td>extensionMethodPrefix</td>
+    <td>Method declared in class extension must have a prefix followed by a underscore</td>
+</tr><tr>
+    <td>/Users/boob/Documents/demos/HBKit/tools/HBKitRefresh/HBKitRefresh.m</td>
+    <td>22</td>
+    <td>defineStatement</td>
+    <td>#define should be named with uppercase</td>
+</tr><tr>
+    <td>/Users/boob/Documents/demos/HBKit/tools/HBKitRefresh/HBKitRefresh.m</td>
+    <td>30</td>
+    <td>defineStatement</td>
+    <td>#define should be named with uppercase</td>
+</tr><tr>
+    <td>/Users/boob/Documents/demos/HBKit/tools/HBKitRefresh/HBKitRefresh.m</td>
+    <td>52</td>
+    <td>extensionMethodPrefix</td>
+    <td>Method declared in class extension must have a prefix followed by a underscore</td>
+</tr><tr>
+    <td>/Users/boob/Documents/demos/HBKit/tools/HBKitRefresh/HBKitRefresh.m</td>
+    <td>59</td>
+    <td>extensionMethodPrefix</td>
+    <td>Method declared in class extension must have a prefix followed by a underscore</td>
+</tr><tr>
+    <td>/Users/boob/Documents/demos/HBKit/tools/HBKitRefresh/HBKitRefresh.m</td>
+    <td>71</td>
+    <td>extensionMethodPrefix</td>
+    <td>Method declared in class extension must have a prefix followed by a underscore</td>
+</tr><tr>
+    <td>/Users/boob/Documents/demos/HBKit/tools/HBKitRefresh/HBKitRefresh.m</td>
+    <td>83</td>
+    <td>extensionMethodPrefix</td>
+    <td>Method declared in class extension must have a prefix followed by a underscore</td>
+</tr><tr>
+    <td>/Users/boob/Documents/demos/HBKit/tools/HBKitRefresh/HBKitRefresh.m</td>
+    <td>85</td>
+    <td>extensionMethodPrefix</td>
+    <td>Method declared in class extension must have a prefix followed by a underscore</td>
+</tr><tr>
+    <td>/Users/boob/Documents/demos/HBKit/tools/HBKitRefresh/HBKitRefresh.m</td>
+    <td>87</td>
+    <td>extensionMethodPrefix</td>
+    <td>Method declared in class extension must have a prefix followed by a underscore</td>
+</tr><tr>
+    <td>/Users/boob/Documents/demos/HBKit/tools/HBKitRefresh/HBKitRefresh.m</td>
+    <td>93</td>
+    <td>extensionMethodPrefix</td>
+    <td>Method declared in class extension must have a prefix followed by a underscore</td>
+</tr><tr>
+    <td>/Users/boob/Documents/demos/HBKit/tools/HBKitRefresh/HBKitRefresh.m</td>
+    <td>96</td>
+    <td>extensionMethodPrefix</td>
+    <td>Method declared in class extension must have a prefix followed by a underscore</td>
+</tr><tr>
+    <td>/Users/boob/Documents/demos/HBKit/tools/HBKitRefresh/HBKitRefresh.m</td>
+    <td>100</td>
+    <td>extensionMethodPrefix</td>
+    <td>Method declared in class extension must have a prefix followed by a underscore</td>
+</tr><tr>
+    <td>/Users/boob/Documents/demos/HBKit/tools/HBKitRefresh/HBKitRefresh.m</td>
+    <td>106</td>
+    <td>extensionMethodPrefix</td>
+    <td>Method declared in class extension must have a prefix followed by a underscore</td>
+</tr><tr>
+    <td>/Users/boob/Documents/demos/HBKit/tools/HBKitRefresh/HBKitRefresh.m</td>
+    <td>111</td>
+    <td>extensionMethodPrefix</td>
+    <td>Method declared in class extension must have a prefix followed by a underscore</td>
+</tr><tr>
+    <td>/Users/boob/Documents/demos/HBKit/tools/HBKitRefresh/HBKitRefresh.m</td>
+    <td>139</td>
+    <td>extensionMethodPrefix</td>
+    <td>Method declared in class extension must have a prefix followed by a underscore</td>
+</tr><tr>
+    <td>/Users/boob/Documents/demos/HBKit/tools/HBKitRefresh/HBKitRefresh.m</td>
+    <td>151</td>
+    <td>extensionMethodPrefix</td>
+    <td>Method declared in class extension must have a prefix followed by a underscore</td>
+</tr><tr>
+    <td>/Users/boob/Documents/demos/HBKit/tools/HBKitRefresh/HBKitRefresh.m</td>
+    <td>165</td>
+    <td>extensionMethodPrefix</td>
+    <td>Method declared in class extension must have a prefix followed by a underscore</td>
+</tr><tr>
+    <td>/Users/boob/Documents/demos/HBKit/tools/HBKitRefresh/HBKitRefresh.m</td>
+    <td>167</td>
+    <td>extensionMethodPrefix</td>
+    <td>Method declared in class extension must have a prefix followed by a underscore</td>
+</tr><tr>
+    <td>/Users/boob/Documents/demos/HBKit/tools/HBKitRefresh/HBKitRefresh.m</td>
+    <td>169</td>
+    <td>extensionMethodPrefix</td>
+    <td>Method declared in class extension must have a prefix followed by a underscore</td>
+</tr><tr>
+    <td>/Users/boob/Documents/demos/HBKit/tools/HBKitAnode/ASHBaseViewController.h</td>
+    <td>17</td>
+    <td>mutableScope</td>
+    <td>Declaring mutable property in header file is not allowed</td>
+</tr><tr>
+    <td>/Users/boob/Documents/demos/HBKit/tools/HBKitAnode/ASHBaseTableViewCell.h</td>
+    <td>28</td>
+    <td>mutableScope</td>
+    <td>Declaring mutable property in header file is not allowed</td>
+</tr><tr>
+    <td>/Users/boob/Documents/demos/HBKit/tools/HBKitAnode/ASHBaseViewController.m</td>
+    <td>21</td>
+    <td>defineStatement</td>
+    <td>#define should be named with uppercase</td>
+</tr><tr>
+    <td>/Users/boob/Documents/demos/HBKit/tools/HBKitAnode/ASHBaseViewController.m</td>
+    <td>29</td>
+    <td>defineStatement</td>
+    <td>#define should be named with uppercase</td>
+</tr><tr>
+    <td>/Users/boob/Documents/demos/HBKit/HBKit/HBCellStruct_Common.m</td>
+    <td>151</td>
+    <td>extensionMethodPrefix</td>
+    <td>Method declared in class extension must have a prefix followed by a underscore</td>
+</tr><tr>
+    <td>/Users/boob/Documents/demos/HBKit/HBKit/HBCellStruct_Common.m</td>
+    <td>230</td>
+    <td>extensionMethodPrefix</td>
+    <td>Method declared in class extension must have a prefix followed by a underscore</td>
+</tr><tr>
+    <td>/Users/boob/Documents/demos/HBKit/HBKit/HBCellStruct_Common.m</td>
+    <td>240</td>
+    <td>extensionMethodPrefix</td>
+    <td>Method declared in class extension must have a prefix followed by a underscore</td>
+</tr><tr>
+    <td>/Users/boob/Documents/demos/HBKit/HBKit/HBCellStruct_Common.m</td>
+    <td>47</td>
+    <td>tooManyParameters</td>
+    <td>Method with 14 parameters exceeds limit of 10</td>
+</tr><tr>
+    <td>/Users/boob/Documents/demos/HBKit/HBKit/NSObject+HBObjectMap.m</td>
+    <td>128</td>
+    <td>emptyCodeBlock</td>
+    <td>Empty @finally statement</td>
+</tr><tr>
+    <td>/Users/boob/Documents/demos/HBKit/HBKit/NSObject+HBObjectMap.m</td>
+    <td>492</td>
+    <td>nestedCodeBlockDepth</td>
+    <td>Block Depth 6 exceeds limitation of 5.</td>
+</tr><tr>
+    <td>/Users/boob/Documents/demos/HBKit/HBKit/NSObject+HBObjectMap.m</td>
+    <td>498</td>
+    <td>nestedCodeBlockDepth</td>
+    <td>Block Depth 6 exceeds limitation of 5.</td>
+</tr><tr>
+    <td>/Users/boob/Documents/demos/HBKit/HBKit/HBCellStruct.m</td>
+    <td>88</td>
+    <td>emptyCodeBlock</td>
+    <td>Empty @finally statement</td>
+</tr><tr>
+    <td>/Users/boob/Documents/demos/HBKit/HBKit/HBCellStruct.m</td>
+    <td>120</td>
+    <td>nestedCodeBlockDepth</td>
+    <td>Block Depth 6 exceeds limitation of 5.</td>
+</tr><tr>
+    <td>/Users/boob/Documents/demos/HBKit/HBKit/HBBaseSectionCollectionReusableView.m</td>
+    <td>20</td>
+    <td>emptyCodeBlock</td>
+    <td>Empty if statement</td>
+</tr><tr>
+    <td>/Users/boob/Documents/demos/HBKit/HBKit/UIButton+HBkit.m</td>
+    <td>13</td>
+    <td>extensionMethodPrefix</td>
+    <td>Method declared in class extension must have a prefix followed by a underscore</td>
+</tr><tr>
+    <td>/Users/boob/Documents/demos/HBKit/HBKit/UIButton+HBkit.m</td>
+    <td>23</td>
+    <td>extensionMethodPrefix</td>
+    <td>Method declared in class extension must have a prefix followed by a underscore</td>
+</tr><tr>
+    <td>/Users/boob/Documents/demos/HBKit/HBKit/UIButton+HBkit.m</td>
+    <td>32</td>
+    <td>extensionMethodPrefix</td>
+    <td>Method declared in class extension must have a prefix followed by a underscore</td>
+</tr><tr>
+    <td>/Users/boob/Documents/demos/HBKit/HBKit/UIButton+HBkit.m</td>
+    <td>42</td>
+    <td>extensionMethodPrefix</td>
+    <td>Method declared in class extension must have a prefix followed by a underscore</td>
+</tr><tr>
+    <td>/Users/boob/Documents/demos/HBKit/HBKit/UIButton+HBkit.m</td>
+    <td>52</td>
+    <td>extensionMethodPrefix</td>
+    <td>Method declared in class extension must have a prefix followed by a underscore</td>
+</tr><tr>
+    <td>/Users/boob/Documents/demos/HBKit/HBKit/UIButton+HBkit.m</td>
+    <td>59</td>
+    <td>extensionMethodPrefix</td>
+    <td>Method declared in class extension must have a prefix followed by a underscore</td>
+</tr><tr>
+    <td>/Users/boob/Documents/demos/HBKit/HBKit/UIButton+HBkit.m</td>
+    <td>67</td>
+    <td>extensionMethodPrefix</td>
+    <td>Method declared in class extension must have a prefix followed by a underscore</td>
+</tr><tr>
+    <td>/Users/boob/Documents/demos/HBKit/HBKit/UIButton+HBkit.m</td>
+    <td>78</td>
+    <td>extensionMethodPrefix</td>
+    <td>Method declared in class extension must have a prefix followed by a underscore</td>
+</tr><tr>
+    <td>/Users/boob/Documents/demos/HBKit/HBKit/UIButton+HBkit.m</td>
+    <td>92</td>
+    <td>extensionMethodPrefix</td>
+    <td>Method declared in class extension must have a prefix followed by a underscore</td>
+</tr><tr>
+    <td>/Users/boob/Documents/demos/HBKit/HBKit/UIButton+HBkit.m</td>
+    <td>129</td>
+    <td>extensionMethodPrefix</td>
+    <td>Method declared in class extension must have a prefix followed by a underscore</td>
+</tr><tr>
+    <td>/Users/boob/Documents/demos/HBKit/HBKit/UIButton+HBkit.m</td>
+    <td>137</td>
+    <td>extensionMethodPrefix</td>
+    <td>Method declared in class extension must have a prefix followed by a underscore</td>
+</tr><tr>
+    <td>/Users/boob/Documents/demos/HBKit/HBKit/UIButton+HBkit.m</td>
+    <td>142</td>
+    <td>extensionMethodPrefix</td>
+    <td>Method declared in class extension must have a prefix followed by a underscore</td>
+</tr><tr>
+    <td>/Users/boob/Documents/demos/HBKit/HBKit/UIButton+HBkit.m</td>
+    <td>146</td>
+    <td>extensionMethodPrefix</td>
+    <td>Method declared in class extension must have a prefix followed by a underscore</td>
+</tr><tr>
+    <td>/Users/boob/Documents/demos/HBKit/HBKit/UIButton+HBkit.m</td>
+    <td>151</td>
+    <td>extensionMethodPrefix</td>
+    <td>Method declared in class extension must have a prefix followed by a underscore</td>
+</tr><tr>
+    <td>/Users/boob/Documents/demos/HBKit/HBKit/UIButton+HBkit.m</td>
+    <td>156</td>
+    <td>extensionMethodPrefix</td>
+    <td>Method declared in class extension must have a prefix followed by a underscore</td>
+</tr><tr>
+    <td>/Users/boob/Documents/demos/HBKit/HBKit/UIButton+HBkit.m</td>
+    <td>160</td>
+    <td>extensionMethodPrefix</td>
+    <td>Method declared in class extension must have a prefix followed by a underscore</td>
+</tr><tr>
+    <td>/Users/boob/Documents/demos/HBKit/HBKit/UIButton+HBkit.m</td>
+    <td>165</td>
+    <td>extensionMethodPrefix</td>
+    <td>Method declared in class extension must have a prefix followed by a underscore</td>
+</tr><tr>
+    <td>/Users/boob/Documents/demos/HBKit/HBKit/UIButton+HBkit.m</td>
+    <td>172</td>
+    <td>extensionMethodPrefix</td>
+    <td>Method declared in class extension must have a prefix followed by a underscore</td>
+</tr><tr>
+    <td>/Users/boob/Documents/demos/HBKit/HBKit/UIButton+HBkit.m</td>
+    <td>177</td>
+    <td>extensionMethodPrefix</td>
+    <td>Method declared in class extension must have a prefix followed by a underscore</td>
+</tr><tr>
+    <td>/Users/boob/Documents/demos/HBKit/HBKit/UIButton+HBkit.m</td>
+    <td>186</td>
+    <td>extensionMethodPrefix</td>
+    <td>Method declared in class extension must have a prefix followed by a underscore</td>
+</tr><tr>
+    <td>/Users/boob/Documents/demos/HBKit/HBKit/HBCellStruct_KVO.h</td>
+    <td>28</td>
+    <td>extensionMethodPrefix</td>
+    <td>Method declared in class extension must have a prefix followed by a underscore</td>
+</tr><tr>
+    <td>/Users/boob/Documents/demos/HBKit/HBKit/HBCellStruct_KVO.h</td>
+    <td>29</td>
+    <td>extensionMethodPrefix</td>
+    <td>Method declared in class extension must have a prefix followed by a underscore</td>
+</tr><tr>
+    <td>/Users/boob/Documents/demos/HBKit/HBKit/HBBaseTableViewCell.h</td>
+    <td>59</td>
+    <td>extensionMethodPrefix</td>
+    <td>Method declared in class extension must have a prefix followed by a underscore</td>
+</tr><tr>
+    <td>/Users/boob/Documents/demos/HBKit/HBKit/HBBaseTableViewCell.h</td>
+    <td>60</td>
+    <td>extensionMethodPrefix</td>
+    <td>Method declared in class extension must have a prefix followed by a underscore</td>
+</tr><tr>
+    <td>/Users/boob/Documents/demos/HBKit/HBKit/HBBaseTableViewCell.h</td>
+    <td>61</td>
+    <td>extensionMethodPrefix</td>
+    <td>Method declared in class extension must have a prefix followed by a underscore</td>
+</tr><tr>
+    <td>/Users/boob/Documents/demos/HBKit/HBKit/HBBaseTableViewCell.h</td>
+    <td>62</td>
+    <td>extensionMethodPrefix</td>
+    <td>Method declared in class extension must have a prefix followed by a underscore</td>
+</tr><tr>
+    <td>/Users/boob/Documents/demos/HBKit/HBKit/HBBaseTableViewCell.h</td>
+    <td>45</td>
+    <td>mutableScope</td>
+    <td>Declaring mutable property in header file is not allowed</td>
+</tr><tr>
+    <td>/Users/boob/Documents/demos/HBKit/HBKit/HBBaseViewController.m</td>
+    <td>14</td>
+    <td>defineStatement</td>
+    <td>#define should be named with uppercase</td>
+</tr><tr>
+    <td>/Users/boob/Documents/demos/HBKit/HBKit/HBCellStruct_Common.h</td>
+    <td>75</td>
+    <td>extensionMethodPrefix</td>
+    <td>Method declared in class extension must have a prefix followed by a underscore</td>
+</tr><tr>
+    <td>/Users/boob/Documents/demos/HBKit/HBKit/HBCellStruct_Common.h</td>
+    <td>81</td>
+    <td>extensionMethodPrefix</td>
+    <td>Method declared in class extension must have a prefix followed by a underscore</td>
+</tr><tr>
+    <td>/Users/boob/Documents/demos/HBKit/HBKit/HBCellStruct_Common.h</td>
+    <td>83</td>
+    <td>extensionMethodPrefix</td>
+    <td>Method declared in class extension must have a prefix followed by a underscore</td>
+</tr><tr>
+    <td>/Users/boob/Documents/demos/HBKit/HBKit/HBCellStruct_Common.h</td>
+    <td>57</td>
+    <td>tooManyParameters</td>
+    <td>Method with 14 parameters exceeds limit of 10</td>
+</tr><tr>
+    <td>/Users/boob/Documents/demos/HBKit/HBKit/HBCollectionViewModel.m</td>
+    <td>147</td>
+    <td>emptyCodeBlock</td>
+    <td>Empty @finally statement</td>
+</tr><tr>
+    <td>/Users/boob/Documents/demos/HBKit/HBKit/HBCellStruct.h</td>
+    <td>49</td>
+    <td>mutableScope</td>
+    <td>Declaring mutable property in header file is not allowed</td>
+</tr><tr>
+    <td>/Users/boob/Documents/demos/HBKit/HBKit/HBCellStruct.h</td>
+    <td>50</td>
+    <td>mutableScope</td>
+    <td>Declaring mutable property in header file is not allowed</td>
+</tr><tr>
+    <td>/Users/boob/Documents/demos/HBKit/HBKit/HBCellStruct.h</td>
+    <td>51</td>
+    <td>mutableScope</td>
+    <td>Declaring mutable property in header file is not allowed</td>
+</tr><tr>
+    <td>/Users/boob/Documents/demos/HBKit/HBKit/HBCellStruct.h</td>
+    <td>92</td>
+    <td>mutableScope</td>
+    <td>Declaring mutable property in header file is not allowed</td>
+</tr><tr>
+    <td>/Users/boob/Documents/demos/HBKit/HBKit/NSObject+HBObjectMap.h</td>
+    <td>34</td>
+    <td>defineStatement</td>
+    <td>#define should be named with uppercase</td>
+</tr><tr>
+    <td>/Users/boob/Documents/demos/HBKit/HBKit/NSObject+HBObjectMap.h</td>
+    <td>34</td>
+    <td>defineStatement</td>
+    <td>You shouldn't use #define to define a constant, use a static const instead.</td>
+</tr><tr>
+    <td>/Users/boob/Documents/demos/HBKit/HBKit/NSObject+HBObjectMap.h</td>
+    <td>35</td>
+    <td>defineStatement</td>
+    <td>#define should be named with uppercase</td>
+</tr><tr>
+    <td>/Users/boob/Documents/demos/HBKit/HBKit/NSObject+HBObjectMap.h</td>
+    <td>35</td>
+    <td>defineStatement</td>
+    <td>You shouldn't use #define to define a constant, use a static const instead.</td>
+</tr><tr>
+    <td>/Users/boob/Documents/demos/HBKit/HBKit/HBCellStruct_KVO.m</td>
+    <td>17</td>
+    <td>extensionMethodPrefix</td>
+    <td>Method declared in class extension must have a prefix followed by a underscore</td>
+</tr><tr>
+    <td>/Users/boob/Documents/demos/HBKit/HBKit/HBCellStruct_KVO.m</td>
+    <td>52</td>
+    <td>extensionMethodPrefix</td>
+    <td>Method declared in class extension must have a prefix followed by a underscore</td>
+</tr><tr>
+    <td>/Users/boob/Documents/demos/HBKit/HBKit/HBCellStruct_KVO.m</td>
+    <td>61</td>
+    <td>extensionMethodPrefix</td>
+    <td>Method declared in class extension must have a prefix followed by a underscore</td>
+</tr><tr>
+    <td>/Users/boob/Documents/demos/HBKit/HBKit/HBCellStruct_KVO.m</td>
+    <td>70</td>
+    <td>extensionMethodPrefix</td>
+    <td>Method declared in class extension must have a prefix followed by a underscore</td>
+</tr><tr>
+    <td>/Users/boob/Documents/demos/HBKit/HBKit/HBKitDataModel.h</td>
+    <td>17</td>
+    <td>mutableScope</td>
+    <td>Declaring mutable property in header file is not allowed</td>
+</tr><tr>
+    <td>/Users/boob/Documents/demos/HBKit/HBKit/HBKitDataModel.h</td>
+    <td>18</td>
+    <td>mutableScope</td>
+    <td>Declaring mutable property in header file is not allowed</td>
+</tr><tr>
+    <td>/Users/boob/Documents/demos/HBKit/HBKit/HBBaseCollectionViewCell.h</td>
+    <td>17</td>
+    <td>mutableScope</td>
+    <td>Declaring mutable property in header file is not allowed</td>
+</tr><tr>
+    <td>/Users/boob/Documents/demos/HBKit/HBKit/HBBaseViewController.h</td>
+    <td>25</td>
+    <td>mutableScope</td>
+    <td>Declaring mutable property in header file is not allowed</td>
+</tr><tr>
+    <td>/Users/boob/Documents/demos/HBKit/HBKit/HBBaseView.m</td>
+    <td>17</td>
+    <td>extensionMethodPrefix</td>
+    <td>Method declared in class extension must have a prefix followed by a underscore</td>
+</tr><tr>
+    <td>/Users/boob/Documents/demos/HBKit/HBKit/HBBaseView.m</td>
+    <td>23</td>
+    <td>extensionMethodPrefix</td>
+    <td>Method declared in class extension must have a prefix followed by a underscore</td>
+</tr><tr>
+    <td>/Users/boob/Documents/demos/HBKit/HBKit/HBBaseView.m</td>
+    <td>30</td>
+    <td>extensionMethodPrefix</td>
+    <td>Method declared in class extension must have a prefix followed by a underscore</td>
+</tr><tr>
+    <td>/Users/boob/Documents/demos/HBKit/HBKit/HBBaseView.m</td>
+    <td>37</td>
+    <td>extensionMethodPrefix</td>
+    <td>Method declared in class extension must have a prefix followed by a underscore</td>
+</tr><tr>
+    <td>/Users/boob/Documents/demos/HBKit/HBKit/HBBaseView.m</td>
+    <td>42</td>
+    <td>extensionMethodPrefix</td>
+    <td>Method declared in class extension must have a prefix followed by a underscore</td>
+</tr><tr>
+    <td>/Users/boob/Documents/demos/HBKit/HBKit/HBBaseView.m</td>
+    <td>49</td>
+    <td>extensionMethodPrefix</td>
+    <td>Method declared in class extension must have a prefix followed by a underscore</td>
+</tr><tr>
+    <td>/Users/boob/Documents/demos/HBKit/HBKit/HBBaseView.m</td>
+    <td>56</td>
+    <td>extensionMethodPrefix</td>
+    <td>Method declared in class extension must have a prefix followed by a underscore</td>
+</tr><tr>
+    <td>/Users/boob/Documents/demos/HBKit/HBKit/HBBaseView.m</td>
+    <td>64</td>
+    <td>extensionMethodPrefix</td>
+    <td>Method declared in class extension must have a prefix followed by a underscore</td>
+</tr><tr>
+    <td>/Users/boob/Documents/demos/HBKit/HBKit/HBBaseView.m</td>
+    <td>71</td>
+    <td>extensionMethodPrefix</td>
+    <td>Method declared in class extension must have a prefix followed by a underscore</td>
+</tr><tr>
+    <td>/Users/boob/Documents/demos/HBKit/HBKit/HBBaseView.m</td>
+    <td>91</td>
+    <td>extensionMethodPrefix</td>
+    <td>Method declared in class extension must have a prefix followed by a underscore</td>
+</tr><tr>
+    <td>/Users/boob/Documents/demos/HBKit/HBKit/HBBaseView.m</td>
+    <td>101</td>
+    <td>extensionMethodPrefix</td>
+    <td>Method declared in class extension must have a prefix followed by a underscore</td>
+</tr><tr>
+    <td>/Users/boob/Documents/demos/HBKit/HBKit/HBBaseView.m</td>
+    <td>114</td>
+    <td>extensionMethodPrefix</td>
+    <td>Method declared in class extension must have a prefix followed by a underscore</td>
+</tr><tr>
+    <td>/Users/boob/Documents/demos/HBKit/HBKit/HBBaseView.m</td>
+    <td>123</td>
+    <td>extensionMethodPrefix</td>
+    <td>Method declared in class extension must have a prefix followed by a underscore</td>
+</tr><tr>
+    <td>/Users/boob/Documents/demos/HBKit/HBKit/HBBaseView.m</td>
+    <td>131</td>
+    <td>extensionMethodPrefix</td>
+    <td>Method declared in class extension must have a prefix followed by a underscore</td>
+</tr><tr>
+    <td>/Users/boob/Documents/demos/HBKit/HBKit/HBBaseView.m</td>
+    <td>140</td>
+    <td>extensionMethodPrefix</td>
+    <td>Method declared in class extension must have a prefix followed by a underscore</td>
+</tr><tr>
+    <td>/Users/boob/Documents/demos/HBKit/HBKit/HBBaseView.m</td>
+    <td>147</td>
+    <td>extensionMethodPrefix</td>
+    <td>Method declared in class extension must have a prefix followed by a underscore</td>
+</tr><tr>
+    <td>/Users/boob/Documents/demos/HBKit/HBKit/HBBaseView.m</td>
+    <td>149</td>
+    <td>extensionMethodPrefix</td>
+    <td>Method declared in class extension must have a prefix followed by a underscore</td>
+</tr><tr>
+    <td>/Users/boob/Documents/demos/HBKit/HBKit/HBBaseView.m</td>
+    <td>151</td>
+    <td>extensionMethodPrefix</td>
+    <td>Method declared in class extension must have a prefix followed by a underscore</td>
+</tr><tr>
+    <td>/Users/boob/Documents/demos/HBKit/HBKit/HBBaseView.m</td>
+    <td>153</td>
+    <td>extensionMethodPrefix</td>
+    <td>Method declared in class extension must have a prefix followed by a underscore</td>
+</tr><tr>
+    <td>/Users/boob/Documents/demos/HBKit/HBKit/HBBaseView.m</td>
+    <td>155</td>
+    <td>extensionMethodPrefix</td>
+    <td>Method declared in class extension must have a prefix followed by a underscore</td>
+</tr><tr>
+    <td>/Users/boob/Documents/demos/HBKit/HBKit/HBBaseTableViewCell.m</td>
+    <td>36</td>
+    <td>emptyCodeBlock</td>
+    <td>Empty if statement</td>
+</tr><tr>
+    <td>/Users/boob/Documents/demos/HBKit/HBKit/HBBaseTableViewCell.m</td>
+    <td>186</td>
+    <td>emptyCodeBlock</td>
+    <td>Empty if statement</td>
+</tr><tr>
+    <td>/Users/boob/Documents/demos/HBKit/HBKit/HBBaseTableViewCell.m</td>
+    <td>357</td>
+    <td>extensionMethodPrefix</td>
+    <td>Method declared in class extension must have a prefix followed by a underscore</td>
+</tr><tr>
+    <td>/Users/boob/Documents/demos/HBKit/HBKit/HBBaseTableViewCell.m</td>
+    <td>368</td>
+    <td>extensionMethodPrefix</td>
+    <td>Method declared in class extension must have a prefix followed by a underscore</td>
+</tr><tr>
+    <td>/Users/boob/Documents/demos/HBKit/HBKit/HBBaseTableViewCell.m</td>
+    <td>376</td>
+    <td>extensionMethodPrefix</td>
+    <td>Method declared in class extension must have a prefix followed by a underscore</td>
+</tr><tr>
+    <td>/Users/boob/Documents/demos/HBKit/HBKit/HBBaseTableViewCell.m</td>
+    <td>396</td>
+    <td>extensionMethodPrefix</td>
+    <td>Method declared in class extension must have a prefix followed by a underscore</td>
+</tr><tr>
+    <td>/Users/boob/Documents/demos/HBKit/HBKit/HBBaseTableViewCell.m</td>
+    <td>411</td>
+    <td>extensionMethodPrefix</td>
+    <td>Method declared in class extension must have a prefix followed by a underscore</td>
+</tr><tr>
+    <td>/Users/boob/Documents/demos/HBKit/HBKit/HBBaseTableViewCell.m</td>
+    <td>434</td>
+    <td>extensionMethodPrefix</td>
+    <td>Method declared in class extension must have a prefix followed by a underscore</td>
+</tr><tr>
+    <td>/Users/boob/Documents/demos/HBKit/HBKit/HBBaseTableViewCell.m</td>
+    <td>444</td>
+    <td>extensionMethodPrefix</td>
+    <td>Method declared in class extension must have a prefix followed by a underscore</td>
+</tr><tr>
+    <td>/Users/boob/Documents/demos/HBKit/HBKit/HBKitWatchDog/NSObject+DirWatchDog.m</td>
+    <td>20</td>
+    <td>defineStatement</td>
+    <td>#define should be named with uppercase</td>
+</tr><tr>
+    <td>/Users/boob/Documents/demos/HBKit/HBKit/HBKitWatchDog/NSObject+DirWatchDog.m</td>
+    <td>28</td>
+    <td>defineStatement</td>
+    <td>#define should be named with uppercase</td>
+</tr><tr>
+    <td>/Users/boob/Documents/demos/HBKit/HBKit/HBKitWatchDog/NSObject+DirWatchDog.m</td>
+    <td>61</td>
+    <td>extensionMethodPrefix</td>
+    <td>Method declared in class extension must have a prefix followed by a underscore</td>
+</tr><tr>
+    <td>/Users/boob/Documents/demos/HBKit/HBKit/HBKitWatchDog/HBBaseViewController+DirWatchDog.m</td>
+    <td>20</td>
+    <td>defineStatement</td>
+    <td>#define should be named with uppercase</td>
+</tr><tr>
+    <td>/Users/boob/Documents/demos/HBKit/HBKit/HBKitWatchDog/HBBaseViewController+DirWatchDog.m</td>
+    <td>28</td>
+    <td>defineStatement</td>
+    <td>#define should be named with uppercase</td>
+</tr><tr>
+    <td>/Users/boob/Documents/demos/HBKit/HBKit/HBKitWatchDog/HBBaseViewController+DirWatchDog.m</td>
+    <td>61</td>
+    <td>extensionMethodPrefix</td>
+    <td>Method declared in class extension must have a prefix followed by a underscore</td>
+</tr><tr>
+    <td>/Users/boob/Documents/demos/HBKit/HBKit/HBKitWatchDog/HBBaseViewController+DirWatchDog.m</td>
+    <td>70</td>
+    <td>extensionMethodPrefix</td>
+    <td>Method declared in class extension must have a prefix followed by a underscore</td>
+</tr><tr>
+    <td>/Users/boob/Documents/demos/HBKit/HBKit/HBKitWatchDog/HBBaseViewController+DirWatchDog.m</td>
+    <td>121</td>
+    <td>extensionMethodPrefix</td>
+    <td>Method declared in class extension must have a prefix followed by a underscore</td>
+</tr><tr>
+    <td>/Users/boob/Documents/demos/HBKit/HBKit/HBKitWatchDog/HBBaseViewController+DirWatchDog.m</td>
+    <td>130</td>
+    <td>extensionMethodPrefix</td>
+    <td>Method declared in class extension must have a prefix followed by a underscore</td>
+</tr><tr>
+    <td>/Users/boob/Documents/demos/HBKit/HBKit/HBKitWatchDog/HBBaseViewController+DirWatchDog.m</td>
+    <td>145</td>
+    <td>extensionMethodPrefix</td>
+    <td>Method declared in class extension must have a prefix followed by a underscore</td>
+</tr><tr>
+    <td>/Users/boob/Documents/demos/HBKit/HBKit/HBKitWatchDog/HBBaseViewController+DirWatchDog.m</td>
+    <td>164</td>
+    <td>extensionMethodPrefix</td>
+    <td>Method declared in class extension must have a prefix followed by a underscore</td>
+</tr><tr>
+    <td>/Users/boob/Documents/demos/HBKit/HBKit/HBKitWatchDog/HBBaseViewController+DirWatchDog.m</td>
+    <td>179</td>
+    <td>extensionMethodPrefix</td>
+    <td>Method declared in class extension must have a prefix followed by a underscore</td>
+</tr><tr>
+    <td>/Users/boob/Documents/demos/HBKit/HBKit/HBKitWatchDog/HBBaseViewController+DirWatchDog.m</td>
+    <td>194</td>
+    <td>extensionMethodPrefix</td>
+    <td>Method declared in class extension must have a prefix followed by a underscore</td>
+</tr><tr>
+    <td>/Users/boob/Documents/demos/HBKit/HBKit/HBKitWatchDog/HBBaseViewController+DirWatchDog.h</td>
+    <td>30</td>
+    <td>extensionMethodPrefix</td>
+    <td>Method declared in class extension must have a prefix followed by a underscore</td>
+</tr><tr>
+    <td>/Users/boob/Documents/demos/HBKit/HBKit/HBKitWatchDog/HBBaseViewController+DirWatchDog.h</td>
+    <td>35</td>
+    <td>extensionMethodPrefix</td>
+    <td>Method declared in class extension must have a prefix followed by a underscore</td>
+</tr><tr>
+    <td>/Users/boob/Documents/demos/HBKit/HBKit/HBKitWatchDog/HBBaseViewController+DirWatchDog.h</td>
+    <td>49</td>
+    <td>extensionMethodPrefix</td>
+    <td>Method declared in class extension must have a prefix followed by a underscore</td>
+</tr><tr>
+    <td>/Users/boob/Documents/demos/HBKit/HBKit/HBKitWatchDog/HBBaseViewController+DirWatchDog.h</td>
+    <td>53</td>
+    <td>extensionMethodPrefix</td>
+    <td>Method declared in class extension must have a prefix followed by a underscore</td>
+</tr><tr>
+    <td>/Users/boob/Documents/demos/HBKit/HBKit/HBKitWatchDog/HBBaseViewController+DirWatchDog.h</td>
+    <td>58</td>
+    <td>extensionMethodPrefix</td>
+    <td>Method declared in class extension must have a prefix followed by a underscore</td>
+</tr><tr>
+    <td>/Users/boob/Documents/demos/HBKit/HBKit/HBKitWatchDog/HBBaseViewController+DirWatchDog.h</td>
+    <td>68</td>
+    <td>extensionMethodPrefix</td>
+    <td>Method declared in class extension must have a prefix followed by a underscore</td>
+</tr><tr>
+    <td>/Users/boob/Documents/demos/HBKit/HBKit/HBKitWatchDog/HBBaseViewController+DirWatchDog.h</td>
+    <td>72</td>
+    <td>extensionMethodPrefix</td>
+    <td>Method declared in class extension must have a prefix followed by a underscore</td>
+</tr><tr>
+    <td>/Users/boob/Documents/demos/HBKit/HBKit/HBKitWatchDog/HBBaseViewController+DirWatchDog.h</td>
+    <td>77</td>
+    <td>extensionMethodPrefix</td>
+    <td>Method declared in class extension must have a prefix followed by a underscore</td>
+</tr>        </tbody>
+        </table>
+        <hr />
+        <p>May 16, 2019 at 10:58:18 AM
+        </p>
+        </body>
+        </html>
