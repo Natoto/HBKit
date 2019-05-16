@@ -9,8 +9,8 @@
 
 @interface HBKitDirWatchdog : NSObject
 
-@property (readonly, nonatomic) NSString *path;
-@property (copy, nonatomic) void (^update)(void);
+@property (nonatomic, readonly) NSString *path;
+@property (nonatomic, copy) void (^update)(void);
 
 + (NSString *)documentsPath;
 + (id)watchtdogOnDocumentsDir:(void (^)(void))update;

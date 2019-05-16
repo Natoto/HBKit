@@ -36,7 +36,7 @@
 
 @protocol HBCollectionViewControllerConfig <NSObject>
 
-@property (nonatomic, strong) UICollectionViewLayout * collectionViewFlowLayout;
+@property (nonatomic, strong) UICollectionViewLayout *collectionViewFlowLayout;
 
 @required
 /**
@@ -50,34 +50,34 @@
  *
  *  @return 列数目
  */
--(NSInteger)configColumnCount;
+- (NSInteger)configColumnCount;
 //配置偏移量需要重载
 /**
  *  配置collectionView距上左下右的距离
  *
  *  @return  UIEdgeInsets
  */
--(UIEdgeInsets)configSectionInset;
+- (UIEdgeInsets)configSectionInset;
 
--(UIEdgeInsets)configInsetForSectionAtIndex:(NSInteger)section;
+- (UIEdgeInsets)configInsetForSectionAtIndex:(NSInteger)section;
 
 /**
  *  配置列(左右)之间的间距
  *
  */
--(CGFloat)configMinimumColumnSpacing;
+- (CGFloat)configMinimumColumnSpacing;
 /**
  *  配置行(上下)之间的间距
  *
  *  @return 间距
  */
--(CGFloat)configMinimumInteritemSpacing;
+- (CGFloat)configMinimumInteritemSpacing;
 @end
 
 @interface HBCollectionViewModel : NSObject
 
 
-+(void)collectionView:(UICollectionView *)collectionView
++ (void)collectionView:(UICollectionView *)collectionView
 didSelectItemAtIndexPath:(NSIndexPath *)indexPath
        dataDictionary:(NSDictionary *)dataDictionary;
 
@@ -90,7 +90,7 @@ didSelectItemAtIndexPath:(NSIndexPath *)indexPath
                               dataDictionary:(NSDictionary *)dataDictionary viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath;
 
 
-+(UICollectionView *)createCollectionView:(id)delegate size:(CGSize)size
++ (UICollectionView *)createCollectionView:(id)delegate size:(CGSize)size
                      minimumColumnSpacing:(CGFloat)minimumColumnSpacing
                   minimumInteritemSpacing:(CGFloat)minimumInteritemSpacing
                        configSectionInset:(UIEdgeInsets)configSectionInset
@@ -120,6 +120,6 @@ didSelectItemAtIndexPath:(NSIndexPath *)indexPath
                                   background:(UIColor *)backgroundColor
                               dataDictionary:(NSMutableDictionary *)dataDictionary;
 
-+(UICollectionView *)createCollectionView:(id<HBCollectionViewControllerConfig,HBWaterFLayoutDelegate,UICollectionViewDataSource,UICollectionViewDelegate>)target frame:(CGRect)frame;
++ (UICollectionView *)createCollectionView:(id<HBCollectionViewControllerConfig,HBWaterFLayoutDelegate,UICollectionViewDataSource,UICollectionViewDelegate>)target frame:(CGRect)frame;
 
 @end

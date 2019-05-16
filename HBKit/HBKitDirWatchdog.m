@@ -16,14 +16,14 @@
 @end
 
 
-static void KHBKitQCallback(CFFileDescriptorRef kqRef, CFOptionFlags callBackTypes, void *info) {
+static void KHBKitQCallback(CFFileDescriptorRef kqRef, CFOptionFlags callBackTypes, void *info)
+{
 	// Pick up the object passed in the "info" member of the CFFileDescriptorContext passed to CFFileDescriptorCreate
-    HBKitDirWatchdog* obj = (__bridge HBKitDirWatchdog*) info;
+    HBKitDirWatchdog *obj = (__bridge HBKitDirWatchdog *) info;
 	
 	if ([obj isKindOfClass:[HBKitDirWatchdog class]]		&&	// If we can call back to the proper sort of object ...
 		(kqRef == obj.kqRef)								&&	// and the FD that issued the CB is the expected one ...
-		(callBackTypes == kCFFileDescriptorReadCallBack)	)	// and we're processing the proper sort of CB ...
-	{
+		(callBackTypes == kCFFileDescriptorReadCallBack)) {//and we're processing the proper sort of CB ...
 		[obj kqueueFired];										// Invoke the instance's CB handler
 	}
 }
@@ -33,18 +33,21 @@ static void KHBKitQCallback(CFFileDescriptorRef kqRef, CFOptionFlags callBackTyp
     CFFileDescriptorRef _kqRef;
 }
 
-+ (NSString *)documentsPath {
++ (NSString *)documentsPath
+{
 	NSArray *documentsPaths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     
 	return documentsPaths[0]; // Path to the application's "Documents" directory
 }
 
-+ (id)watchtdogOnDocumentsDir:(void (^)(void))update; {
++ (id)watchtdogOnDocumentsDir:(void (^)(void))update;
+{
     return [[HBKitDirWatchdog alloc]initWithPath:[self documentsPath] update:update];
 }
 
 
-- (id)initWithPath:(NSString *)path update:(void (^)(void))update; {
+- (id)initWithPath:(NSString *)path update:(void (^)(void))update;
+{
     if ((self = [super init])) {
         _path = path;
         _update = [update copy];
@@ -52,7 +55,8 @@ static void KHBKitQCallback(CFFileDescriptorRef kqRef, CFOptionFlags callBackTyp
     return self;
 }
 
-- (void)dealloc {
+- (void)dealloc
+{
     [self stop];
     
     
@@ -61,10 +65,13 @@ static void KHBKitQCallback(CFFileDescriptorRef kqRef, CFOptionFlags callBackTyp
 #pragma mark -
 #pragma mark Extension methods
 
-- (void)kqueueFired {
+- (void)kqueueFired
+{
 	// Pull the native FD around which the CFFileDescriptor was wrapped
     int kq = CFFileDescriptorGetNativeDescriptor(_kqRef);
-	if (kq < 0) return;
+	if (kq < 0) {
+	     return;
+	}
 	
 	// If we pull a single available event out of the queue, assume the directory was updated
     struct kevent event;
@@ -78,22 +85,28 @@ static void KHBKitQCallback(CFFileDescriptorRef kqRef, CFOptionFlags callBackTyp
 }
 
 
-- (void)start {
+- (void)start
+{
 	// One ping only
-    if (_kqRef != NULL) return;
+    if (_kqRef != NULL) {
+         return;
+    }
 	
 	// Fetch pathname of the directory to monitor
-	NSString* docPath = self.path;
-	if (!docPath) return;
+	NSString *docPath = self.path;
+	if (!docPath) {
+	     return;
+	}
     
 	// Open an event-only file descriptor associated with the directory
     int dirFD = open([docPath fileSystemRepresentation], O_EVTONLY);
-	if (dirFD < 0) return;
+	if (dirFD < 0) {
+	     return;
+	}
 	
 	// Create a new kernel event queue
     int kq = kqueue();
-	if (kq < 0)
-	{
+	if (kq < 0) {
 		close(dirFD);
 		return;
 	}
@@ -146,7 +159,8 @@ static void KHBKitQCallback(CFFileDescriptorRef kqRef, CFOptionFlags callBackTyp
     CFFileDescriptorEnableCallBacks(_kqRef, kCFFileDescriptorReadCallBack);
 }
 
-- (void)stop {
+- (void)stop
+{
 	if (_kqRef) {
 		close(_dirFD);
 		CFFileDescriptorInvalidate(_kqRef);

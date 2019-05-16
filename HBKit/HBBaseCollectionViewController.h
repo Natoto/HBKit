@@ -14,12 +14,12 @@ UICollectionViewDataSource,
 UICollectionViewDelegate,
 UICollectionViewDelegateFlowLayout,HBCollectionViewControllerConfig,HBWaterFLayoutDelegate>
 
-@property (nonatomic, strong) UICollectionView          *collectionView;
-@property (nonatomic, strong) HBCollectionFallFLayout   *collectionViewFlowLayout;
+@property (nonatomic, strong) UICollectionView *collectionView;
+@property (nonatomic, strong) HBCollectionFallFLayout *collectionViewFlowLayout;
 
-@property (nonatomic, assign         ) BOOL    nodeselectRow;
-@property (nonatomic, assign,readonly) CGFloat itemWidth;
+@property (nonatomic, assign) BOOL    nodeselectRow;
+@property (nonatomic, assign, readonly) CGFloat itemWidth;
 
--(void)viewDidCurrentView;
--(CGRect)adjustContentOffSet:(CGFloat)top bottom:(CGFloat)bottom; 
+- (void)viewDidCurrentView;
+- (CGRect)adjustContentOffSet:(CGFloat)top bottom:(CGFloat)bottom; 
 @end

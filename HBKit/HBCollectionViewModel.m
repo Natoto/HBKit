@@ -15,16 +15,15 @@
 @implementation HBCollectionViewModel
 
 
-+(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath   dataDictionary:(NSDictionary *)dataDictionary {
++ (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath   dataDictionary:(NSDictionary *)dataDictionary
+{
 
-    CELL_STRUCT * cellstruct = [dataDictionary  cellstructobjectForKey:KEY_INDEXPATH(indexPath.section, indexPath.row)];
-    if ( cellstruct.sel_selector && [cellstruct.delegate respondsToSelector:cellstruct.sel_selector])
-    {
+    CELL_STRUCT *cellstruct = [dataDictionary  cellstructobjectForKey:KEY_INDEXPATH(indexPath.section, indexPath.row)];
+    if (cellstruct.sel_selector && [cellstruct.delegate respondsToSelector:cellstruct.sel_selector]) {
         [cellstruct.delegate performSelector:cellstruct.sel_selector withObject:cellstruct afterDelay:0];
     }
-    else
-    {
-        NSString * sel_selector = cellstruct.sel_selector_str;
+    else {
+        NSString *sel_selector = cellstruct.sel_selector_str;
         SEL selector = NSSelectorFromString(sel_selector);
         if (sel_selector  && [cellstruct.delegate respondsToSelector:selector]) {
             [cellstruct.delegate performSelector:selector withObject:cellstruct afterDelay:0];
@@ -38,11 +37,11 @@
              dataDictionary:(NSDictionary *)dataDictionary
 {
     //    return self.dataDictionary.allKeys.count;
-    NSArray * keys = dataDictionary.allKeys;
-    NSString * sectionx = KEY_SECTION_MARK(section);
+    NSArray *keys = dataDictionary.allKeys;
+    NSString *sectionx = KEY_SECTION_MARK(section);
     NSInteger rowcount = 0;
     for (int index = 0; index < keys.count; index ++) {
-        NSString * key =[keys objectAtIndex:index];
+        NSString *key =[keys objectAtIndex:index];
         if ([key rangeOfString:sectionx].location != NSNotFound) {
             rowcount ++;
         }
@@ -53,12 +52,12 @@
 + (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
                                dataDictionary:(NSDictionary *)dataDictionary
 {
-    NSArray * keys = dataDictionary.allKeys;
+    NSArray *keys = dataDictionary.allKeys;
     NSInteger maxsection = 1;
     for (int index = 0; index < keys.count; index ++) {
-        NSString * key =[keys objectAtIndex:index];
+        NSString *key =[keys objectAtIndex:index];
         
-        NSString * sectionstr = KEY_SECTION_INDEX_STR(key);
+        NSString *sectionstr = KEY_SECTION_INDEX_STR(key);
         if ((sectionstr.integerValue +1) > maxsection) {
             maxsection = (sectionstr.integerValue + 1);
         }
@@ -66,7 +65,7 @@
     return maxsection;
 }
 
-+(UICollectionView *)createCollectionView:(id)delegate
++ (UICollectionView *)createCollectionView:(id)delegate
                                      size:(CGSize)size
                      minimumColumnSpacing:(CGFloat)minimumColumnSpacing
                   minimumInteritemSpacing:(CGFloat)minimumInteritemSpacing
@@ -100,7 +99,7 @@
 }
 
 
-+(NSString *)valiateCellClass:(NSString *)cellclass
++ (NSString *)valiateCellClass:(NSString *)cellclass
 {
     if ([cellclass isEqualToString:@"HBBaseTableViewCell"]) {
         return @"HBBaseCollectionViewCell";
@@ -112,8 +111,7 @@
 + (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView
                               dataDictionary:(NSDictionary *)dataDictionary viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath
 {
-    if (kind == UICollectionElementKindSectionHeader)
-    {
+    if (kind == UICollectionElementKindSectionHeader) {
         HBBaseSectionCollectionReusableView *view = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"HBBaseSectionCollectionReusableView" forIndexPath:indexPath];
         CELL_STRUCT *cell_struce = [dataDictionary cellstructobjectForKey:KEY_INDEXPATH(indexPath.section, 0)];
         
@@ -122,7 +120,7 @@
         view.titleLabel.font = [UIFont systemFontOfSize:sectionfont];
         view.titleLabel.textColor = [CELL_STRUCT_Common colorWithStructKey:cell_struce.sectioncolor];
         view.titleLabel.textAlignment = NSTextAlignmentLeft;
-        UIColor * bgcolor =  [CELL_STRUCT_Common colorWithStructKey:cell_struce.sectionbgcolor];
+        UIColor *bgcolor =  [CELL_STRUCT_Common colorWithStructKey:cell_struce.sectionbgcolor];
         view.backgroundColor = bgcolor?bgcolor:collectionView.backgroundColor;
         
         return view;
@@ -135,9 +133,9 @@
                                 delegate:(id)delegate
                   cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    CELL_STRUCT * cellstruct = [dataDictionary cellstructobjectForKey:KEY_INDEXPATH(indexPath.section, indexPath.row)];
-    CELL_STRUCT * cellstruct0 = [dataDictionary cellstructobjectForKey:KEY_INDEXPATH(indexPath.section, 0)];
-    NSString * identifier01 =  [[self class] valiateCellClass:cellstruct.cellclass];
+    CELL_STRUCT *cellstruct = [dataDictionary cellstructobjectForKey:KEY_INDEXPATH(indexPath.section, indexPath.row)];
+    CELL_STRUCT *cellstruct0 = [dataDictionary cellstructobjectForKey:KEY_INDEXPATH(indexPath.section, 0)];
+    NSString *identifier01 =  [[self class] valiateCellClass:cellstruct.cellclass];
     HBBaseCollectionViewCell *cell ;
     @try {
         cell =  [collectionView dequeueReusableCellWithReuseIdentifier:identifier01 forIndexPath:indexPath];
@@ -179,7 +177,6 @@
 
 
 
-#import "HBCollectionFallFLayout.h"
 //#import "HBBaseCollectionViewCell.h"
 //#import "HBBaseSectionCollectionReusableView.h"
 //#import "HBCellStruct.h"
@@ -191,8 +188,7 @@
 
 + (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath background:(UIColor *)backgroundColor dataDictionary:(NSMutableDictionary *)dataDictionary
 {
-    if (kind == UICollectionElementKindSectionHeader)
-    {
+    if (kind == UICollectionElementKindSectionHeader) {
         HBBaseSectionCollectionReusableView *view = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"HBBaseSectionCollectionReusableView" forIndexPath:indexPath];
         CELL_STRUCT *cell_struce = [dataDictionary cellstructobjectForKey:KEY_INDEXPATH(indexPath.section, 0)];
         
@@ -201,7 +197,7 @@
         view.titleLabel.font = [UIFont systemFontOfSize:sectionfont];
         view.titleLabel.textColor = [CELL_STRUCT_Common colorWithStructKey:cell_struce.sectioncolor];
         view.titleLabel.textAlignment = NSTextAlignmentLeft;
-        UIColor * bgcolor =  [CELL_STRUCT_Common colorWithStructKey:cell_struce.sectionbgcolor];
+        UIColor *bgcolor =  [CELL_STRUCT_Common colorWithStructKey:cell_struce.sectionbgcolor];
         view.backgroundColor =  bgcolor?bgcolor:backgroundColor;
         
         return view;
@@ -209,7 +205,8 @@
     return nil;
 }
 
-+(UICollectionView *)createCollectionView:(id<HBCollectionViewControllerConfig,HBWaterFLayoutDelegate,UICollectionViewDataSource,UICollectionViewDelegate>)target frame:(CGRect)frame{
++ (UICollectionView *)createCollectionView:(id<HBCollectionViewControllerConfig,HBWaterFLayoutDelegate,UICollectionViewDataSource,UICollectionViewDelegate>)target frame:(CGRect)frame
+{
     
     CGRect collectionViewFrame = frame;
     HBCollectionFallFLayout *collectionViewFlowLayout = [[HBCollectionFallFLayout alloc] init];
@@ -221,7 +218,7 @@
     collectionViewFlowLayout.columnCount = target.configColumnCount;
     
     target.collectionViewFlowLayout = collectionViewFlowLayout;
-    UICollectionView * _collectionView = [[UICollectionView alloc] initWithFrame:collectionViewFrame collectionViewLayout:collectionViewFlowLayout];
+    UICollectionView *_collectionView = [[UICollectionView alloc] initWithFrame:collectionViewFrame collectionViewLayout:collectionViewFlowLayout];
     _collectionView.dataSource = target;
     _collectionView.delegate = target;
     _collectionView.alwaysBounceVertical = YES;

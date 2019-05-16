@@ -16,16 +16,16 @@ UICollectionViewDelegate,
 UICollectionViewDelegateFlowLayout,HBCollectionViewControllerConfig,HBWaterFLayoutDelegate,HBBaseViewControllerDelegate>
 
 //@property (nonatomic, strong) NSMutableDictionary * dataDictionary;
-@property (nonatomic, strong) UICollectionView          *collectionView;
-@property (nonatomic, strong) HBCollectionFallFLayout   *collectionViewFlowLayout;
-@property (nonatomic, assign         ) BOOL    nodeselectRow;
-@property (nonatomic, assign,readonly) CGFloat itemWidth;
+@property (nonatomic, strong) UICollectionView *collectionView;
+@property (nonatomic, strong) HBCollectionFallFLayout *collectionViewFlowLayout;
+@property (nonatomic, assign) BOOL    nodeselectRow;
+@property (nonatomic, assign, readonly) CGFloat itemWidth;
 
--(void)reloadData;
+- (void)reloadData;
 
--(void)viewDidCurrentView;
+- (void)viewDidCurrentView;
 
--(CGRect)adjustContentOffSet:(CGFloat)top bottom:(CGFloat)bottom; 
+- (CGRect)adjustContentOffSet:(CGFloat)top bottom:(CGFloat)bottom; 
  
 - (void)registerClass:(nullable Class)cellClass;
 

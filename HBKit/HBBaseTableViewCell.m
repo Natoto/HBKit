@@ -11,7 +11,7 @@
 #import <objc/runtime.h>
 
 @interface HBCirclePoint : UIView
-@property(nonatomic,strong) UIColor * color;
+@property(nonatomic, strong) UIColor *color;
 @end
 
 @interface HBRedPoint : HBCirclePoint
@@ -19,7 +19,7 @@
 
 
 @interface HBBaseTableViewCell()
-@property(nonatomic,strong) HBRedPoint * redPoint;
+@property(nonatomic, strong) HBRedPoint *redPoint;
 
 @end
 @implementation HBBaseTableViewCell
@@ -30,14 +30,16 @@
 @synthesize object2 = _object2;
 
 
-- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier plistdic:(NSDictionary *)plistdic{
+- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier plistdic:(NSDictionary *)plistdic
+{
     self = [self initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) { 
     }
     return self;
 }
 
--(void)firstconfigcell:(NSDictionary *)dic{
+- (void)firstconfigcell:(NSDictionary *)dic
+{
     if (!self.customizedStyle) {
         self.detailTextLabel.textColor = [UIColor grayColor];
         self.imageView.contentMode = UIViewContentModeScaleAspectFit;
@@ -47,7 +49,7 @@
     }
 }
 
--(id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
+- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
@@ -56,17 +58,18 @@
     return self;
 }
 
--(BOOL)customizedStyle
+- (BOOL)customizedStyle
 {
     return NO;
 }
-- (void)awakeFromNib {
+- (void)awakeFromNib
+{
     
     [super awakeFromNib];
 
 }
  
--(void)layoutSubviews
+- (void)layoutSubviews
 {
     [super layoutSubviews];
     if (self.customizedStyle) {
@@ -122,44 +125,41 @@
     
     if (self.showTopLine) {
         [self drawToplinelayer];
-        NSString * toplayerinset = self.dictionary[key_cellstruct_toplayerinsets];
+        NSString *toplayerinset = self.dictionary[key_cellstruct_toplayerinsets];
         if (toplayerinset) {
             UIEdgeInsets  insets  = UIEdgeInsetsFromString(toplayerinset);
             CGRect  layerframe = CGRectMake(insets.left, insets.top, self.bounds.size.width - insets.left - insets.right, 0.5);
            self.toplayer.frame = layerframe;
         }
-        else{
+        else {
             CGRect  layerframe = CGRectMake(0, 0, self.bounds.size.width, 0.5);
             self.toplayer.frame = layerframe;
         }
      }
-    else
-    {
+    else {
         [self clearTopLayer];
     }
     
     if (self.showBottomLine) {
         [self drawBottomlinelayer];
-        NSString * toplayerinset = self.dictionary[key_cellstruct_bottomlayerinsets];
+        NSString *toplayerinset = self.dictionary[key_cellstruct_bottomlayerinsets];
         if (toplayerinset) {
             UIEdgeInsets  insets  = UIEdgeInsetsFromString(toplayerinset);
             CGRect  layerframe = CGRectMake(insets.left,  self.frame.size.height - insets.bottom - 0.5, [UIScreen mainScreen].bounds.size.width - insets.left - insets.right, 0.5);
             self.bottomlayer.frame = layerframe;
         }
-        else
-        {
+        else {
             CGRect  layerframe = CGRectMake(0, self.frame.size.height - 0.5, [UIScreen mainScreen].bounds.size.width, 0.5);
             self.bottomlayer.frame = layerframe;
         }
         
-    }else
-    {
+    } else {
         [self clearBottomLayer];
     }
     self.redPoint.center = CGPointMake(self.contentView.frame.size.width - 20, self.contentView.frame.size.height/2);
 }
 
--(void)setcellimageRight:(BOOL)imageRight
+- (void)setcellimageRight:(BOOL)imageRight
 {
     self.imageRight = imageRight;
     if (imageRight) {
@@ -167,18 +167,19 @@
     }
 }
 //设置圆角
--(void)setcellimageCornerRadius:(BOOL)CornerRadius
+- (void)setcellimageCornerRadius:(BOOL)CornerRadius
 {
     _CornerRadius = CornerRadius;
     //[self layoutIfNeeded];
 }
 
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
+- (void)setSelected:(BOOL)selected animated:(BOOL)animated
+{
     [super setSelected:selected animated:animated];
     // Configure the view for the selected state
 }
 
--(void)setIndexPath:(NSIndexPath *)indexPath
+- (void)setIndexPath:(NSIndexPath *)indexPath
 {
     _indexPath = indexPath;
     if (self.RoundCircleType) {
@@ -187,31 +188,31 @@
         }
     }
 }
--(void)setcelldictionary:(NSMutableDictionary *)dictionary
+- (void)setcelldictionary:(NSMutableDictionary *)dictionary
 {
     _dictionary = dictionary;
-    UIColor * bgcolor = [dictionary objectForKey:key_cellstruct_background];
+    UIColor *bgcolor = [dictionary objectForKey:key_cellstruct_background];
     if ([[bgcolor class] isSubclassOfClass:[UIColor class]]) {
         self.contentView.backgroundColor = bgcolor;
         self.backgroundColor = bgcolor;
     }
     if ([[bgcolor class] isSubclassOfClass:[NSString class]]) {
-        NSString * bgcolorstring= [dictionary objectForKey:key_cellstruct_background];
+        NSString *bgcolorstring= [dictionary objectForKey:key_cellstruct_background];
         bgcolorstring = (bgcolorstring && bgcolorstring.length)?bgcolorstring:@"white";
         self.contentView.backgroundColor = [CELL_STRUCT colorWithStructKey:bgcolorstring];
         self.backgroundColor = self.contentView.backgroundColor;
     }
-    NSString * titltfontname = dictionary[key_cellstruct_titleFontFamily];
+    NSString *titltfontname = dictionary[key_cellstruct_titleFontFamily];
     if (titltfontname.length && [[titltfontname class] isSubclassOfClass:[NSString class]]) {
         self.textLabel.font = [UIFont fontWithName:titltfontname size:self.textLabel.font.pointSize];
     }
     
-    NSString * detailvalue = [dictionary objectForKey:key_cellstruct_detailvalue];
+    NSString *detailvalue = [dictionary objectForKey:key_cellstruct_detailvalue];
     OBJ_NULL_DEFAULT(detailvalue, @"")
-    NSNumber * imageCornerRadius = DIC_OBJ_KEY(dictionary, key_cellstruct_detailvalue);
+    NSNumber *imageCornerRadius = DIC_OBJ_KEY(dictionary, key_cellstruct_detailvalue);
     OBJ_NULL_DEFAULT(imageCornerRadius, @0)
     
-    NSNumber * newmsgcount = DIC_OBJ_KEY(dictionary, key_cellstruct_newmessagecount);
+    NSNumber *newmsgcount = DIC_OBJ_KEY(dictionary, key_cellstruct_newmessagecount);
     OBJ_NULL_DEFAULT(newmsgcount, @0)
     self.showNewMsg = newmsgcount.boolValue;//是否显示红点
     self.redPoint.hidden = !self.showNewMsg;
@@ -219,34 +220,35 @@
 };
 
 
--(void)setcellTitleFontsize:(NSNumber *)titleFontsize
+- (void)setcellTitleFontsize:(NSNumber *)titleFontsize
 {
     if (titleFontsize.floatValue > 8) {
         self.textLabel.font = [UIFont fontWithName:self.textLabel.font.fontName size:titleFontsize.floatValue];
     }
 }
 
--(void)setcellTitleFont:(UIFont *)titleFont
+- (void)setcellTitleFont:(UIFont *)titleFont
 {
     if (titleFont) {
         self.textLabel.font = titleFont;
     }
 }
 //这个方法需要在子类写[super setcellobject];
--(void)setcellobject:(id)object
+- (void)setcellobject:(id)object
 {   _object = object;
     
 } ;
 
--(void)setcellobject2:(id)object
+- (void)setcellobject2:(id)object
 {
     _object2 = object;
 }
 
--(void)setcelldelegate:(id)delegate{}
+- (void)setcelldelegate:(id)delegate
+{}
 
 
--(void)setcellPicture:(NSString *)profile
+- (void)setcellPicture:(NSString *)profile
 {
     if ([profile hasPrefix:@"http://"] || [profile hasPrefix:@"https://"]) {//如果是网络图片 就加载网络图片
 //        [self.imageView hb_setImageWithURL:[NSURL URLWithString:profile] placeholderImage:[UIImage imageFileNamed:@"big_icon"] options:0 completed:nil];
@@ -257,50 +259,49 @@
     }
 }
 
--(void)setcellpicturecolor:(NSString *)picturecolor
+- (void)setcellpicturecolor:(NSString *)picturecolor
 {
     if (picturecolor) {
         if (self.imageView) {
-            UIColor *  color = [CELL_STRUCT colorWithStructKey:picturecolor];
+            UIColor *color = [CELL_STRUCT colorWithStructKey:picturecolor];
             self.imageView.backgroundColor = color;
             self.imageView.contentMode = UIViewContentModeScaleAspectFit;
         }
     }
 }
--(void)setcellAttributeTitle:(NSAttributedString *)attributeTitle
+- (void)setcellAttributeTitle:(NSAttributedString *)attributeTitle
 {//被坑了  不起作用妈的
     //    if (attributeTitle) {
     //      self.textLabel.attributedText = attributeTitle;
     //    }
 }
--(void)setcellTitle:(NSString *)title
+- (void)setcellTitle:(NSString *)title
 {
     self.textLabel.text = title;
 }
--(void)setcellTitleColor:(NSString *)color
+- (void)setcellTitleColor:(NSString *)color
 {
-    UIColor * titlecolor = [CELL_STRUCT colorWithStructKey:color] ;
+    UIColor *titlecolor = [CELL_STRUCT colorWithStructKey:color] ;
     if (titlecolor) {
         self.textLabel.textColor = titlecolor;
     }
-    else
-    {
+    else {
         self.textLabel.textColor = [UIColor blackColor];
     }
 }
--(void)setcelldetailtitle:(NSString *)detailtitle
+- (void)setcelldetailtitle:(NSString *)detailtitle
 {
     if (detailtitle) {
         self.detailTextLabel.text = detailtitle;
     }
 }
--(void)setcellTitleLabelNumberOfLines:(NSInteger)numberOfLines
+- (void)setcellTitleLabelNumberOfLines:(NSInteger)numberOfLines
 {
     self.numberOfLines = numberOfLines;
     self.textLabel.numberOfLines = numberOfLines;
     self.textLabel.lineBreakMode = NSLineBreakByWordWrapping;
 }
--(CGSize)sizeThatFits:(CGSize)size
+- (CGSize)sizeThatFits:(CGSize)size
 {
     CGFloat totalHeight = 0;
     totalHeight += [self.textLabel sizeThatFits:size].height;
@@ -308,21 +309,32 @@
     return CGSizeMake(size.width, totalHeight);
 }
 
--(void)setcellRightValue:(NSString *)value{};
--(void)setcellValue:(NSString *)value{}
--(void)setcellValue2:(NSString *)value{}
--(void)setcellArray:(NSMutableArray *)array{}
--(void)setcellplaceholder:(NSString *)placeholder{}
--(void)setcellAction:(SEL)action{}
--(void)setinputAccessoryView:(NSString *)inputAccessoryView{}
--(void)setinputView:(NSString *)inputView{}
+- (void)setcellRightValue:(NSString *)value
+{};
+- (void)setcellValue:(NSString *)value
+{}
+- (void)setcellValue2:(NSString *)value
+{}
+- (void)setcellArray:(NSMutableArray *)array
+{}
+- (void)setcellplaceholder:(NSString *)placeholder
+{}
+- (void)setcellAction:(SEL)action
+{}
+- (void)setinputAccessoryView:(NSString *)inputAccessoryView
+{}
+- (void)setinputView:(NSString *)inputView
+{}
 
--(void)draw{
+- (void)draw
+{
 }
 
-- (void)clear{
+- (void)clear
+{
 }
-- (void)releaseMemory{
+- (void)releaseMemory
+{
     [[NSNotificationCenter defaultCenter] removeObserver:self];
     [self clear];
     [super removeFromSuperview];
@@ -342,7 +354,7 @@
 /**
  *  清除顶部分割线
  */
--(void)clearTopLayer
+- (void)clearTopLayer
 {
     UIView *imageLayer = self.toplayer;
     if (imageLayer) {
@@ -353,7 +365,7 @@
 /**
  *  清除底部分割线
  */
--(void)clearBottomLayer
+- (void)clearBottomLayer
 {
     UIView *imageLayer = self.bottomlayer;
     if (imageLayer) {
@@ -361,7 +373,7 @@
     }
 }
 
--(void)drawBottomlinelayer
+- (void)drawBottomlinelayer
 {
     UIView *imageLayer = self.bottomlayer;
     CGRect layerframe =  CGRectMake(0, self.frame.size.height - 0.5, [UIScreen mainScreen].bounds.size.width, 0.5);
@@ -369,19 +381,19 @@
         imageLayer =  [self createLayer:layerframe color:self.top_bottom_line_color];
         [self addSubview:imageLayer];
         self.bottomlayer = imageLayer;
-    }else
-    {
+    } else {
         imageLayer.frame = layerframe;
     }
     [self bringSubviewToFront:imageLayer];
     imageLayer.hidden = NO;
 }
 
--(UIColor *)top_bottom_line_color{
+- (UIColor *)top_bottom_line_color
+{
     return PENG_COLOR_LINE;
 }
 
--(void)drawToplinelayer
+- (void)drawToplinelayer
 {
     UIView *imageLayer = self.toplayer;
     CGRect  layerframe = CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 0.5);
@@ -389,15 +401,14 @@
         imageLayer =  [self createLayer:layerframe color:self.top_bottom_line_color];
         [self addSubview:imageLayer];
         self.toplayer = imageLayer;
-    }else
-    {
+    } else {
         imageLayer.frame = layerframe;
     }
     [self bringSubviewToFront:imageLayer];
     imageLayer.hidden = NO;
 }
 
--(UIView *)createLayer:(CGRect)frame color:(UIColor *)color
+- (UIView *)createLayer:(CGRect)frame color:(UIColor *)color
 {
     UIView *imageLayer = [UIView new];
     imageLayer.frame = frame; //CGRectMake(0, 0, UISCREEN_WIDTH, 0.5);
@@ -414,23 +425,23 @@
 static char  key_toplayer;
 static char  key_bottomlayer;
 
--(UIView *)toplayer
+- (UIView *)toplayer
 {
-    UIView * layer = (UIView *)objc_getAssociatedObject(self, &key_toplayer);
+    UIView *layer = (UIView *)objc_getAssociatedObject(self, &key_toplayer);
     return layer;
 }
 
--(void)setToplayer:(UIView *)toplayer
+- (void)setToplayer:(UIView *)toplayer
 {
     objc_setAssociatedObject(self, &key_toplayer, toplayer, OBJC_ASSOCIATION_RETAIN);
 }
--(UIView *)bottomlayer
+- (UIView *)bottomlayer
 {
-    UIView * layer = (UIView *)objc_getAssociatedObject(self, &key_bottomlayer);
+    UIView *layer = (UIView *)objc_getAssociatedObject(self, &key_bottomlayer);
     return layer;
 }
 
--(void)setBottomlayer:(UIView *)bottomlayer
+- (void)setBottomlayer:(UIView *)bottomlayer
 {
     objc_setAssociatedObject(self, &key_bottomlayer, bottomlayer, OBJC_ASSOCIATION_RETAIN);
 }
@@ -442,7 +453,7 @@ static char  key_bottomlayer;
 #pragma mark - REDPoint
 
 @implementation HBRedPoint
--(id)initWithFrame:(CGRect)frame
+- (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
     if (self) {
@@ -473,14 +484,14 @@ static char  key_bottomlayer;
                         radius:rect.size.width/2];
 }
 
--(void)setColor:(UIColor *)color
+- (void)setColor:(UIColor *)color
 {
     _color = color;
     //    [self setNeedsDisplay];
 }
 
 //圆形
--(void)drawCircleWithCenter:(CGPoint)center
+- (void)drawCircleWithCenter:(CGPoint)center
                      radius:(float)radius
 {
     CGContextRef     context = UIGraphicsGetCurrentContext();
@@ -496,7 +507,7 @@ static char  key_bottomlayer;
     CGPathCloseSubpath(pathRef);
     
     CGContextAddPath(context, pathRef);
-    UIColor * color = self.color?self.color:[UIColor redColor];
+    UIColor *color = self.color?self.color:[UIColor redColor];
     CGContextSetFillColorWithColor(context, color.CGColor);
     CGContextFillPath(context);
     //    CGContextDrawPath(context,kCGPathFillStroke); //画空心圆 并且去掉前面两行

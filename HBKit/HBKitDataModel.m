@@ -8,7 +8,6 @@
 
 #import "HBKitDataModel.h"
 #import "HBCellStruct.h"
-#import "HBCellStruct.h"
 
 //@implementation NSObject(hbkit) 
 //-(NSString *)key_indexpath:(int)section row:(int)row{
@@ -18,13 +17,15 @@
 
 @implementation HBKitDataModel
 
--(NSMutableDictionary<NSString * ,HBCellStruct *> *)dataDictionary{
+- (NSMutableDictionary<NSString *,HBCellStruct *> *)dataDictionary
+{
     if (!_dataDictionary) {
         _dataDictionary = [NSMutableDictionary new];
     }
     return _dataDictionary;
 }
--(NSMutableDictionary *)viewConfigDictionary{
+- (NSMutableDictionary *)viewConfigDictionary
+{
     if (!_viewConfigDictionary) {
         _viewConfigDictionary = [NSMutableDictionary new];
     }
@@ -38,8 +39,9 @@
  *
  *  @param plistname plist文件的名字
  */
--(void)loadplistConfig:(NSString *)plistname
-       configViewblock:(void(^)( NSMutableDictionary * dataDictionary))configViewblock{
+- (void)loadplistConfig:(NSString *)plistname
+       configViewblock:(void(^)(NSMutableDictionary * dataDictionary))configViewblock
+{
     
     [self loadplistConfig:plistname filepath:nil configViewblock:configViewblock];
 }
@@ -47,11 +49,11 @@
 /**
  * 从绝对路径中加载文件，filepath如果不填默认从系统文件中读取
  */
--(void)loadplistConfig:(NSString *)plistname
+- (void)loadplistConfig:(NSString *)plistname
               filepath:(NSString *)filepath
-       configViewblock:(void(^)( NSMutableDictionary * viewconfigDictionary))configViewblock
+       configViewblock:(void(^)(NSMutableDictionary * viewconfigDictionary))configViewblock
 {
-    NSMutableDictionary * dataDictionary = [self loadplistConfigToDictionary:plistname filepath:filepath];
+    NSMutableDictionary *dataDictionary = [self loadplistConfigToDictionary:plistname filepath:filepath];
     if (configViewblock) {
         configViewblock(self.viewConfigDictionary);
     }
@@ -64,13 +66,15 @@
  *  @param plistname plist文件的名字
  */
 
--(NSMutableDictionary *)loadplistConfigToDictionary:(NSString *)plistname{
+- (NSMutableDictionary *)loadplistConfigToDictionary:(NSString *)plistname
+{
     return [self loadplistConfigToDictionary:plistname filepath:nil];
 }
 
--(BOOL)containkeys:(NSString *)key{
+- (BOOL)containkeys:(NSString *)key
+{
     
-    NSArray * array = @[@"title",@"backgroundcolor",@"backgroundimage"];
+    NSArray *array = @[@"title",@"backgroundcolor",@"backgroundimage"];
     __block  BOOL valiate = NO;
     [array enumerateObjectsUsingBlock:^(NSString * obj, NSUInteger idx, BOOL * _Nonnull stop) {
         if ([key isEqualToString:obj]) {
@@ -83,33 +87,32 @@
 /**
  * 从绝对路径中加载文件，filepath如果不填默认从系统文件中读取
  */
--(NSMutableDictionary *)loadplistConfigToDictionary:(NSString *)plistname filepath:(NSString *)filepath
+- (NSMutableDictionary *)loadplistConfigToDictionary:(NSString *)plistname filepath:(NSString *)filepath
 {
-    NSMutableDictionary * dataDictionary = [NSMutableDictionary new];
+    NSMutableDictionary *dataDictionary = [NSMutableDictionary new];
     if (!filepath) {
         filepath = [[NSBundle mainBundle] pathForResource:plistname ofType:@"plist"];
     }
     
     NSFileManager *fileManager = [NSFileManager defaultManager];
     //访问【filepath】目录下的问题件，该目录下支持手动增加、修改、删除文件及目录
-    if([fileManager fileExistsAtPath:filepath]) //如果存在
-    {
-        NSDictionary * dic = [NSDictionary dictionaryWithContentsOfFile:filepath];
+    if ([fileManager fileExistsAtPath:filepath]) {//如果存在
+        NSDictionary *dic = [NSDictionary dictionaryWithContentsOfFile:filepath];
         for (NSString * key in dic.allKeys) {
-            NSDictionary * adic = dic[key];
+            NSDictionary *adic = dic[key];
             if ([key containsString:@"section"] && adic) {
-                CELL_STRUCT * cellstruct = [[CELL_STRUCT alloc] initWithPlistDictionary:adic];
+                CELL_STRUCT *cellstruct = [[CELL_STRUCT alloc] initWithPlistDictionary:adic];
                 if (cellstruct) {
                     [dataDictionary setObject:cellstruct forKey:key];
                 }
             }
-            else if([self containkeys:key]){
-                NSObject * value = dic[key];
+            else if ([self containkeys:key]) {
+                NSObject *value = dic[key];
                 [self.viewConfigDictionary setObject:value forKey:key];
             }
         }
     }
-    else{
+    else {
         NSLog(@"文件不存在 path:%@",filepath);
     }
     return dataDictionary;
@@ -127,26 +130,27 @@
  *  @param jsonfilepath  json文件存放的路径名
  */
 
--(void)loadjsonfileConfig:(NSString *)jsonfilename  configViewblock:(void(^)( CELL_STRUCT_ARRAY * vclist))configViewblock{
+- (void)loadjsonfileConfig:(NSString *)jsonfilename  configViewblock:(void(^)(CELL_STRUCT_ARRAY * vclist))configViewblock
+{
     [self loadjsonfileConfig:jsonfilename filepath:nil configViewblock:configViewblock];
 }
 
--(void)loadjsonfileConfig:(NSString *)jsonfilename
+- (void)loadjsonfileConfig:(NSString *)jsonfilename
                  filepath:(NSString *)filepath
-          configViewblock:(void(^)( CELL_STRUCT_ARRAY * vclist))configViewblock
+          configViewblock:(void(^)(CELL_STRUCT_ARRAY * vclist))configViewblock
 {
     if (!filepath) {
         filepath = [[NSBundle mainBundle] pathForResource:jsonfilename ofType:@"json"];
     }
     NSError * error;
-    NSString * jsonstring = [NSString stringWithContentsOfFile:filepath encoding:NSUTF8StringEncoding error:&error];
-    if(error) { // If error object was instantiated, handle it.
+    NSString *jsonstring = [NSString stringWithContentsOfFile:filepath encoding:NSUTF8StringEncoding error:&error];
+    if (error) { // If error object was instantiated, handle it.
         NSLog(@"ERROR while loading from file: %@", error);
         // …
     }
-    else{
-        CELL_STRUCT_ARRAY * vclist = [[CELL_STRUCT_ARRAY alloc] hb_initWithJSONData:[jsonstring dataUsingEncoding:NSUTF8StringEncoding]];
-        NSString * title = vclist.title;
+    else {
+        CELL_STRUCT_ARRAY *vclist = [[CELL_STRUCT_ARRAY alloc] hb_initWithJSONData:[jsonstring dataUsingEncoding:NSUTF8StringEncoding]];
+        NSString *title = vclist.title;
         if (configViewblock) {
             configViewblock(vclist);
         }
@@ -155,7 +159,7 @@
             
 //            obj.dictionarystring  = [self URLDecoding:obj.dictionarystring];
 //            obj.dictionary = [NSMutableDictionary dictionaryWithDictionary: [self dictionaryWithJsonString:obj.dictionarystring]];
-            if (obj && [obj.key_indexpath containsString:@"section"] ) {
+            if (obj && [obj.key_indexpath containsString:@"section"]) {
                 [self.dataDictionary setObject:obj forKey:obj.key_indexpath];
             }
         }];
@@ -173,7 +177,8 @@
  * @param jsonString JSON格式的字符串
  * @return 返回字典
  */
-- (NSDictionary *)dictionaryWithJsonString:(NSString *)jsonString {
+- (NSDictionary *)dictionaryWithJsonString:(NSString *)jsonString
+{
     if (jsonString == nil) {
         return nil;
     }
@@ -183,7 +188,7 @@
     NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:jsonData
                                                         options:NSJSONReadingMutableContainers
                                                           error:&err];
-    if(err) {
+    if (err) {
         NSLog(@"json解析失败：%@",err);
         return nil;
     }
@@ -195,7 +200,7 @@
     if (!sourcestring) {
         return nil;
     }
-    NSMutableString * string = [NSMutableString stringWithString:sourcestring];
+    NSMutableString *string = [NSMutableString stringWithString:sourcestring];
     [string replaceOccurrencesOfString:@"+"
                             withString:@" "
                                options:NSLiteralSearch

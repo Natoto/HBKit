@@ -31,11 +31,13 @@ static char const key_hbkitv_watchdog = 'x';
 
 @implementation  NSObject(DirWatchDog)
 
--(HBDirWatchdog *)hbkitobj_watchDog{
-    HBDirWatchdog * obj = objc_getAssociatedObject(self, &key_hbkitv_watchdog);
+- (HBDirWatchdog *)hbkitobj_watchDog
+{
+    HBDirWatchdog *obj = objc_getAssociatedObject(self, &key_hbkitv_watchdog);
     return obj;
 }
--(void)setHBKitobj_WatchDog:(HBDirWatchdog * )watchdog{
+- (void)setHBKitobj_WatchDog:(HBDirWatchdog *)watchdog
+{
     objc_setAssociatedObject(self, &key_hbkitv_watchdog, watchdog, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
@@ -56,15 +58,16 @@ static char const key_hbkitv_watchdog = 'x';
 3. 添加此方法，每次按cmd+s会收到一个block，可以在此回调中完成重新配置
 4. 所有的实时刷新都只在模拟器中进行
  */
--(void)loadfilesConfig:(NSString *)filename
+- (void)loadfilesConfig:(NSString *)filename
                postfix:(NSString *)postfix
              directory:(NSString *)directory
-                update:(void(^)(NSString * mainScriptPath))block{
+                update:(void(^)(NSString * mainScriptPath))block
+{
     
     [self hb_loadfilesConfig:filename postfix:postfix directory:directory infoplistkey:@"projectPath" update:block];
 }
 
--(void)hb_loadfilesConfig:(NSString *)filename
+- (void)hb_loadfilesConfig:(NSString *)filename
                postfix:(NSString *)postfix
              directory:(NSString *)directory
           infoplistkey:(NSString *)infplistkey
@@ -78,12 +81,11 @@ static char const key_hbkitv_watchdog = 'x';
     NSString *mainScriptPath ;
     if (postfix.length) {
         mainScriptPath = [NSString stringWithFormat:@"%@/%@.%@", scriptRootPath, filename,postfix];
-    }else{
+    } else {
          mainScriptPath = [NSString stringWithFormat:@"%@/%@", scriptRootPath, filename];
     }
     NSFileManager *fileManager = [NSFileManager defaultManager];
-    if(![fileManager fileExistsAtPath:mainScriptPath]) //如果不存在
-    {
+    if (![fileManager fileExistsAtPath:mainScriptPath]) {//如果不存在
         NSLog(@"ERROR: 文件不存在 path:%@ \n 请确认info.plist设置一项 inflPlistKey:%@  value:$(SRCROOT)/$(TARGET_NAME)",mainScriptPath,infplistkey);
         
         NSString *mainScriptPath2 = [[NSBundle mainBundle] pathForResource:filename ofType:postfix inDirectory:directory];

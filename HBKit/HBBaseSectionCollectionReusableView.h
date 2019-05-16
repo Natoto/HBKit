@@ -11,5 +11,5 @@
 @class HBBaseSectionCollectionReusableView;
  
 @interface HBBaseSectionCollectionReusableView : UICollectionReusableView 
-@property(nonatomic,strong) UILabel * titleLabel;
+@property(nonatomic, strong) UILabel *titleLabel;
 @end

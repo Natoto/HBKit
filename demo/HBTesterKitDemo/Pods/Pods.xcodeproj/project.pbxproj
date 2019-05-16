@@ -1,0 +1,729 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		07DD446A85AE4C11CF27E7494778894E /* UITableView+autoHeight.m in Sources */ = {isa = PBXBuildFile; fileRef = 95A3B3C2E8C61052A796F39E8BE9D749 /* UITableView+autoHeight.m */; };
+		0F4D4D76EB8ABA3C9558227A27F69B2F /* cellstruct.plist in Sources */ = {isa = PBXBuildFile; fileRef = B54D40A61ADFFA089378C851BDFF9A04 /* cellstruct.plist */; };
+		14B4022B8CC578E814848D14F2CD06EB /* HBTesterKit-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = DCD4E2D5BB7E9D47B3231E5CA8AF43C5 /* HBTesterKit-dummy.m */; };
+		152BCD1E023522BEEF71FEEE4FDDF3D6 /* UITableView+autoHeight.h in Headers */ = {isa = PBXBuildFile; fileRef = F14BB0143138ED34F6094A4DA856C490 /* UITableView+autoHeight.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		156C07CB348234BA1911FC83750A8D13 /* HBBaseTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 067DC68C809E08764010052E4394354F /* HBBaseTableView.m */; };
+		15CEEDE34879328BB83094FCDE813CC8 /* HBCProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = E0BDA805913B85458935DC509A6C8B7D /* HBCProtocol.m */; };
+		1C739BE630D5B09D475EB585E3DA7D87 /* HBKitDataModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 5B3BE1F36446B4C830E2A512032A1F73 /* HBKitDataModel.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		1EB9C128DB34574D0A7568CEF04759BF /* HBCellStruct_Common.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C60026E8C629C57A5E473FD04024E1B /* HBCellStruct_Common.m */; };
+		23520B7716A899A168E1DE18A54793C3 /* NSObject+DirWatchDog.m in Sources */ = {isa = PBXBuildFile; fileRef = C7AA560711DA889E65708563B6503C23 /* NSObject+DirWatchDog.m */; };
+		2BD313B12ECB5D25E4E76E40FCFF4329 /* HBCellStruct_Common.h in Headers */ = {isa = PBXBuildFile; fileRef = 377AF42A3C0E2CA7DC71CAB7B6EEC9F7 /* HBCellStruct_Common.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		2D07BFF1846BD748DA64D1A47F7A09E3 /* Pods-TestHBKitDemo-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F2ECB64CE020B8C7C5250C9732B6E106 /* Pods-TestHBKitDemo-dummy.m */; };
+		3A159BC296AE53BA563E6FD9C9218051 /* HBTesterKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 439858DBAC073A6B021DAD3A1FCB0E38 /* HBTesterKit.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		3C11F916FDD9541CBB99D87AFAF1C488 /* HBTableViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B4628DC255434D9DC9907113E69CFDD4 /* HBTableViewModel.m */; };
+		3DECB7095F0470BE038817E53DBE8547 /* HBCollectionFallFLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = 87B9DFC9AA317B303727494A0C955151 /* HBCollectionFallFLayout.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		4A67793453B373A50FF8B38C219AB094 /* HBCellStruct_KVO.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D2D38F7F726D5E77CF30DCAD30B0127 /* HBCellStruct_KVO.m */; };
+		4CCE3635E7D608C9DB21019EE80584A4 /* HBKitDirWatchdog.h in Headers */ = {isa = PBXBuildFile; fileRef = 7C2EEC7106A6BF782986EEA5AA87E0FE /* HBKitDirWatchdog.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		59CE97FE49A03DD5C1145F7D46C09AD0 /* HBBaseTableView.h in Headers */ = {isa = PBXBuildFile; fileRef = 581567C03294636F0D5DD967D8936D69 /* HBBaseTableView.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		5EC3B10D0A2329CF453BA41FBD915760 /* HBCellStruct.h in Headers */ = {isa = PBXBuildFile; fileRef = 08D27E2C9DD0A76A6EAA8309F1C9948C /* HBCellStruct.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		630FE9A1AC48110A227FF48E6FE848B4 /* HBBaseCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 61E6BBEEF2DCFAB89D717C8780396CE5 /* HBBaseCollectionViewCell.m */; };
+		63FD83B1CFC6D76051E3772EF92FF13A /* HBBaseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 86D347310966866FD1C5E5C54452D2BE /* HBBaseTableViewCell.m */; };
+		6BCA88480E1D765013D8E5D0C3077E02 /* HBCProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 4356802E44129D82B8DCFB7D7E4DF065 /* HBCProtocol.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		6D932AC6DBC188263EED6384A04231B6 /* HBDirWatchdog.h in Headers */ = {isa = PBXBuildFile; fileRef = BAAE27694DB03C320B0A616260E6CDE4 /* HBDirWatchdog.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		72F4952F5785A89332E2E0E7531573B0 /* HBBaseTableViewCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 35D32CA3BE795E27B76FF180318DABC5 /* HBBaseTableViewCell.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		74B0A03A12C5A8789302E22917C5B86A /* HBBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A2590859E49B0D08545487FED2CEF5E7 /* HBBaseViewController.m */; };
+		75E222236B42371C1DFB73EB81030766 /* HBKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 3064CF270B4EA335F48C96A1235B8C50 /* HBKit.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		7F3A3D9949FF43B140936D2490850F23 /* HBCollectionViewModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 342DE62FD716D6E02BCD12C5920929F5 /* HBCollectionViewModel.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		83EDDF90240AECE24DD95E9DD21B7C40 /* HBBaseCollectionViewCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 03C3A6E53C6141C938EE37F2C0BC9655 /* HBBaseCollectionViewCell.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		8AC08BFF82C091AEBB61A42DF8ED8E14 /* HBBaseViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F7FD517D3CE0AA7406BB86AD43AABD5 /* HBBaseViewController.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		8F6FA0EAF41775F370FB95658E66AC2A /* HBCollectionViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CF0B846657841D1FC3B7C7AD6717A7A5 /* HBCollectionViewModel.m */; };
+		908FAD7F7F68DEEBAAE44CE19FAE639B /* HBBaseViewController+DirWatchDog.h in Headers */ = {isa = PBXBuildFile; fileRef = 982C031D2CF69DDD714FE2D90EFEADE3 /* HBBaseViewController+DirWatchDog.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		9366D570DDB2AB13E51A754571B82212 /* HBBaseCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = E7815375D6A358F33618A391FD25BDF8 /* HBBaseCollectionView.m */; };
+		95581E5BD2AEE12D93877917E436CBE1 /* UIButton+HBkit.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F5A8076E1FF16DCBD02C6029757913A /* UIButton+HBkit.m */; };
+		989F25831FB8D2184E79C3B666D78AB0 /* NSObject+HBObjectMap.m in Sources */ = {isa = PBXBuildFile; fileRef = 34A8D8DF23B9747566D23D7DFE9A0B2F /* NSObject+HBObjectMap.m */; };
+		A610958E3A7F4E0BBAF5A3D8335811E4 /* HBKitDirWatchdog.m in Sources */ = {isa = PBXBuildFile; fileRef = 950F1D6B8BC0F40C24BF07BD033C95B7 /* HBKitDirWatchdog.m */; };
+		A9FF1F7E9D1FF396C78EB6DCEAE5366C /* NSObject+DirWatchDog.h in Headers */ = {isa = PBXBuildFile; fileRef = B2AC89051FD2AC1FB4D9C116A73EC688 /* NSObject+DirWatchDog.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		ACBDE6041F93199D80D4D492C2E7B92C /* HBBaseViewControllerDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 8EBD982366C7DEFE80B43759575B197A /* HBBaseViewControllerDelegate.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		B0C1DD12DA89F8945B184592CC0B5B81 /* HBCollectionFallFLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C5310C2EA659410FD41CEFBAFD228DE /* HBCollectionFallFLayout.m */; };
+		B7592B72E83339D7FC6BB208F24A30FB /* HBBaseCollectionViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 3C83AB6274F8909456312FF4DE3AFF25 /* HBBaseCollectionViewController.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		B79B6ED58F95961CE7C5E735A64F8D39 /* HBBaseViewController+DirWatchDog.m in Sources */ = {isa = PBXBuildFile; fileRef = 37BA78BE060FF153A705662AE9F5C3BD /* HBBaseViewController+DirWatchDog.m */; };
+		BBE10DE07E4C2F6F9960212630FEB1AF /* HBBaseCellProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 2272B88ADBA7D1E2C989D5E83D3A70ED /* HBBaseCellProtocol.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		C797F18BABDF010D4E4A3B722939267A /* HBBaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5885027F476B8EE4CDFE19C1CC26237 /* HBBaseTableViewController.m */; };
+		C929FD4EC0FC7F2C961D501B62AA1D04 /* NSObject+HBObjectMap.h in Headers */ = {isa = PBXBuildFile; fileRef = FD74545E761AE8FA666B579FF3220A21 /* NSObject+HBObjectMap.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		C9C9B2C794C390F7231027EC97AD5467 /* HBCellStruct.m in Sources */ = {isa = PBXBuildFile; fileRef = F5E4F6947B097802C46A7035060A8F37 /* HBCellStruct.m */; };
+		CBFC2817E565ECBC6B4020C52E36097E /* HBBaseView.h in Headers */ = {isa = PBXBuildFile; fileRef = 22E91FDBF97053D83951AD534BAFF08B /* HBBaseView.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		CC8E3205308257EC0595D86B77BB1905 /* HBKitWatchDog.h in Headers */ = {isa = PBXBuildFile; fileRef = C205E9694489BAD32DC1E63C4FF1F658 /* HBKitWatchDog.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		CD69778DE82C0598A1925499355D06C7 /* HBBaseTableViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 318EDA4A202F9589B07B672496604631 /* HBBaseTableViewController.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		CE2F605753DB6E1D84FD653C177D976C /* HBBaseCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6313B62475F62994C53A4385801833A6 /* HBBaseCollectionViewController.m */; };
+		CFE110703775ABE9714E5DCCED97D305 /* HBCellStruct_KVO.h in Headers */ = {isa = PBXBuildFile; fileRef = CB49217A9CBD217A5B3B5EAD9D59591F /* HBCellStruct_KVO.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		D0ACB07DF23F222DF751A0C0CAA19163 /* HBDirWatchdog.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CECDC3F75F9077A576D141EA5F70B4D /* HBDirWatchdog.m */; };
+		DDDC77731ECAAEE40AD2D03D5ABE6A88 /* HBBaseSectionCollectionReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = D18B84127FF6FC973BB77315D258F55E /* HBBaseSectionCollectionReusableView.m */; };
+		DF76BC49BD8049C824AF16DC842D6947 /* HBKitDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 730E9DB0DA06612919C36796D74D07C1 /* HBKitDataModel.m */; };
+		E4541E84C3103ACBB38673D0D19D820C /* HBBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1585E3555D2224EBE9A2EAA672274065 /* HBBaseView.m */; };
+		E5613B776C13587ED54367F5C144C244 /* HBBaseCollectionView.h in Headers */ = {isa = PBXBuildFile; fileRef = 754212440A432886C0F542B4E7736DAE /* HBBaseCollectionView.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		EA712D9B0EE27865FC65549A256D970E /* UIButton+HBKit.h in Headers */ = {isa = PBXBuildFile; fileRef = BEE031413BCB3B6E3F0F619A26F5F9E9 /* UIButton+HBKit.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		FC25E368994A8879B7679C5F447B3FC9 /* HBTableViewModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 2E01BA2B1C5FC7937D981A212B59EB19 /* HBTableViewModel.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		FC9D714304F30B7C21D195DA413181BF /* HBBaseSectionCollectionReusableView.h in Headers */ = {isa = PBXBuildFile; fileRef = 4B47D2F2210322917DA967C1D2481A2A /* HBBaseSectionCollectionReusableView.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		FD0AD3F2EBC1E87EDD44D308231343E2 /* HBCellStruct_KEY.h in Headers */ = {isa = PBXBuildFile; fileRef = 7CC69263161548D5BF916B217FAEC862 /* HBCellStruct_KEY.h */; settings = {ATTRIBUTES = (Project, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C3ADFC17288F96BB43B631C27C6971E4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3195839486DCD3011792C1D4701B8A77;
+			remoteInfo = HBTesterKit;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		03C3A6E53C6141C938EE37F2C0BC9655 /* HBBaseCollectionViewCell.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HBBaseCollectionViewCell.h; path = HBKit/HBBaseCollectionViewCell.h; sourceTree = "<group>"; };
+		067DC68C809E08764010052E4394354F /* HBBaseTableView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = HBBaseTableView.m; path = HBKit/HBBaseTableView.m; sourceTree = "<group>"; };
+		08D27E2C9DD0A76A6EAA8309F1C9948C /* HBCellStruct.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HBCellStruct.h; path = HBKit/HBCellStruct.h; sourceTree = "<group>"; };
+		0D2D38F7F726D5E77CF30DCAD30B0127 /* HBCellStruct_KVO.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = HBCellStruct_KVO.m; path = HBKit/HBCellStruct_KVO.m; sourceTree = "<group>"; };
+		1585E3555D2224EBE9A2EAA672274065 /* HBBaseView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = HBBaseView.m; path = HBKit/HBBaseView.m; sourceTree = "<group>"; };
+		2272B88ADBA7D1E2C989D5E83D3A70ED /* HBBaseCellProtocol.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HBBaseCellProtocol.h; path = HBKit/HBBaseCellProtocol.h; sourceTree = "<group>"; };
+		22E91FDBF97053D83951AD534BAFF08B /* HBBaseView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HBBaseView.h; path = HBKit/HBBaseView.h; sourceTree = "<group>"; };
+		25A33A1360CF785A5F619736DB9B8474 /* HBTesterKit-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "HBTesterKit-prefix.pch"; sourceTree = "<group>"; };
+		2E01BA2B1C5FC7937D981A212B59EB19 /* HBTableViewModel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HBTableViewModel.h; path = HBKit/HBTableViewModel.h; sourceTree = "<group>"; };
+		3064CF270B4EA335F48C96A1235B8C50 /* HBKit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HBKit.h; path = HBKit/HBKit.h; sourceTree = "<group>"; };
+		318EDA4A202F9589B07B672496604631 /* HBBaseTableViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HBBaseTableViewController.h; path = HBKit/HBBaseTableViewController.h; sourceTree = "<group>"; };
+		342DE62FD716D6E02BCD12C5920929F5 /* HBCollectionViewModel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HBCollectionViewModel.h; path = HBKit/HBCollectionViewModel.h; sourceTree = "<group>"; };
+		34A8D8DF23B9747566D23D7DFE9A0B2F /* NSObject+HBObjectMap.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSObject+HBObjectMap.m"; path = "HBKit/NSObject+HBObjectMap.m"; sourceTree = "<group>"; };
+		35D32CA3BE795E27B76FF180318DABC5 /* HBBaseTableViewCell.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HBBaseTableViewCell.h; path = HBKit/HBBaseTableViewCell.h; sourceTree = "<group>"; };
+		377AF42A3C0E2CA7DC71CAB7B6EEC9F7 /* HBCellStruct_Common.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HBCellStruct_Common.h; path = HBKit/HBCellStruct_Common.h; sourceTree = "<group>"; };
+		37BA78BE060FF153A705662AE9F5C3BD /* HBBaseViewController+DirWatchDog.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "HBBaseViewController+DirWatchDog.m"; sourceTree = "<group>"; };
+		3C83AB6274F8909456312FF4DE3AFF25 /* HBBaseCollectionViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HBBaseCollectionViewController.h; path = HBKit/HBBaseCollectionViewController.h; sourceTree = "<group>"; };
+		4087A11F9771E01FE30AEF1997C7B544 /* HBTesterKit.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = HBTesterKit.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		4356802E44129D82B8DCFB7D7E4DF065 /* HBCProtocol.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HBCProtocol.h; path = HBKit/HBCProtocol.h; sourceTree = "<group>"; };
+		439858DBAC073A6B021DAD3A1FCB0E38 /* HBTesterKit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HBTesterKit.h; path = HBKit/HBTesterKit.h; sourceTree = "<group>"; };
+		4B47D2F2210322917DA967C1D2481A2A /* HBBaseSectionCollectionReusableView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HBBaseSectionCollectionReusableView.h; path = HBKit/HBBaseSectionCollectionReusableView.h; sourceTree = "<group>"; };
+		4F5A8076E1FF16DCBD02C6029757913A /* UIButton+HBkit.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIButton+HBkit.m"; path = "HBKit/UIButton+HBkit.m"; sourceTree = "<group>"; };
+		581567C03294636F0D5DD967D8936D69 /* HBBaseTableView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HBBaseTableView.h; path = HBKit/HBBaseTableView.h; sourceTree = "<group>"; };
+		5B3BE1F36446B4C830E2A512032A1F73 /* HBKitDataModel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HBKitDataModel.h; path = HBKit/HBKitDataModel.h; sourceTree = "<group>"; };
+		5D07EEA44B3185C65F46D5B699C6EA34 /* Pods-TestHBKitDemo-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-TestHBKitDemo-acknowledgements.markdown"; sourceTree = "<group>"; };
+		61E6BBEEF2DCFAB89D717C8780396CE5 /* HBBaseCollectionViewCell.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = HBBaseCollectionViewCell.m; path = HBKit/HBBaseCollectionViewCell.m; sourceTree = "<group>"; };
+		6313B62475F62994C53A4385801833A6 /* HBBaseCollectionViewController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = HBBaseCollectionViewController.m; path = HBKit/HBBaseCollectionViewController.m; sourceTree = "<group>"; };
+		730E9DB0DA06612919C36796D74D07C1 /* HBKitDataModel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = HBKitDataModel.m; path = HBKit/HBKitDataModel.m; sourceTree = "<group>"; };
+		754212440A432886C0F542B4E7736DAE /* HBBaseCollectionView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HBBaseCollectionView.h; path = HBKit/HBBaseCollectionView.h; sourceTree = "<group>"; };
+		7C2EEC7106A6BF782986EEA5AA87E0FE /* HBKitDirWatchdog.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HBKitDirWatchdog.h; path = HBKit/HBKitDirWatchdog.h; sourceTree = "<group>"; };
+		7CC69263161548D5BF916B217FAEC862 /* HBCellStruct_KEY.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HBCellStruct_KEY.h; path = HBKit/HBCellStruct_KEY.h; sourceTree = "<group>"; };
+		7CECDC3F75F9077A576D141EA5F70B4D /* HBDirWatchdog.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = HBDirWatchdog.m; sourceTree = "<group>"; };
+		86D347310966866FD1C5E5C54452D2BE /* HBBaseTableViewCell.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = HBBaseTableViewCell.m; path = HBKit/HBBaseTableViewCell.m; sourceTree = "<group>"; };
+		87B9DFC9AA317B303727494A0C955151 /* HBCollectionFallFLayout.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HBCollectionFallFLayout.h; path = HBKit/HBCollectionFallFLayout.h; sourceTree = "<group>"; };
+		8C60026E8C629C57A5E473FD04024E1B /* HBCellStruct_Common.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = HBCellStruct_Common.m; path = HBKit/HBCellStruct_Common.m; sourceTree = "<group>"; };
+		8E059A8E15730D52B2874D836DE47C4C /* libHBTesterKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libHBTesterKit.a; path = libHBTesterKit.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		8EBD982366C7DEFE80B43759575B197A /* HBBaseViewControllerDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HBBaseViewControllerDelegate.h; path = HBKit/HBBaseViewControllerDelegate.h; sourceTree = "<group>"; };
+		950F1D6B8BC0F40C24BF07BD033C95B7 /* HBKitDirWatchdog.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = HBKitDirWatchdog.m; path = HBKit/HBKitDirWatchdog.m; sourceTree = "<group>"; };
+		95A3B3C2E8C61052A796F39E8BE9D749 /* UITableView+autoHeight.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UITableView+autoHeight.m"; path = "HBKit/UITableView+autoHeight.m"; sourceTree = "<group>"; };
+		982C031D2CF69DDD714FE2D90EFEADE3 /* HBBaseViewController+DirWatchDog.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "HBBaseViewController+DirWatchDog.h"; sourceTree = "<group>"; };
+		9C5310C2EA659410FD41CEFBAFD228DE /* HBCollectionFallFLayout.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = HBCollectionFallFLayout.m; path = HBKit/HBCollectionFallFLayout.m; sourceTree = "<group>"; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9F707FAEF04C54B102CD0B231CEC8359 /* libPods-TestHBKitDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-TestHBKitDemo.a"; path = "libPods-TestHBKitDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9F7FD517D3CE0AA7406BB86AD43AABD5 /* HBBaseViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HBBaseViewController.h; path = HBKit/HBBaseViewController.h; sourceTree = "<group>"; };
+		A2590859E49B0D08545487FED2CEF5E7 /* HBBaseViewController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = HBBaseViewController.m; path = HBKit/HBBaseViewController.m; sourceTree = "<group>"; };
+		A65D2672FD7447F9E4F740917F36AC7B /* Pods-TestHBKitDemo-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TestHBKitDemo-acknowledgements.plist"; sourceTree = "<group>"; };
+		A9ED4BE7789421237D9DADAFB509D19A /* Pods-TestHBKitDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TestHBKitDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		B2AC89051FD2AC1FB4D9C116A73EC688 /* NSObject+DirWatchDog.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "NSObject+DirWatchDog.h"; sourceTree = "<group>"; };
+		B4628DC255434D9DC9907113E69CFDD4 /* HBTableViewModel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = HBTableViewModel.m; path = HBKit/HBTableViewModel.m; sourceTree = "<group>"; };
+		B54D40A61ADFFA089378C851BDFF9A04 /* cellstruct.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; name = cellstruct.plist; path = HBKit/cellstruct.plist; sourceTree = "<group>"; };
+		B5885027F476B8EE4CDFE19C1CC26237 /* HBBaseTableViewController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = HBBaseTableViewController.m; path = HBKit/HBBaseTableViewController.m; sourceTree = "<group>"; };
+		BAAE27694DB03C320B0A616260E6CDE4 /* HBDirWatchdog.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = HBDirWatchdog.h; sourceTree = "<group>"; };
+		BEE031413BCB3B6E3F0F619A26F5F9E9 /* UIButton+HBKit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIButton+HBKit.h"; path = "HBKit/UIButton+HBKit.h"; sourceTree = "<group>"; };
+		C205E9694489BAD32DC1E63C4FF1F658 /* HBKitWatchDog.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = HBKitWatchDog.h; sourceTree = "<group>"; };
+		C7AA560711DA889E65708563B6503C23 /* NSObject+DirWatchDog.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "NSObject+DirWatchDog.m"; sourceTree = "<group>"; };
+		CB49217A9CBD217A5B3B5EAD9D59591F /* HBCellStruct_KVO.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HBCellStruct_KVO.h; path = HBKit/HBCellStruct_KVO.h; sourceTree = "<group>"; };
+		CF0B846657841D1FC3B7C7AD6717A7A5 /* HBCollectionViewModel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = HBCollectionViewModel.m; path = HBKit/HBCollectionViewModel.m; sourceTree = "<group>"; };
+		D18B84127FF6FC973BB77315D258F55E /* HBBaseSectionCollectionReusableView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = HBBaseSectionCollectionReusableView.m; path = HBKit/HBBaseSectionCollectionReusableView.m; sourceTree = "<group>"; };
+		DB03C5B495679D8A6E5F6A8C8560CE64 /* Pods-TestHBKitDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TestHBKitDemo.release.xcconfig"; sourceTree = "<group>"; };
+		DB0C319638E79214A869EBC3FA842DCA /* HBTesterKit.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = HBTesterKit.xcconfig; sourceTree = "<group>"; };
+		DCD4E2D5BB7E9D47B3231E5CA8AF43C5 /* HBTesterKit-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "HBTesterKit-dummy.m"; sourceTree = "<group>"; };
+		E0BDA805913B85458935DC509A6C8B7D /* HBCProtocol.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = HBCProtocol.m; path = HBKit/HBCProtocol.m; sourceTree = "<group>"; };
+		E7815375D6A358F33618A391FD25BDF8 /* HBBaseCollectionView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = HBBaseCollectionView.m; path = HBKit/HBBaseCollectionView.m; sourceTree = "<group>"; };
+		F14BB0143138ED34F6094A4DA856C490 /* UITableView+autoHeight.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UITableView+autoHeight.h"; path = "HBKit/UITableView+autoHeight.h"; sourceTree = "<group>"; };
+		F2ECB64CE020B8C7C5250C9732B6E106 /* Pods-TestHBKitDemo-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-TestHBKitDemo-dummy.m"; sourceTree = "<group>"; };
+		F5E4F6947B097802C46A7035060A8F37 /* HBCellStruct.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = HBCellStruct.m; path = HBKit/HBCellStruct.m; sourceTree = "<group>"; };
+		FD74545E761AE8FA666B579FF3220A21 /* NSObject+HBObjectMap.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSObject+HBObjectMap.h"; path = "HBKit/NSObject+HBObjectMap.h"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		27A5FC9962FB14993CB3FD0EE9B4E58E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C012B856D50D710D1AD09E93893ECFBD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		49AF81FC49789D5ABDF26819A151FCA0 /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				4087A11F9771E01FE30AEF1997C7B544 /* HBTesterKit.podspec */,
+			);
+			name = Pod;
+			sourceTree = "<group>";
+		};
+		4ED0A78FB2DF0329901F2D44A52E410D /* Pods-TestHBKitDemo */ = {
+			isa = PBXGroup;
+			children = (
+				5D07EEA44B3185C65F46D5B699C6EA34 /* Pods-TestHBKitDemo-acknowledgements.markdown */,
+				A65D2672FD7447F9E4F740917F36AC7B /* Pods-TestHBKitDemo-acknowledgements.plist */,
+				F2ECB64CE020B8C7C5250C9732B6E106 /* Pods-TestHBKitDemo-dummy.m */,
+				A9ED4BE7789421237D9DADAFB509D19A /* Pods-TestHBKitDemo.debug.xcconfig */,
+				DB03C5B495679D8A6E5F6A8C8560CE64 /* Pods-TestHBKitDemo.release.xcconfig */,
+			);
+			name = "Pods-TestHBKitDemo";
+			path = "Target Support Files/Pods-TestHBKitDemo";
+			sourceTree = "<group>";
+		};
+		50C9B5E00210A107CB743D5056CC6453 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				4ED0A78FB2DF0329901F2D44A52E410D /* Pods-TestHBKitDemo */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		759DDCE9BF4C81ACDAA295C00F58D1A4 /* HBKitWatchDog */ = {
+			isa = PBXGroup;
+			children = (
+				982C031D2CF69DDD714FE2D90EFEADE3 /* HBBaseViewController+DirWatchDog.h */,
+				37BA78BE060FF153A705662AE9F5C3BD /* HBBaseViewController+DirWatchDog.m */,
+				BAAE27694DB03C320B0A616260E6CDE4 /* HBDirWatchdog.h */,
+				7CECDC3F75F9077A576D141EA5F70B4D /* HBDirWatchdog.m */,
+				C205E9694489BAD32DC1E63C4FF1F658 /* HBKitWatchDog.h */,
+				B2AC89051FD2AC1FB4D9C116A73EC688 /* NSObject+DirWatchDog.h */,
+				C7AA560711DA889E65708563B6503C23 /* NSObject+DirWatchDog.m */,
+			);
+			name = HBKitWatchDog;
+			path = HBKit/HBKitWatchDog;
+			sourceTree = "<group>";
+		};
+		7F69DA2808BA7F06553CBC3F2FBD4119 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8E059A8E15730D52B2874D836DE47C4C /* libHBTesterKit.a */,
+				9F707FAEF04C54B102CD0B231CEC8359 /* libPods-TestHBKitDemo.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		910CA33BF0177B043784EBC9F30E21F4 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				DB0C319638E79214A869EBC3FA842DCA /* HBTesterKit.xcconfig */,
+				DCD4E2D5BB7E9D47B3231E5CA8AF43C5 /* HBTesterKit-dummy.m */,
+				25A33A1360CF785A5F619736DB9B8474 /* HBTesterKit-prefix.pch */,
+			);
+			name = "Support Files";
+			path = "demo/HBTesterKitDemo/Pods/Target Support Files/HBTesterKit";
+			sourceTree = "<group>";
+		};
+		B1AFE59BE4D228AFD7ECE9D62328D095 /* HBTesterKit */ = {
+			isa = PBXGroup;
+			children = (
+				B54D40A61ADFFA089378C851BDFF9A04 /* cellstruct.plist */,
+				2272B88ADBA7D1E2C989D5E83D3A70ED /* HBBaseCellProtocol.h */,
+				754212440A432886C0F542B4E7736DAE /* HBBaseCollectionView.h */,
+				E7815375D6A358F33618A391FD25BDF8 /* HBBaseCollectionView.m */,
+				03C3A6E53C6141C938EE37F2C0BC9655 /* HBBaseCollectionViewCell.h */,
+				61E6BBEEF2DCFAB89D717C8780396CE5 /* HBBaseCollectionViewCell.m */,
+				3C83AB6274F8909456312FF4DE3AFF25 /* HBBaseCollectionViewController.h */,
+				6313B62475F62994C53A4385801833A6 /* HBBaseCollectionViewController.m */,
+				4B47D2F2210322917DA967C1D2481A2A /* HBBaseSectionCollectionReusableView.h */,
+				D18B84127FF6FC973BB77315D258F55E /* HBBaseSectionCollectionReusableView.m */,
+				581567C03294636F0D5DD967D8936D69 /* HBBaseTableView.h */,
+				067DC68C809E08764010052E4394354F /* HBBaseTableView.m */,
+				35D32CA3BE795E27B76FF180318DABC5 /* HBBaseTableViewCell.h */,
+				86D347310966866FD1C5E5C54452D2BE /* HBBaseTableViewCell.m */,
+				318EDA4A202F9589B07B672496604631 /* HBBaseTableViewController.h */,
+				B5885027F476B8EE4CDFE19C1CC26237 /* HBBaseTableViewController.m */,
+				22E91FDBF97053D83951AD534BAFF08B /* HBBaseView.h */,
+				1585E3555D2224EBE9A2EAA672274065 /* HBBaseView.m */,
+				9F7FD517D3CE0AA7406BB86AD43AABD5 /* HBBaseViewController.h */,
+				A2590859E49B0D08545487FED2CEF5E7 /* HBBaseViewController.m */,
+				8EBD982366C7DEFE80B43759575B197A /* HBBaseViewControllerDelegate.h */,
+				08D27E2C9DD0A76A6EAA8309F1C9948C /* HBCellStruct.h */,
+				F5E4F6947B097802C46A7035060A8F37 /* HBCellStruct.m */,
+				377AF42A3C0E2CA7DC71CAB7B6EEC9F7 /* HBCellStruct_Common.h */,
+				8C60026E8C629C57A5E473FD04024E1B /* HBCellStruct_Common.m */,
+				7CC69263161548D5BF916B217FAEC862 /* HBCellStruct_KEY.h */,
+				CB49217A9CBD217A5B3B5EAD9D59591F /* HBCellStruct_KVO.h */,
+				0D2D38F7F726D5E77CF30DCAD30B0127 /* HBCellStruct_KVO.m */,
+				87B9DFC9AA317B303727494A0C955151 /* HBCollectionFallFLayout.h */,
+				9C5310C2EA659410FD41CEFBAFD228DE /* HBCollectionFallFLayout.m */,
+				342DE62FD716D6E02BCD12C5920929F5 /* HBCollectionViewModel.h */,
+				CF0B846657841D1FC3B7C7AD6717A7A5 /* HBCollectionViewModel.m */,
+				4356802E44129D82B8DCFB7D7E4DF065 /* HBCProtocol.h */,
+				E0BDA805913B85458935DC509A6C8B7D /* HBCProtocol.m */,
+				3064CF270B4EA335F48C96A1235B8C50 /* HBKit.h */,
+				5B3BE1F36446B4C830E2A512032A1F73 /* HBKitDataModel.h */,
+				730E9DB0DA06612919C36796D74D07C1 /* HBKitDataModel.m */,
+				7C2EEC7106A6BF782986EEA5AA87E0FE /* HBKitDirWatchdog.h */,
+				950F1D6B8BC0F40C24BF07BD033C95B7 /* HBKitDirWatchdog.m */,
+				2E01BA2B1C5FC7937D981A212B59EB19 /* HBTableViewModel.h */,
+				B4628DC255434D9DC9907113E69CFDD4 /* HBTableViewModel.m */,
+				439858DBAC073A6B021DAD3A1FCB0E38 /* HBTesterKit.h */,
+				FD74545E761AE8FA666B579FF3220A21 /* NSObject+HBObjectMap.h */,
+				34A8D8DF23B9747566D23D7DFE9A0B2F /* NSObject+HBObjectMap.m */,
+				BEE031413BCB3B6E3F0F619A26F5F9E9 /* UIButton+HBKit.h */,
+				4F5A8076E1FF16DCBD02C6029757913A /* UIButton+HBkit.m */,
+				F14BB0143138ED34F6094A4DA856C490 /* UITableView+autoHeight.h */,
+				95A3B3C2E8C61052A796F39E8BE9D749 /* UITableView+autoHeight.m */,
+				759DDCE9BF4C81ACDAA295C00F58D1A4 /* HBKitWatchDog */,
+				49AF81FC49789D5ABDF26819A151FCA0 /* Pod */,
+				910CA33BF0177B043784EBC9F30E21F4 /* Support Files */,
+			);
+			name = HBTesterKit;
+			path = ../../..;
+			sourceTree = "<group>";
+		};
+		BF57B67ADE83E506E3A08B4A44AAE136 /* Development Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B1AFE59BE4D228AFD7ECE9D62328D095 /* HBTesterKit */,
+			);
+			name = "Development Pods";
+			sourceTree = "<group>";
+		};
+		CF1408CF629C7361332E53B88F7BD30C = {
+			isa = PBXGroup;
+			children = (
+				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
+				BF57B67ADE83E506E3A08B4A44AAE136 /* Development Pods */,
+				D89477F20FB1DE18A04690586D7808C4 /* Frameworks */,
+				7F69DA2808BA7F06553CBC3F2FBD4119 /* Products */,
+				50C9B5E00210A107CB743D5056CC6453 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		D89477F20FB1DE18A04690586D7808C4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		1D68913966C9C5F68C4AAC0C0D1DCE6B /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BBE10DE07E4C2F6F9960212630FEB1AF /* HBBaseCellProtocol.h in Headers */,
+				E5613B776C13587ED54367F5C144C244 /* HBBaseCollectionView.h in Headers */,
+				83EDDF90240AECE24DD95E9DD21B7C40 /* HBBaseCollectionViewCell.h in Headers */,
+				B7592B72E83339D7FC6BB208F24A30FB /* HBBaseCollectionViewController.h in Headers */,
+				FC9D714304F30B7C21D195DA413181BF /* HBBaseSectionCollectionReusableView.h in Headers */,
+				59CE97FE49A03DD5C1145F7D46C09AD0 /* HBBaseTableView.h in Headers */,
+				72F4952F5785A89332E2E0E7531573B0 /* HBBaseTableViewCell.h in Headers */,
+				CD69778DE82C0598A1925499355D06C7 /* HBBaseTableViewController.h in Headers */,
+				CBFC2817E565ECBC6B4020C52E36097E /* HBBaseView.h in Headers */,
+				908FAD7F7F68DEEBAAE44CE19FAE639B /* HBBaseViewController+DirWatchDog.h in Headers */,
+				8AC08BFF82C091AEBB61A42DF8ED8E14 /* HBBaseViewController.h in Headers */,
+				ACBDE6041F93199D80D4D492C2E7B92C /* HBBaseViewControllerDelegate.h in Headers */,
+				5EC3B10D0A2329CF453BA41FBD915760 /* HBCellStruct.h in Headers */,
+				2BD313B12ECB5D25E4E76E40FCFF4329 /* HBCellStruct_Common.h in Headers */,
+				FD0AD3F2EBC1E87EDD44D308231343E2 /* HBCellStruct_KEY.h in Headers */,
+				CFE110703775ABE9714E5DCCED97D305 /* HBCellStruct_KVO.h in Headers */,
+				3DECB7095F0470BE038817E53DBE8547 /* HBCollectionFallFLayout.h in Headers */,
+				7F3A3D9949FF43B140936D2490850F23 /* HBCollectionViewModel.h in Headers */,
+				6BCA88480E1D765013D8E5D0C3077E02 /* HBCProtocol.h in Headers */,
+				6D932AC6DBC188263EED6384A04231B6 /* HBDirWatchdog.h in Headers */,
+				75E222236B42371C1DFB73EB81030766 /* HBKit.h in Headers */,
+				1C739BE630D5B09D475EB585E3DA7D87 /* HBKitDataModel.h in Headers */,
+				4CCE3635E7D608C9DB21019EE80584A4 /* HBKitDirWatchdog.h in Headers */,
+				CC8E3205308257EC0595D86B77BB1905 /* HBKitWatchDog.h in Headers */,
+				FC25E368994A8879B7679C5F447B3FC9 /* HBTableViewModel.h in Headers */,
+				3A159BC296AE53BA563E6FD9C9218051 /* HBTesterKit.h in Headers */,
+				A9FF1F7E9D1FF396C78EB6DCEAE5366C /* NSObject+DirWatchDog.h in Headers */,
+				C929FD4EC0FC7F2C961D501B62AA1D04 /* NSObject+HBObjectMap.h in Headers */,
+				EA712D9B0EE27865FC65549A256D970E /* UIButton+HBKit.h in Headers */,
+				152BCD1E023522BEEF71FEEE4FDDF3D6 /* UITableView+autoHeight.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A97FFBB5F2FEA2DC2EE3542C4804F651 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		3195839486DCD3011792C1D4701B8A77 /* HBTesterKit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D423DB810750995812067E0313638099 /* Build configuration list for PBXNativeTarget "HBTesterKit" */;
+			buildPhases = (
+				1D68913966C9C5F68C4AAC0C0D1DCE6B /* Headers */,
+				2D1D67CE21114B3A50E128E18C77D88D /* Sources */,
+				C012B856D50D710D1AD09E93893ECFBD /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HBTesterKit;
+			productName = HBTesterKit;
+			productReference = 8E059A8E15730D52B2874D836DE47C4C /* libHBTesterKit.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		91560CBD146336348308830F89F92D65 /* Pods-TestHBKitDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5C84414FC4A67B07D6FBE7A13B606BDC /* Build configuration list for PBXNativeTarget "Pods-TestHBKitDemo" */;
+			buildPhases = (
+				A97FFBB5F2FEA2DC2EE3542C4804F651 /* Headers */,
+				CD75D040D27D7CDEAD07546DFD37F98C /* Sources */,
+				27A5FC9962FB14993CB3FD0EE9B4E58E /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				01E03C62522D8F3DB375E891DD45A410 /* PBXTargetDependency */,
+			);
+			name = "Pods-TestHBKitDemo";
+			productName = "Pods-TestHBKitDemo";
+			productReference = 9F707FAEF04C54B102CD0B231CEC8359 /* libPods-TestHBKitDemo.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BFDFE7DC352907FC980B868725387E98 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0930;
+				LastUpgradeCheck = 0930;
+			};
+			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
+			productRefGroup = 7F69DA2808BA7F06553CBC3F2FBD4119 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3195839486DCD3011792C1D4701B8A77 /* HBTesterKit */,
+				91560CBD146336348308830F89F92D65 /* Pods-TestHBKitDemo */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2D1D67CE21114B3A50E128E18C77D88D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0F4D4D76EB8ABA3C9558227A27F69B2F /* cellstruct.plist in Sources */,
+				9366D570DDB2AB13E51A754571B82212 /* HBBaseCollectionView.m in Sources */,
+				630FE9A1AC48110A227FF48E6FE848B4 /* HBBaseCollectionViewCell.m in Sources */,
+				CE2F605753DB6E1D84FD653C177D976C /* HBBaseCollectionViewController.m in Sources */,
+				DDDC77731ECAAEE40AD2D03D5ABE6A88 /* HBBaseSectionCollectionReusableView.m in Sources */,
+				156C07CB348234BA1911FC83750A8D13 /* HBBaseTableView.m in Sources */,
+				63FD83B1CFC6D76051E3772EF92FF13A /* HBBaseTableViewCell.m in Sources */,
+				C797F18BABDF010D4E4A3B722939267A /* HBBaseTableViewController.m in Sources */,
+				E4541E84C3103ACBB38673D0D19D820C /* HBBaseView.m in Sources */,
+				B79B6ED58F95961CE7C5E735A64F8D39 /* HBBaseViewController+DirWatchDog.m in Sources */,
+				74B0A03A12C5A8789302E22917C5B86A /* HBBaseViewController.m in Sources */,
+				C9C9B2C794C390F7231027EC97AD5467 /* HBCellStruct.m in Sources */,
+				1EB9C128DB34574D0A7568CEF04759BF /* HBCellStruct_Common.m in Sources */,
+				4A67793453B373A50FF8B38C219AB094 /* HBCellStruct_KVO.m in Sources */,
+				B0C1DD12DA89F8945B184592CC0B5B81 /* HBCollectionFallFLayout.m in Sources */,
+				8F6FA0EAF41775F370FB95658E66AC2A /* HBCollectionViewModel.m in Sources */,
+				15CEEDE34879328BB83094FCDE813CC8 /* HBCProtocol.m in Sources */,
+				D0ACB07DF23F222DF751A0C0CAA19163 /* HBDirWatchdog.m in Sources */,
+				DF76BC49BD8049C824AF16DC842D6947 /* HBKitDataModel.m in Sources */,
+				A610958E3A7F4E0BBAF5A3D8335811E4 /* HBKitDirWatchdog.m in Sources */,
+				3C11F916FDD9541CBB99D87AFAF1C488 /* HBTableViewModel.m in Sources */,
+				14B4022B8CC578E814848D14F2CD06EB /* HBTesterKit-dummy.m in Sources */,
+				23520B7716A899A168E1DE18A54793C3 /* NSObject+DirWatchDog.m in Sources */,
+				989F25831FB8D2184E79C3B666D78AB0 /* NSObject+HBObjectMap.m in Sources */,
+				95581E5BD2AEE12D93877917E436CBE1 /* UIButton+HBkit.m in Sources */,
+				07DD446A85AE4C11CF27E7494778894E /* UITableView+autoHeight.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CD75D040D27D7CDEAD07546DFD37F98C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2D07BFF1846BD748DA64D1A47F7A09E3 /* Pods-TestHBKitDemo-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		01E03C62522D8F3DB375E891DD45A410 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = HBTesterKit;
+			target = 3195839486DCD3011792C1D4701B8A77 /* HBTesterKit */;
+			targetProxy = C3ADFC17288F96BB43B631C27C6971E4 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		109E125EF42C22921E56A377A1643A01 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DB0C319638E79214A869EBC3FA842DCA /* HBTesterKit.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				GCC_PREFIX_HEADER = "Target Support Files/HBTesterKit/HBTesterKit-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_MODULE_NAME = HBTesterKit;
+				PRODUCT_NAME = HBTesterKit;
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		6150C5A6436C42A4C4A48895288022DD /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DB03C5B495679D8A6E5F6A8C8560CE64 /* Pods-TestHBKitDemo.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MACH_O_TYPE = staticlib;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		6B24865849881D487417D822F26460EC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.2;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		76476A53A7830E5D0C7752E96C726515 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A9ED4BE7789421237D9DADAFB509D19A /* Pods-TestHBKitDemo.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MACH_O_TYPE = staticlib;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		941D2361789486AF91B4F48A0B2292CE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 4.2;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		D3594D3425AC4EA74DDD727D083CA11B /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DB0C319638E79214A869EBC3FA842DCA /* HBTesterKit.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				GCC_PREFIX_HEADER = "Target Support Files/HBTesterKit/HBTesterKit-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_MODULE_NAME = HBTesterKit;
+				PRODUCT_NAME = HBTesterKit;
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6B24865849881D487417D822F26460EC /* Debug */,
+				941D2361789486AF91B4F48A0B2292CE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5C84414FC4A67B07D6FBE7A13B606BDC /* Build configuration list for PBXNativeTarget "Pods-TestHBKitDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				76476A53A7830E5D0C7752E96C726515 /* Debug */,
+				6150C5A6436C42A4C4A48895288022DD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D423DB810750995812067E0313638099 /* Build configuration list for PBXNativeTarget "HBTesterKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				109E125EF42C22921E56A377A1643A01 /* Debug */,
+				D3594D3425AC4EA74DDD727D083CA11B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+}

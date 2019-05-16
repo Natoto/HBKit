@@ -27,7 +27,7 @@
  3. 添加此方法，每次按cmd+s会收到一个block，可以在此回调中完成重新配置,默认回调 configcellstructs 方法
  4. 所有的实时刷新都只在模拟器中进行
  */
--(void)hb_loadfilesConfig:(NSString *)filename
+- (void)hb_loadfilesConfig:(NSString *)filename
                postfix:(NSString *)postfix
              directory:(NSString *)directory
           infoplistkey:(NSString *)infplistkey

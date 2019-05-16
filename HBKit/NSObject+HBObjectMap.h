@@ -44,8 +44,8 @@ typedef NS_ENUM(NSInteger, HBCAPSDataType) {
 @interface NSObject (HBObjectMap)
 
 // Universal Method
--(NSDictionary *)hb_propertyDictionary;
--(NSString *)hb_nameOfClass;
+- (NSDictionary *)hb_propertyDictionary;
+- (NSString *)hb_nameOfClass;
 
 
 #pragma mark - Init Methods
@@ -105,21 +105,21 @@ typedef NS_ENUM(NSInteger, HBCAPSDataType) {
 
 
 #pragma mark - Serialized Data/Strings from Objects
--(NSData *)hb_JSONData;
--(NSString *)hb_JSONString;
--(NSData *)hb_XMLData;
--(NSString *)hb_XMLString;
--(NSData *)hb_SOAPData;
--(NSString *)hb_SOAPString;
--(NSDictionary *)hb_objectDictionary;
+- (NSData *)hb_JSONData;
+- (NSString *)hb_JSONString;
+- (NSData *)hb_XMLData;
+- (NSString *)hb_XMLString;
+- (NSData *)hb_SOAPData;
+- (NSString *)hb_SOAPString;
+- (NSDictionary *)hb_objectDictionary;
 
 
 #pragma mark - New Object with properties of another Object
--(id)hb_initWithObject:(NSObject *)oldObject error:(NSError **)error;
+- (id)hb_initWithObject:(NSObject *)oldObject error:(NSError **)error;
 
 #pragma mark - Base64 Encode/Decode
-+(NSString *)hb_encodeBase64WithData:(NSData *)objData;
-+(NSData *)hb_base64DataFromString:(NSString *)string;
++ (NSString *)hb_encodeBase64WithData:(NSData *)objData;
++ (NSData *)hb_base64DataFromString:(NSString *)string;
 
 @end
 

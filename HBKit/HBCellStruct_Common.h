@@ -30,18 +30,6 @@
 
 
 
-
-
-//#undef GET_CELL_STRUCT_WITH
-//#define GET_CELL_STRUCT_WITH(OBJ,TITLE) -(CELL_STRUCT *)cell_struct_##OBJ\
-//{\
-//if (!_cell_struct_##OBJ) {\
-//_cell_struct_##OBJ = [CELL_STRUCT cell_x_x_struct:@#TITLE detailvalue:nil target:self selectAction:@selector(selectAction:)];\
-//}\
-//return _cell_struct_##OBJ;\
-//}
-
-
 #undef DEFAULT_CELL_SELECT_ACTION
 #define DEFAULT_CELL_SELECT_ACTION @selector(selectAction:)
 
@@ -61,12 +49,12 @@
 @interface HBCellStruct(Common)
 
 
-+(HBCellStruct *)cell_x_x_struct:(NSString *)title
++ (HBCellStruct *)cell_x_x_struct:(NSString *)title
                     detailvalue:(NSString *)detailvalue
                          target:(id)target
                    selectAction:(SEL)selectAction;
 
-+(HBCellStruct *)cell_x_x_struct:(NSString *)title
++ (HBCellStruct *)cell_x_x_struct:(NSString *)title
                     detailvalue:(NSString *)detailvalue
                    footerheight:(CGFloat)footerheight
                  selectionStyle:(BOOL)selectionStyle
@@ -82,28 +70,27 @@
                   sectionheight:(CGFloat)sectionheight;
 
 
-+(HBCellStruct *)cell_x_x_structWithDictionary:(NSDictionary *)dictionary;
++ (HBCellStruct *)cell_x_x_structWithDictionary:(NSDictionary *)dictionary;
 
-+(UIColor *)colorWithStructKey:(NSString *)key;
++ (UIColor *)colorWithStructKey:(NSString *)key;
 
 @end
 
 @interface NSDictionary(cellstruct)
 
--(HBCellStruct *)cellstructobjectForKey:(id)aKey;
+- (HBCellStruct *)cellstructobjectForKey:(id)aKey;
 
--(HBCellStruct *)cellstructobjectForIndexPath:(NSIndexPath *)indexpath;
+- (HBCellStruct *)cellstructobjectForIndexPath:(NSIndexPath *)indexpath;
 
 @end
 
 @interface NSObject(KEYINDEXPATH)
--(NSString *)key_indexpath:(NSInteger )section row:(NSInteger)row;
--(NSString *)key_section:(NSInteger)section;
--(NSString *)key_section_mark:(NSInteger)section;
-//-(NSString *)key_section_index_str:(NSString *)indexpathkey;
--(NSString *)key_indexpath_section_str:(NSString *)indexpathkey;
--(NSString *)key_indexpath_row_str:(NSString *)indexpathkey;
+- (NSString *)key_indexpath:(NSInteger)section row:(NSInteger)row;
+- (NSString *)key_section:(NSInteger)section;
+- (NSString *)key_section_mark:(NSInteger)section;
+- (NSString *)key_indexpath_section_str:(NSString *)indexpathkey;
+- (NSString *)key_indexpath_row_str:(NSString *)indexpathkey;
 
--(NSIndexPath *)key_indexPath_withStr:(NSString *)indexpathstr;
+- (NSIndexPath *)key_indexPath_withStr:(NSString *)indexpathstr;
 
 @end

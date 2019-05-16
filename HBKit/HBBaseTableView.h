@@ -14,41 +14,41 @@
 #import "UITableView+autoHeight.h"
 
 @interface HBBaseTableView : UIView<UITableViewDataSource,UITableViewDelegate,HBBaseViewControllerDelegate>
-@property (nonatomic, strong) UITableView               * tableView;
+@property (nonatomic, strong) UITableView *tableView;
 //不自动配置tableview
 @property (nonatomic, assign) BOOL                       noAutoConfigTableView;
 //点击之后不自动变回未选状态
 @property (nonatomic, assign) BOOL                       nodeselectRow;
 
 
--(NSMutableDictionary<NSString * ,HBCellStruct *> *)dataDictionary;
+- (NSMutableDictionary<NSString *,HBCellStruct *> *)dataDictionary;
 
 
--(void)viewDidCurrentView;
+- (void)viewDidCurrentView;
 
--(CGRect)adjustContentOffSet:(CGFloat)top bottom:(CGFloat)bottom;
+- (CGRect)adjustContentOffSet:(CGFloat)top bottom:(CGFloat)bottom;
 
--(CGRect)adjustContentOffLeft:(CGFloat)left right:(CGFloat)right;
+- (CGRect)adjustContentOffLeft:(CGFloat)left right:(CGFloat)right;
 
--(void)observeTapgesture;
+- (void)observeTapgesture;
 
 //配置tableview 一般情况下自动配置 配合 noautoconfigtableview 使用
--(void)configTableView;
+- (void)configTableView;
 
 /**
  * 配置顶部navigationbar 和 tableview的位置
  */
--(void)tableViewDefaultConfigWithTitle:(NSString *)title;
+- (void)tableViewDefaultConfigWithTitle:(NSString *)title;
 
 /**
  * 使用默认配置 供子类调用
  */
--(void)userDefaultConfigWithTitle:(NSString *)title;
+- (void)userDefaultConfigWithTitle:(NSString *)title;
 
 /**
  * 根据keyindexpath 刷新该cell
  */
--(void)reloadTableViewCellWithKeyindexpath:(NSString *)keyindexpath;
+- (void)reloadTableViewCellWithKeyindexpath:(NSString *)keyindexpath;
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section;
 

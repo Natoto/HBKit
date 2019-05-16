@@ -14,7 +14,7 @@
 
 @implementation HBBaseSectionCollectionReusableView
 
--(instancetype)initWithFrame:(CGRect)frame
+- (instancetype)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
     if (self) {
@@ -23,10 +23,10 @@
     return self;
 }
 
--(UILabel *)titleLabel
+- (UILabel *)titleLabel
 {
     if (!_titleLabel) {
-        UILabel * label = [UILabel new];
+        UILabel *label = [UILabel new];
         label.frame = CGRectMake(8, 0, self.bounds.size.width - 16, self.bounds.size.height);// self.bounds;
         label.autoresizingMask =  UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
         [self addSubview:label];

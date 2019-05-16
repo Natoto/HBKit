@@ -23,22 +23,22 @@
 
 @interface HBTableViewModel : NSObject
 
-+(void)configTableView:(UITableView *)tableView dataDictionary:(NSDictionary *)dataDictionary;
++ (void)configTableView:(UITableView *)tableView dataDictionary:(NSDictionary *)dataDictionary;
 
 + (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView dataDictionary:(NSDictionary *)dataDictionary;
 
 + (NSInteger)tableView:(UITableView *)tableView  dataDictionary:(NSDictionary *)dataDictionary numberOfRowsInSection:(NSInteger)section;
 
-+(void)tableView:(UITableView *)tableView  dataDictionary:(NSDictionary *)dataDictionary didSelectRowAtIndexPath:(NSIndexPath *)indexPath;
++ (void)tableView:(UITableView *)tableView  dataDictionary:(NSDictionary *)dataDictionary didSelectRowAtIndexPath:(NSIndexPath *)indexPath;
 
-+(UIView *)tableView:(UITableView *)tableView dataDictionary:(NSDictionary *)dataDictionary viewForFooterInSection:(NSInteger)section;
++ (UIView *)tableView:(UITableView *)tableView dataDictionary:(NSDictionary *)dataDictionary viewForFooterInSection:(NSInteger)section;
 
 
-+(UIView *)tableView:(UITableView *)tableView dataDictionary:(NSDictionary *)dataDictionary viewForHeaderInSection:(NSInteger)section;
++ (UIView *)tableView:(UITableView *)tableView dataDictionary:(NSDictionary *)dataDictionary viewForHeaderInSection:(NSInteger)section;
  
-+  (void)drawCell:(HBBaseTableViewCell *)cell delegate:(id)delegate dataDictionary:(NSDictionary *)dataDictionary withIndexPath:(NSIndexPath *)indexPath;
++ (void)drawCell:(HBBaseTableViewCell *)cell delegate:(id)delegate dataDictionary:(NSDictionary *)dataDictionary withIndexPath:(NSIndexPath *)indexPath;
 
-+(HBBaseTableViewCell *)tableview:(UITableView *)tableView
++ (HBBaseTableViewCell *)tableview:(UITableView *)tableView
                    dataDictionary:(NSDictionary *)dataDictionary
                 cellWithIndexPath:(NSIndexPath *)indexPath;
 

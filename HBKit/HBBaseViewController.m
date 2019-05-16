@@ -18,28 +18,32 @@
 @end
 
 @interface HBBaseViewController ()
-@property (nonatomic, strong) HBKitDataModel * datamodel;
+@property (nonatomic, strong) HBKitDataModel *datamodel;
 @end
 
 
 @implementation HBBaseViewController
 
--(void)otherConfigCellStruct:(HBCellStruct *)cs{
+- (void)otherConfigCellStruct:(HBCellStruct *)cs
+{
 }
 
--(HBKitDataModel *)datamodel{
+- (HBKitDataModel *)datamodel
+{
     if (!_datamodel) {
         _datamodel  = [HBKitDataModel new];
     }
     return _datamodel;
 }
--(void)setDataDictionary:(NSMutableDictionary *)dataDictionary  {
+- (void)setDataDictionary:(NSMutableDictionary *)dataDictionary
+{
     [self.datamodel setDataDictionary:dataDictionary];
 }
 
--(void)configcellstructs{};
+- (void)configcellstructs
+{};
 
--(NSMutableDictionary *)dataDictionary
+- (NSMutableDictionary *)dataDictionary
 {
     return  self.datamodel.dataDictionary;
 }
@@ -48,11 +52,12 @@
  *
  *  @param plistname plist文件的名字
  */
--(void)loadplistConfig:(NSString *)plistname{
+- (void)loadplistConfig:(NSString *)plistname
+{
     [self loadplistConfig:plistname filepath:nil];
 }
 
--(void)loadplistConfig:(NSString *)plistname filepath:(NSString *)filepath
+- (void)loadplistConfig:(NSString *)plistname filepath:(NSString *)filepath
 {
     __weak typeof(self) weakself = self;
     [self.datamodel loadplistConfig:plistname filepath:filepath  configViewblock:^(NSMutableDictionary *dic) {
@@ -66,10 +71,11 @@
  *  @param plistname plist文件的名字
  */
 
--(NSMutableDictionary *)loadplistConfigToDictionary:(NSString *)plistname{
+- (NSMutableDictionary *)loadplistConfigToDictionary:(NSString *)plistname
+{
     return [self loadplistConfigToDictionary:plistname filepath:nil];
 }
--(NSMutableDictionary *)loadplistConfigToDictionary:(NSString *)plistname filepath:(NSString *)filepath
+- (NSMutableDictionary *)loadplistConfigToDictionary:(NSString *)plistname filepath:(NSString *)filepath
 {
   return  [self.datamodel loadplistConfigToDictionary:plistname filepath:filepath];
 }
@@ -80,22 +86,23 @@
  *  @param jsonfilename  json文件存放的路径名
  */
 
--(void)loadjsonfileConfig:(NSString *)jsonfilename{
+- (void)loadjsonfileConfig:(NSString *)jsonfilename
+{
     [self loadjsonfileConfig:jsonfilename filepath:nil];
 }
 
--(void)loadjsonfileConfig:(NSString *)jsonfilename filepath:(NSString *)filepath
+- (void)loadjsonfileConfig:(NSString *)jsonfilename filepath:(NSString *)filepath
 {
     [self.datamodel loadjsonfileConfig:jsonfilename filepath:filepath configViewblock:^(CELL_STRUCT_ARRAY *vclist) {
-        NSString * title = vclist.title;
+        NSString *title = vclist.title;
         if (title && [[title class] isSubclassOfClass:[NSString class]]) {
             self.title = title;
         }
-        NSString * backgroundcolor = vclist.backgroundcolor;
+        NSString *backgroundcolor = vclist.backgroundcolor;
         if (backgroundcolor && [[backgroundcolor class] isSubclassOfClass:[NSString class]]) {
             self.view.backgroundColor = [CELL_STRUCT_Common colorWithStructKey:backgroundcolor];
         }
-        NSString * backgroundimage  = vclist.backgroundimage;
+        NSString *backgroundimage  = vclist.backgroundimage;
         if (backgroundimage && [[backgroundimage class] isSubclassOfClass:[NSString class]]) {
             [self changeBackGroundWithBackImage:[UIImage imageNamed:backgroundimage]];
         }
@@ -103,17 +110,17 @@
     
 }
 
--(void)loadplistviewConfig:(NSDictionary *)dic
+- (void)loadplistviewConfig:(NSDictionary *)dic
 {
-    NSString * title = [dic objectForKey:@"title"];
+    NSString *title = [dic objectForKey:@"title"];
     if (title && [[title class] isSubclassOfClass:[NSString class]]) {
         self.title = title;
     }
-    NSString * backgroundcolor = [dic objectForKey:@"backgroundcolor"];
+    NSString *backgroundcolor = [dic objectForKey:@"backgroundcolor"];
     if (backgroundcolor && [[backgroundcolor class] isSubclassOfClass:[NSString class]]) {
         self.view.backgroundColor = [CELL_STRUCT_Common colorWithStructKey:backgroundcolor];
     }
-    NSString * backgroundimage  = [dic objectForKey:@"backgroundimage"];
+    NSString *backgroundimage  = [dic objectForKey:@"backgroundimage"];
     if (backgroundimage && [[backgroundimage class] isSubclassOfClass:[NSString class]]) {
         [self changeBackGroundWithBackImage:[UIImage imageNamed:backgroundimage]];
     }
@@ -121,34 +128,35 @@
 }
 
 
--(void)setShowBackItem:(BOOL)showBackItem
+- (void)setShowBackItem:(BOOL)showBackItem
 {
     _showBackItem = showBackItem;
     if (_showBackItem) {
-        UIBarButtonItem * item = [[UIBarButtonItem alloc] initWithTitle:@"返回" style:UIBarButtonItemStylePlain target:self action:@selector(backtoparent:)];
+        UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithTitle:@"返回" style:UIBarButtonItemStylePlain target:self action:@selector(backtoparent:)];
         self.navigationItem.leftBarButtonItem = item;
     }
-    else{
+    else {
         self.navigationItem.leftBarButtonItem = nil;
     }
 }
 
--(void)dealloc
+- (void)dealloc
 {
     NSLog(@"%@ dealloc",NSStringFromClass([self class]));
 }
--(void)viewDidLoad
+- (void)viewDidLoad
 {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor colorWithRed:239./255. green:239./255. blue:239./255. alpha:1];
     [self viewOtherConfig];
 }
 
--(void)viewOtherConfig{
+- (void)viewOtherConfig
+{
     
 }
  
--(void)setStatusBarStyleDefault:(BOOL)statusBarStyleDefault
+- (void)setStatusBarStyleDefault:(BOOL)statusBarStyleDefault
 {
     _statusBarStyleDefault = statusBarStyleDefault;
     if (self.statusBarStyleDefault) {
@@ -160,7 +168,7 @@
 }
 
 
--(void)viewWillAppear:(BOOL)animated
+- (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
     if (self.useStatusBar) {
@@ -168,7 +176,7 @@
     }
 }
 
--(void)viewWillDisappear:(BOOL)animated
+- (void)viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];
     if (self.useStatusBar) {
@@ -178,19 +186,19 @@
     }
 }
 
--(void)changeFaceStyle:(int)style view:(UIView *)View
+- (void)changeFaceStyle:(int)style view:(UIView *)View
 {
     
 }
 
--(void)userDefaultBackground
+- (void)userDefaultBackground
 {
     [self changeBackGroundWithBackColor:HB_UIColorWithRGB(14, 113, 196)];
 }
 
--(void)changeBackGroundWithBackImage:(UIImage *)Image
+- (void)changeBackGroundWithBackImage:(UIImage *)Image
 {
-    UIImageView * imageview = (UIImageView *)[self.view viewWithTag:2222];//
+    UIImageView *imageview = (UIImageView *)[self.view viewWithTag:2222];//
     if (!imageview) {
         imageview = [[UIImageView alloc] initWithImage:Image];
         imageview.frame = CGRectMake(0, -20, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height + 20);
@@ -201,9 +209,9 @@
     imageview.image = Image;
 }
 
--(void)changeBackGroundWithBackColor:(UIColor *)color
+- (void)changeBackGroundWithBackColor:(UIColor *)color
 {
-    UIImageView * imageview = (UIImageView *)[self.view viewWithTag:2222];
+    UIImageView *imageview = (UIImageView *)[self.view viewWithTag:2222];
     if (!imageview) {
         imageview = [[UIImageView alloc] init];
         imageview.tag = 2222;
@@ -214,11 +222,11 @@
     [self.view sendSubviewToBack:imageview];
 }
 
--(void)changeBackGroundWithBackImgName:(NSString *)imgname ofType:(NSString *)type
+- (void)changeBackGroundWithBackImgName:(NSString *)imgname ofType:(NSString *)type
 {
     NSString *imagePath = [[NSBundle mainBundle] pathForResource:imgname ofType:type];
     UIImage *img = [UIImage imageWithContentsOfFile:imagePath];
-    UIImageView * imageview = (UIImageView *)[self.view viewWithTag:2222];
+    UIImageView *imageview = (UIImageView *)[self.view viewWithTag:2222];
     if (!imageview) {
         imageview = [[UIImageView alloc] initWithImage:img];
         imageview.tag = 2222;
@@ -228,13 +236,13 @@
     imageview.frame = CGRectMake(0, -20, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height + 20);
     [self.view sendSubviewToBack:imageview];
 }
--(void)changeBackGroundWithBackImgName:(NSString *)imgname
+- (void)changeBackGroundWithBackImgName:(NSString *)imgname
 {
     [self changeBackGroundWithBackImgName:imgname ofType:@"png"];
 }
 
 
--(void)showhbnavigationbarBackItem:(BOOL)show
+- (void)showhbnavigationbarBackItem:(BOOL)show
 {
     if (show) {
         self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"返回"
@@ -242,14 +250,13 @@
                                                                                target:self
                                                                                action:@selector(backtoparent:)];
     }
-    else
-    {
+    else {
         self.navigationItem.leftBarButtonItem = nil;
     }
 }
 
 
--(IBAction)backtoparent:(id)sender animate:(BOOL)animate
+- (IBAction)backtoparent:(id)sender animate:(BOOL)animate
 {
     if (self.navigationController.childViewControllers.count >1 && self.navigationController.topViewController == self) {
         [self.navigationController popViewControllerAnimated:animate];
@@ -268,22 +275,22 @@
     
 }
 
--(IBAction)backtoparent:(id)sender
+- (IBAction)backtoparent:(id)sender
 {
     [self backtoparent:sender animate:YES];
 }
 
 #pragma mark 点击手势
--(void)observeTapgestureWithSuperView:(UIView *)superview target:(id)target sel:(SEL)seletor
+- (void)observeTapgestureWithSuperView:(UIView *)superview target:(id)target sel:(SEL)seletor
 {
-    UITapGestureRecognizer * tap = [[UITapGestureRecognizer alloc] initWithTarget:target action:seletor];
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:target action:seletor];
     [superview addGestureRecognizer:tap];
 }
 
--(BackGroundView *)backgroundview
+- (BackGroundView *)backgroundview
 {
     if (!_backgroundview) {
-        BackGroundView * backgroundview =  [[BackGroundView alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height)];
+        BackGroundView *backgroundview =  [[BackGroundView alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height)];
         _backgroundview = backgroundview;
     }
     return _backgroundview;

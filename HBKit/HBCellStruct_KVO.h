@@ -31,6 +31,6 @@
 /**
  * 可能执行多次
  */
--(void)handle_cell_struct_datachange:(NSString *) keyPath;
--(void)handle_cell_struct_datachange:(CELL_STRUCT *)cellstruct keypath:(NSString *) keyPath;
+- (void)handle_cell_struct_datachange:(NSString *) keyPath;
+- (void)handle_cell_struct_datachange:(CELL_STRUCT *)cellstruct keypath:(NSString *) keyPath;
 @end

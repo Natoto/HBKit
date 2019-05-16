@@ -14,58 +14,68 @@
 /** 
  * 需要重载，是否使用自定义NavgationBar,相对于系统自定义的 
  */
--(BOOL)useCustomNavBar{ return NO; }
+- (BOOL)useCustomNavBar
+{ return NO; }
 
 /** 
  * 使用默认底色 
  */
--(void)userDefaultBackground{
+- (void)userDefaultBackground
+{
     
 }
 /** 
  * 配置 cs
  */
--(void)configcellstructs{
+- (void)configcellstructs
+{
     
 }
 /** 
  * 需要重载，重新配置View
  */
--(void)viewOtherConfig{}
+- (void)viewOtherConfig
+{}
 /** 
  * 需要重载，重新配置cs 
  */
--(void)otherConfigCellStruct:(HBCellStruct *)cs{
+- (void)otherConfigCellStruct:(HBCellStruct *)cs
+{
     
 }
 
 
 //设置自定义navigationbar
--(void)showhbnavigationbarBackItem:(BOOL)show{
+- (void)showhbnavigationbarBackItem:(BOOL)show
+{
     
 }
 /** 
  * 返回上一级
  */
--(IBAction)backtoparent:(id)sender{
+- (IBAction)backtoparent:(id)sender
+{
     [self removeFromSuperview];
 }
 
 /** 
  * 返回上一级
  */
--(IBAction)backtoparent:(id)sender animate:(BOOL)animate{
+- (IBAction)backtoparent:(id)sender animate:(BOOL)animate
+{
     [self removeFromSuperview];
 }
 
 static char kAssociatedObjectKey_dataDictionary;
 
-- (void)setDataDictionary:(NSMutableDictionary *)dataDic {
+- (void)setDataDictionary:(NSMutableDictionary *)dataDic
+{
     objc_setAssociatedObject(self, &kAssociatedObjectKey_dataDictionary, dataDic, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
-- (NSMutableDictionary *)dataDictionary {
-    NSMutableDictionary * dic = (NSMutableDictionary *)objc_getAssociatedObject(self, &kAssociatedObjectKey_dataDictionary);
+- (NSMutableDictionary *)dataDictionary
+{
+    NSMutableDictionary *dic = (NSMutableDictionary *)objc_getAssociatedObject(self, &kAssociatedObjectKey_dataDictionary);
     if (!dic) {
         dic = [NSMutableDictionary new];
         [self setDataDictionary:dic];
@@ -78,8 +88,9 @@ static char kAssociatedObjectKey_dataDictionary;
  *
  *  @param plistname plist文件的名字
  */
--(void)loadplistConfig:(NSString *)plistname{
-     NSDictionary * plistdic = [[HBKitDataModel new] loadplistConfigToDictionary:plistname];
+- (void)loadplistConfig:(NSString *)plistname
+{
+     NSDictionary *plistdic = [[HBKitDataModel new] loadplistConfigToDictionary:plistname];
      [self setDataDictionary:plistdic.mutableCopy];
 }
 /**
@@ -87,7 +98,8 @@ static char kAssociatedObjectKey_dataDictionary;
  *
  *  @param plistname plist文件的名字
  */
--(NSMutableDictionary *)loadplistConfigToDictionary:(NSString *)plistname{
+- (NSMutableDictionary *)loadplistConfigToDictionary:(NSString *)plistname
+{
     
     return  [[HBKitDataModel new] loadplistConfigToDictionary:plistname];
    
@@ -99,7 +111,8 @@ static char kAssociatedObjectKey_dataDictionary;
  *
  *  @param jsonfilename  json文件存放的路径名
  */
--(void)loadjsonfileConfig:(NSString *)jsonfilename{
+- (void)loadjsonfileConfig:(NSString *)jsonfilename
+{
     
    
 }
@@ -107,14 +120,16 @@ static char kAssociatedObjectKey_dataDictionary;
 /** 
  * 加载plist文件 
  */
--(void)loadplistConfig:(NSString *)plistname filepath:(NSString *)filepath{
+- (void)loadplistConfig:(NSString *)plistname filepath:(NSString *)filepath
+{
    
 }
 
 /** 
  * 根据plist文件获取字典 
  */
--(NSMutableDictionary *)loadplistConfigToDictionary:(NSString *)plistname filepath:(NSString *)filepath{
+- (NSMutableDictionary *)loadplistConfigToDictionary:(NSString *)plistname filepath:(NSString *)filepath
+{
     
     return  [[HBKitDataModel new] loadplistConfigToDictionary:plistname filepath:filepath];
 }
@@ -122,16 +137,22 @@ static char kAssociatedObjectKey_dataDictionary;
 /** 
  * 加载json文件 
  */
--(void)loadjsonfileConfig:(NSString *)jsonfilename filepath:(NSString *)filepath{
+- (void)loadjsonfileConfig:(NSString *)jsonfilename filepath:(NSString *)filepath
+{
     
 }
 
 
 //改变背景颜色
--(void)changeBackGroundWithBackImage:(UIImage *)Image{}
--(void)changeBackGroundWithBackImgName:(NSString *)imgname ofType:(NSString *)type{}
--(void)changeBackGroundWithBackImgName:(NSString *)imgname{}
--(void)changeFaceStyle:(int)style view:(UIView *)View{}
--(void)changeBackGroundWithBackColor:(UIColor *)color{}
+- (void)changeBackGroundWithBackImage:(UIImage *)Image
+{}
+- (void)changeBackGroundWithBackImgName:(NSString *)imgname ofType:(NSString *)type
+{}
+- (void)changeBackGroundWithBackImgName:(NSString *)imgname
+{}
+- (void)changeFaceStyle:(int)style view:(UIView *)View
+{}
+- (void)changeBackGroundWithBackColor:(UIColor *)color
+{}
 
 @end

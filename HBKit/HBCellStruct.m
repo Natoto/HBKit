@@ -14,7 +14,7 @@
 
 @class HBBaseTableViewCell;
 @class HBBaseCollectionViewCell;
--(instancetype)init
+- (instancetype)init
 {
     self = [super init];
     if (self) {
@@ -25,13 +25,14 @@
     return self;
 }
 
-+(instancetype)initWithTitle:(NSString *)title{
++ (instancetype)initWithTitle:(NSString *)title
+{
     
-    HBCellStruct * cs = [[HBCellStruct alloc] initWithtitle:title cellclass:@"HBBaseTableViewCell" placeholder:nil accessory:NO sel_selctor:nil delegate:nil];
+    HBCellStruct *cs = [[HBCellStruct alloc] initWithtitle:title cellclass:@"HBBaseTableViewCell" placeholder:nil accessory:NO sel_selctor:nil delegate:nil];
     return cs;
 }
 
--(instancetype)initWithtitle:(NSString *)title
+- (instancetype)initWithtitle:(NSString *)title
                    cellclass:(NSString *)cellclass
                  placeholder:(NSString *)placehoder
                    accessory:(BOOL)accessory
@@ -93,7 +94,7 @@
 }
 
 
--(id)initWithDictionary:(NSDictionary *)dictionary
+- (id)initWithDictionary:(NSDictionary *)dictionary
 {
     self = [super init];
     if (self) {
@@ -103,20 +104,17 @@
 }
 
 #pragma mark -
--(id)initWithPlistDictionary:(NSDictionary *)plistdic
+- (id)initWithPlistDictionary:(NSDictionary *)plistdic
 {
     self = [super init];
     if (self) {
-        for ( Class clazzType = [CELL_STRUCT class];; )
-        {
+        for (Class clazzType = [CELL_STRUCT class];;) {
             unsigned int		propertyCount = 0;
-            objc_property_t *	properties = class_copyPropertyList( clazzType, &propertyCount);
-            for ( NSUInteger i = 0; i < propertyCount; i++ )
-            {
-                const char *	name = property_getName(properties[i]);
-                NSString *		propertyName = [NSString stringWithCString:name encoding:NSUTF8StringEncoding];
-                if([propertyName description])
-                {
+            objc_property_t *properties = class_copyPropertyList(clazzType, &propertyCount);
+            for (NSUInteger i = 0; i < propertyCount; i++) {
+                const char *name = property_getName(properties[i]);
+                NSString *propertyName = [NSString stringWithCString:name encoding:NSUTF8StringEncoding];
+                if ([propertyName description]) {
                     @try {
                         id object = [plistdic valueForKey:propertyName];
                         if (object) {
@@ -130,10 +128,11 @@
                     }
                 }
             }
-            free( properties );
-            clazzType = class_getSuperclass( clazzType );
-            if ( nil == clazzType )
+            free(properties);
+            clazzType = class_getSuperclass(clazzType);
+            if (nil == clazzType) {
                 break;
+            }
         }
         if ([plistdic objectForKey:@"dictionary"]) {
             self.dictionary = [NSMutableDictionary dictionaryWithDictionary:[plistdic objectForKey:@"dictionary"]];
@@ -142,9 +141,9 @@
     return self;
 }
 
--(id)initWithJsonString:(NSString *)jsonstring
+- (id)initWithJsonString:(NSString *)jsonstring
 {
-    CELL_STRUCT * cellstruct = [[CELL_STRUCT alloc] hb_initWithJSONData:[jsonstring dataUsingEncoding:NSUTF8StringEncoding]];
+    CELL_STRUCT *cellstruct = [[CELL_STRUCT alloc] hb_initWithJSONData:[jsonstring dataUsingEncoding:NSUTF8StringEncoding]];
     return cellstruct;
 }
 
@@ -153,7 +152,8 @@
 
 @implementation CELL_STRUCT_ARRAY
 
--(id)init{
+- (id)init
+{
     self = [super init];
     if (self) {
         [self setValue:@"HBCellStruct" forKeyPath:[NSString stringWithFormat:@"propertyArrayMap.%@",@"array"]];

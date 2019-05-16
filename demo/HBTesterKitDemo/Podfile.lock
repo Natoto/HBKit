@@ -1,0 +1,16 @@
+PODS:
+  - HBTesterKit (1.0.1)
+
+DEPENDENCIES:
+  - HBTesterKit (from `../../HBTesterKit.podspec`)
+
+EXTERNAL SOURCES:
+  HBTesterKit:
+    :path: "../../HBTesterKit.podspec"
+
+SPEC CHECKSUMS:
+  HBTesterKit: ecd577889b759fe5bc249153119b0d1160048251
+
+PODFILE CHECKSUM: 6229e2bd3e5b30618128e9fb53847d389c160a99
+
+COCOAPODS: 1.6.1

@@ -8,7 +8,6 @@
  
 #import <UIKit/UIKit.h>
 #import "HBCellStruct.h"
-#import "HBCellStruct.h"
 #import "HBKitDataModel.h"
 #import "HBBaseViewControllerDelegate.h"
 #define ALPHA_NAVIGATIONBAR 0.7
@@ -20,19 +19,18 @@
 @end
 
 
-@interface HBBaseViewController : UIViewController<HBBaseViewControllerDelegate>
-{
+@interface HBBaseViewController : UIViewController<HBBaseViewControllerDelegate> {
     BOOL statusbarhidden;
 } 
-@property(nonatomic,strong) NSMutableDictionary * dataDictionary;
+@property(nonatomic, strong) NSMutableDictionary *dataDictionary;
 
-@property(nonatomic,assign) BOOL useStatusBar;  //本界面配置statusbar 本界面消失后回归正常
+@property(nonatomic, assign) BOOL useStatusBar;  //本界面配置statusbar 本界面消失后回归正常
 
-@property(nonatomic,assign) BOOL showBackItem;
+@property(nonatomic, assign) BOOL showBackItem;
 
-@property(nonatomic,strong) BackGroundView * backgroundview;
+@property(nonatomic, strong) BackGroundView *backgroundview;
 
-@property(nonatomic,assign) BOOL statusBarStyleDefault;
+@property(nonatomic, assign) BOOL statusBarStyleDefault;
 
 ////是否需要用到MJRefresh
 ////上下拉要用到的

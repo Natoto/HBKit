@@ -31,11 +31,13 @@ static char const key_hbkit_watchdog = 'q';
 
 @implementation  HBBaseViewController(DirWatchDog)
 
--(HBDirWatchdog *)hbkit_watchDog{
-    HBDirWatchdog * obj = objc_getAssociatedObject(self, &key_hbkit_watchdog);
+- (HBDirWatchdog *)hbkit_watchDog
+{
+    HBDirWatchdog *obj = objc_getAssociatedObject(self, &key_hbkit_watchdog);
     return obj;
 }
--(void)setHBKit_WatchDog:(HBDirWatchdog * )watchdog{
+- (void)setHBKit_WatchDog:(HBDirWatchdog *)watchdog
+{
     objc_setAssociatedObject(self, &key_hbkit_watchdog, watchdog, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
@@ -56,15 +58,16 @@ static char const key_hbkit_watchdog = 'q';
 3. 添加此方法，每次按cmd+s会收到一个block，可以在此回调中完成重新配置
 4. 所有的实时刷新都只在模拟器中进行
  */
--(void)loadfilesConfig:(NSString *)filename
+- (void)loadfilesConfig:(NSString *)filename
                postfix:(NSString *)postfix
              directory:(NSString *)directory
-                update:(void(^)(NSString * mainScriptPath))block{
+                update:(void(^)(NSString * mainScriptPath))block
+{
     
     [self loadfilesConfig:filename postfix:postfix directory:directory infoplistkey:@"projectPath" update:block];
 }
 
--(void)loadfilesConfig:(NSString *)filename
+- (void)loadfilesConfig:(NSString *)filename
                postfix:(NSString *)postfix
              directory:(NSString *)directory
           infoplistkey:(NSString *)infplistkey
@@ -78,12 +81,11 @@ static char const key_hbkit_watchdog = 'q';
     NSString *mainScriptPath ;
     if (postfix.length) {
         mainScriptPath = [NSString stringWithFormat:@"%@/%@.%@", scriptRootPath, filename,postfix];
-    }else{
+    } else {
          mainScriptPath = [NSString stringWithFormat:@"%@/%@", scriptRootPath, filename];
     }
     NSFileManager *fileManager = [NSFileManager defaultManager];
-    if(![fileManager fileExistsAtPath:mainScriptPath]) //如果不存在
-    {
+    if (![fileManager fileExistsAtPath:mainScriptPath]) {//如果不存在
         NSLog(@"ERROR: 文件不存在 path:%@ \n 请确认info.plist设置一项 inflPlistKey:%@  value:$(SRCROOT)/$(TARGET_NAME)",mainScriptPath,infplistkey);
         
         NSString *rootPath = [[NSBundle mainBundle] pathForResource:filename ofType:postfix inDirectory:directory];
@@ -99,7 +101,7 @@ static char const key_hbkit_watchdog = 'q';
     [self setHBKit_WatchDog:watchDog];
     if ([postfix isEqualToString:@"plist"]) {
         [self loadplistConfig:filename filepath:mainScriptPath];
-    }else{
+    } else {
         [self loadjsonfileConfig:filename filepath:mainScriptPath];
     }
     
@@ -116,7 +118,8 @@ static char const key_hbkit_watchdog = 'q';
 /**
  *  从plist文件中加载配置信息,实时刷新
  */
--(void)loadplistConfig:(NSString *)plistname watch_directory:(NSString *)directory{
+- (void)loadplistConfig:(NSString *)plistname watch_directory:(NSString *)directory
+{
     
     [self loadplistConfig:plistname watch_directory:directory watchPlistKey:nil];
 }
@@ -124,10 +127,11 @@ static char const key_hbkit_watchdog = 'q';
 /**
  *  从plist文件中加载配置信息,实时刷新
  */
--(void)loadplistConfig:(NSString *)plistname watch_directory:(NSString *)directory watchPlistKey:(NSString *)watchplistkey{
+- (void)loadplistConfig:(NSString *)plistname watch_directory:(NSString *)directory watchPlistKey:(NSString *)watchplistkey
+{
     
     @weakify(self)
-    [self loadfilesConfig:plistname postfix:@"plist" directory:directory infoplistkey:watchplistkey update:^(NSString * mainScriptPath){
+    [self loadfilesConfig:plistname postfix:@"plist" directory:directory infoplistkey:watchplistkey update:^(NSString * mainScriptPath) {
         @strongify(self)
         [self loadplistConfig:plistname filepath:mainScriptPath];
         [self configcellstructs];
@@ -138,10 +142,11 @@ static char const key_hbkit_watchdog = 'q';
 /**
  *  从json文件中加载配置信息,实时刷新
  */
--(void)loadjsonfileConfig:(NSString *)jsonname watch_directory:(NSString *)directory{
+- (void)loadjsonfileConfig:(NSString *)jsonname watch_directory:(NSString *)directory
+{
     
     @weakify(self)
-    [self loadfilesConfig:jsonname postfix:@"json" directory:directory update:^(NSString * mainScriptPath){
+    [self loadfilesConfig:jsonname postfix:@"json" directory:directory update:^(NSString * mainScriptPath) {
         @strongify(self)
         [self loadjsonfileConfig:jsonname filepath:mainScriptPath];
         [self configcellstructs];
@@ -156,10 +161,11 @@ static char const key_hbkit_watchdog = 'q';
 /**
  *  从plist文件中加载配置信息,实时刷新
  */
--(void)loadplistConfig:(NSString *)plistname watch_directory:(NSString *)directory{
+- (void)loadplistConfig:(NSString *)plistname watch_directory:(NSString *)directory
+{
     
     @weakify(self)
-    [self loadfilesConfig:plistname postfix:@"plist" directory:directory update:^(NSString * mainScriptPath){
+    [self loadfilesConfig:plistname postfix:@"plist" directory:directory update:^(NSString * mainScriptPath) {
         @strongify(self)
         [self loadplistConfig:plistname filepath:mainScriptPath];
         [self configcellstructs];
@@ -170,10 +176,11 @@ static char const key_hbkit_watchdog = 'q';
 /**
  *  从json文件中加载配置信息,实时刷新
  */
--(void)loadjsonfileConfig:(NSString *)jsonname watch_directory:(NSString *)directory{
+- (void)loadjsonfileConfig:(NSString *)jsonname watch_directory:(NSString *)directory
+{
     
     @weakify(self)
-    [self loadfilesConfig:jsonname postfix:@"json" directory:directory update:^(NSString * mainScriptPath){
+    [self loadfilesConfig:jsonname postfix:@"json" directory:directory update:^(NSString * mainScriptPath) {
         @strongify(self)
         [self loadjsonfileConfig:jsonname filepath:mainScriptPath];
         [self configcellstructs];
@@ -184,10 +191,11 @@ static char const key_hbkit_watchdog = 'q';
 /**
  *  从plist文件中加载配置信息,实时刷新
  */
--(void)loadplistConfig:(NSString *)plistname watch_directory:(NSString *)directory watchPlistKey:(NSString *)watchplistkey{
+- (void)loadplistConfig:(NSString *)plistname watch_directory:(NSString *)directory watchPlistKey:(NSString *)watchplistkey
+{
     
     @weakify(self)
-    [self loadfilesConfig:plistname postfix:@"plist" directory:directory infoplistkey:watchplistkey update:^(NSString * mainScriptPath){
+    [self loadfilesConfig:plistname postfix:@"plist" directory:directory infoplistkey:watchplistkey update:^(NSString * mainScriptPath) {
         @strongify(self)
         [self loadplistConfig:plistname filepath:mainScriptPath];
         [self configcellstructs];

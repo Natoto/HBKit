@@ -67,7 +67,7 @@
 + (UIButton *)CreateButtonWithFrame:(CGRect)frame andimage:(NSString *)imagename
 {
     UIButton *button=[UIButton buttonWithType:UIButtonTypeCustom]; //[[UIButton alloc] initWithFrame:frame];
-    UIImage * image=[UIImage imageNamed:imagename];
+    UIImage *image=[UIImage imageNamed:imagename];
     [button setImage:image forState:UIControlStateNormal];
     button.imageView.contentMode = UIViewContentModeScaleAspectFit;
     button.frame=frame;
@@ -78,7 +78,7 @@
 + (UIButton *)CreateButtonWithFrame:(CGRect)frame andimage:(NSString *)imagename selectImage:(NSString *)selectimage
 {
     UIButton *button=[UIButton buttonWithType:UIButtonTypeCustom]; //[[UIButton alloc] initWithFrame:frame];
-    UIImage * image=[UIImage imageNamed:imagename];
+    UIImage *image=[UIImage imageNamed:imagename];
     [button setImage:image forState:UIControlStateNormal];
     image = [UIImage imageNamed:selectimage];
     [button setImage:image forState:UIControlStateSelected];
@@ -126,7 +126,7 @@
     return button;
 }
 #pragma mark 下划线
--(void)setUnderlineStyleSingle:(NSString *)text
+- (void)setUnderlineStyleSingle:(NSString *)text
 {
     NSMutableAttributedString *str = [[NSMutableAttributedString alloc] initWithString:text];
     NSRange strRange = {0,[str length]};
@@ -134,47 +134,47 @@
     [self setAttributedTitle:str forState:UIControlStateNormal];
 }
 #pragma mark - 生成背景图
--(void)setBackgroundImage:(UIColor *)backgroundColor
+- (void)setBackgroundImage:(UIColor *)backgroundColor
 {
     [self setBackgroundImage:[UIButton buttonImageFromColor:backgroundColor frame:CGRectMake(0, 0, 1, 1)] forState:UIControlStateNormal];
 }
 
--(void)setSelectBackgroundImage:(UIColor *)backgroundColor
+- (void)setSelectBackgroundImage:(UIColor *)backgroundColor
 {
     [self setBackgroundImage:[UIButton buttonImageFromColor:backgroundColor frame:CGRectMake(0, 0, 1, 1)] forState:UIControlStateSelected];
 }
--(void)setDisableBackgroundImage:(UIColor *)backgroundColor
+- (void)setDisableBackgroundImage:(UIColor *)backgroundColor
 {
     [self setBackgroundImage:[UIButton buttonImageFromColor:backgroundColor frame:CGRectMake(0, 0, 1, 1)] forState:UIControlStateDisabled];
 }
 #pragma mark -
--(void)setTitle:(NSString *)title
+- (void)setTitle:(NSString *)title
 {
     [self setTitle:title forState:UIControlStateNormal];
 }
 
--(void)setSelectedTitle:(NSString *)title
+- (void)setSelectedTitle:(NSString *)title
 {
     [self setTitle:title forState:UIControlStateSelected];
 }
--(void)setFont:(UIFont *)font
+- (void)setFont:(UIFont *)font
 {
     self.titleLabel.font = font;
 }
 
--(void)setlayercolor:(UIColor *)color
+- (void)setlayercolor:(UIColor *)color
 {
     self.layer.masksToBounds = YES;
     self.layer.borderColor = color.CGColor;
     self.layer.borderWidth = 0.5;
 }
 
--(void)setTitleColor:(UIColor *)color
+- (void)setTitleColor:(UIColor *)color
 {
     [self setTitleColor:color forState:UIControlStateNormal];
 }
 
--(void)setTitleSelectedColor:(UIColor *)color
+- (void)setTitleSelectedColor:(UIColor *)color
 {
     [self setTitleColor:color forState:UIControlStateHighlighted];
     [self setTitleColor:color forState:UIControlStateSelected];
@@ -183,7 +183,7 @@
 /**
  * 通过颜色生成一种纯色的图片
  */
-+(UIImage *)buttonImageFromColor:(UIColor *)color frame:(CGRect)frame
++ (UIImage *)buttonImageFromColor:(UIColor *)color frame:(CGRect)frame
 {
     CGRect rect = CGRectMake(0, 0, frame.size.width, frame.size.height);
     UIGraphicsBeginImageContext(rect.size);
@@ -206,7 +206,7 @@
 
 
 
-- (void)hbbase_setLayout:(HBBaseUIButtonLayoutStyle )aLayoutStyle
+- (void)hbbase_setLayout:(HBBaseUIButtonLayoutStyle)aLayoutStyle
           spacing:(CGFloat)aSpacing
 {
     CGSize imageSize = self.imageView.frame.size;
@@ -216,14 +216,14 @@
     UIEdgeInsets imageEdgeInsets = UIEdgeInsetsZero;
     UIEdgeInsets titleEdgeInsets = UIEdgeInsetsZero;
     if (aLayoutStyle == HBBaseImageLeftTitleRightStyle) {
-        imageEdgeInsets = UIEdgeInsetsMake(0, -(aSpacing / 2.0f), 0, 0 );
+        imageEdgeInsets = UIEdgeInsetsMake(0, -(aSpacing / 2.0f), 0, 0);
         titleEdgeInsets = UIEdgeInsetsMake(0, 0, 0, - (aSpacing / 2.0f));
     }
     else if (aLayoutStyle == HBBaseTitleLeftImageRightStyle) {
         imageEdgeInsets = UIEdgeInsetsMake(0, 0, 0, -(titleSize.width * 2 + aSpacing / 2.0f));
         titleEdgeInsets = UIEdgeInsetsMake(0, -(imageSize.width * 2 + aSpacing / 2.0f), 0, 0);
-    }else if (aLayoutStyle == HBBaseImageTopTitleBootomStyle){
-        imageEdgeInsets = UIEdgeInsetsMake( -(totalHeight - imageSize.height),
+    } else if (aLayoutStyle == HBBaseImageTopTitleBootomStyle) {
+        imageEdgeInsets = UIEdgeInsetsMake(-(totalHeight - imageSize.height),
                                            0.0,
                                            0.0,
                                            - titleSize.width);
@@ -231,7 +231,7 @@
                                             -imageSize.width,
                                             - (totalHeight - titleSize.height),
                                             0.0);
-    }else if (aLayoutStyle == HBBaseTitleTopImageBootomStyle){
+    } else if (aLayoutStyle == HBBaseTitleTopImageBootomStyle) {
         imageEdgeInsets = UIEdgeInsetsMake(0.0,
                                            0.0,
                                            -(totalHeight - imageSize.height),
