@@ -13,7 +13,6 @@ Pod::Spec.new do |s|
   s.resource = 'HBLaboratory/**/*.{bundle,xib,storyboard}'
   s.public_header_files = 'HBLaboratory/**/*.h'  
   #s.dependency 'YCViper' 
-  s.dependency 'HBTesterKit'
-  s.dependency 'KVOController'
+  s.dependency 'HBTesterKit' 
 
 end
