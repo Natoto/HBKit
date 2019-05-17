@@ -28,4 +28,5 @@
 #import "HBCProtocol.h"
 #import "HBBaseView.h"
 #import "HBBaseCollectionView.h"
+#import "HBCellStruct_Common.h"
 //#import "HBKitRefresh.h"

@@ -24,6 +24,8 @@
 } 
 @property(nonatomic, strong) NSMutableDictionary *dataDictionary;
 
+@property(nonatomic, strong) NSDictionary *viewConfigDictionary;
+
 @property(nonatomic, assign) BOOL useStatusBar;  //本界面配置statusbar 本界面消失后回归正常
 
 @property(nonatomic, assign) BOOL showBackItem;

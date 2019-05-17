@@ -12,7 +12,6 @@
  pod 'MJRefresh', '~> 2.2.1'
  - Homepage: https://github.com/CoderMJLee/MJRefresh
  */
-//#define 1 1 //0不用到MJRefresh 1 用到了MJRefresh
 
 
 #import "HBKitDataModel.h"
@@ -26,4 +25,4 @@
 #import "HBBaseTableView.h"
 #import "HBBaseView.h"
 #import "HBBaseCollectionView.h"
-//#import "HBKitRefresh.h"
+#import "HBCellStruct_Common.h"

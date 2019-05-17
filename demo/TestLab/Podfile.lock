@@ -1,0 +1,29 @@
+PODS:
+  - HBLaboratory (1.0.0):
+    - HBTesterKit
+    - KVOController
+  - HBTesterKit (1.0.4)
+  - KVOController (1.2.0)
+
+DEPENDENCIES:
+  - HBLaboratory (from `../../HBLaboratory.podspec`)
+  - HBTesterKit (from `../../HBTesterKit.podspec`)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - KVOController
+
+EXTERNAL SOURCES:
+  HBLaboratory:
+    :path: "../../HBLaboratory.podspec"
+  HBTesterKit:
+    :path: "../../HBTesterKit.podspec"
+
+SPEC CHECKSUMS:
+  HBLaboratory: 68491dfa259586c8461beea82d70bc1cf0f52a33
+  HBTesterKit: 31c0b8b81d4736c7a6776468455a319d670bdcd6
+  KVOController: d72ace34afea42468329623b3379ab3cd1d286b6
+
+PODFILE CHECKSUM: 4368db75dd1ac2b018b5583ca478c069867edc94
+
+COCOAPODS: 1.6.1

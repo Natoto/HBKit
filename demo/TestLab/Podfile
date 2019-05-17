@@ -1,0 +1,8 @@
+platform :ios,'7.0'
+ 
+
+target 'TestLab' do  
+ pod 'HBTesterKit',:path=>"../../HBTesterKit.podspec"
+ pod 'HBLaboratory',:path=>"../../HBLaboratory.podspec"
+end
+#注释

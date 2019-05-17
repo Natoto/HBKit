@@ -113,6 +113,7 @@
 
 - (void)loadplistviewConfig:(NSDictionary *)dic
 {
+    self.viewConfigDictionary = dic;
     NSString *title = [dic objectForKey:@"title"];
     if (title && [[title class] isSubclassOfClass:[NSString class]]) {
         self.title = title;

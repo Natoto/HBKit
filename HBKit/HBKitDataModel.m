@@ -74,7 +74,7 @@
 - (BOOL)containkeys:(NSString *)key
 {
     
-    NSArray *array = @[@"title",@"backgroundcolor",@"backgroundimage"];
+    NSArray *array = @[@"title",@"backgroundcolor",@"backgroundimage",@"contentrightwidth"];
     __block  BOOL valiate = NO;
     [array enumerateObjectsUsingBlock:^(NSString * obj, NSUInteger idx, BOOL * _Nonnull stop) {
         if ([key isEqualToString:obj]) {
@@ -106,7 +106,7 @@
                     [dataDictionary setObject:cellstruct forKey:key];
                 }
             }
-            else if ([self containkeys:key]) {
+            else {// if ([self containkeys:key]) {
                 NSObject *value = dic[key];
                 [self.viewConfigDictionary setObject:value forKey:key];
             }
@@ -150,7 +150,7 @@
     }
     else {
         CELL_STRUCT_ARRAY *vclist = [[CELL_STRUCT_ARRAY alloc] hb_initWithJSONData:[jsonstring dataUsingEncoding:NSUTF8StringEncoding]];
-        NSString *title = vclist.title;
+//        NSString *title = vclist.title;
         if (configViewblock) {
             configViewblock(vclist);
         }
