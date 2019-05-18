@@ -3,7 +3,7 @@
 *  create a list(tableview or collectionview) by plist or json file
 *  create a list by one line
 
-## [中文文档](README-ZH.md)
+## [中文文档](README-zh.md)
 
 ## useage
  
