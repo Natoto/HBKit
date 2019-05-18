@@ -6,6 +6,7 @@
 //Copyright © 2017年 YY.Inc. All rights reserved.
 //
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 #import "NOZLaboratoryArchiveObject.h"
 
 static NSString *klab_notify_name = @"klab_notify_name";

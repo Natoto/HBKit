@@ -2,12 +2,12 @@
 
 Pod::Spec.new do |s|
   s.name             = "HBLaboratory"
-  s.version          = "1.0.5"
-  s.summary          = "实验室框架"
-  s.homepage         = "https://github.com/Natoto/HBKit.git"
+  s.version          = "1.0.6"
+  s.summary          = "摇一摇唤起实验室，自定制各种app配置"
+  s.homepage         = "https://github.com/Natoto/HBKit/HBLaboratory"
   s.license          = 'MIT'
   s.author           = { "huangbo" => "huangbo@yy.com" }
-  s.source           = { :git => "https://github.com/Natoto/HBKit.git"} 
+  s.source           = { :git => "https://github.com/Natoto/HBKit/HBLaboratory"} 
   s.ios.deployment_target = '7.0' 
   s.source_files = 'HBLaboratory/**/*.{h,m,mm}' 
   s.resource = 'HBLaboratory/**/*.{bundle,xib,storyboard}'
