@@ -12,7 +12,7 @@
 
 @implementation SODALaboratoryArchiveObject
 
--(id)mutableCopyWithZone:(NSZone *)zone
+- (id)mutableCopyWithZone:(NSZone *)zone
 {
     id object = [[[self class] allocWithZone:zone] init];
     
@@ -41,7 +41,7 @@
     return object;
 }
 
--(id)copyWithZone:(NSZone *)zone
+- (id)copyWithZone:(NSZone *)zone
 {
     id object = [[[self class] allocWithZone:zone] init];
     if (object) {
@@ -69,7 +69,8 @@
     }
     return object;
 }
--(id)initWithCoder:(NSCoder *)aDecoder {
+- (id)initWithCoder:(NSCoder *)aDecoder
+{
     if (self = [super init]) {
         unsigned int outCount = 0;
         objc_property_t *properties = class_copyPropertyList([self class], &outCount);
@@ -112,11 +113,13 @@
 /**
  * 保留字
  */
--(NSArray *)ocreservedwords{
+- (NSArray *)ocreservedwords
+{
     
     return @[@"debugDescription",@"description",@"hash",@"superclass"];
 }
-- (void)encodeWithCoder:(NSCoder *)aCoder {
+- (void)encodeWithCoder:(NSCoder *)aCoder
+{
     unsigned int outCount = 0;
     objc_property_t *properties = class_copyPropertyList([self class], &outCount);
     for (int i = 0; i < outCount; i++) {
@@ -130,15 +133,15 @@
         }
         id value=[self valueForKey:key];
         if (value && key) {
-            @try{
+            @try {
                 if ([value isKindOfClass:[NSObject class]]) {
                     [aCoder encodeObject:value forKey:key];
                 } else {
-                    NSNumber * v = [NSNumber numberWithInt:(int)value];
+                    NSNumber *v = [NSNumber numberWithInt:(int)value];
                     [aCoder encodeObject:v forKey:key];
                 }
             }
-            @catch(NSException * ex){
+            @catch(NSException * ex) {
                 NSLog(@"😑，序列号出了一个错，%@",ex.description);
             }
         }
@@ -155,13 +158,13 @@
 @implementation NSString(hbcache)
 
 //md5 32位 加密 （小写）
-- (NSString*)md532BitLower
+- (NSString *)md532BitLower
 {
     const char *cStr = [self UTF8String];
     unsigned char result[16];
     
     NSNumber *num = [NSNumber numberWithUnsignedLong:strlen(cStr)];
-    CC_MD5( cStr,[num intValue], result );
+    CC_MD5(cStr,[num intValue], result);
     
     return [[NSString stringWithFormat:
              @"%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X",

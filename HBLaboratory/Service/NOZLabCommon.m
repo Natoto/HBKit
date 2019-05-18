@@ -98,15 +98,16 @@
 }
 
 
-+(void)exitApp{
++ (void)exitApp
+{
     
     
     [[UIApplication sharedApplication]performSelector:@selector(suspend) withObject:nil];
     // 隐藏私有 api字符串
-    uint32_t msg[] =  {~'term',~'inat',~'eWit',~'hSuc',~'cess'};
+    uint32_t msg[] = {~'term',~'inat',~'eWit',~'hSuc',~'cess'};
     for (int i=0;i<sizeof(msg)/sizeof(uint32_t); i++) {
         msg[i] = ~msg[i];
-        uint8_t *cmsg =(uint8_t*)( (uint32_t*)msg+i);
+        uint8_t *cmsg =(uint8_t *)((uint32_t *)msg+i);
         cmsg[0] ^= cmsg[3]^= cmsg[0]^= cmsg[3];
         cmsg[1] ^= cmsg[2]^= cmsg[1]^= cmsg[2];
     }

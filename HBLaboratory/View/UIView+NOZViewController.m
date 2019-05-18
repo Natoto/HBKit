@@ -11,7 +11,8 @@
 
 @implementation UIWindow(shake)
 
-- (void)motionEnded:(UIEventSubtype)motion withEvent:(UIEvent *)event {
+- (void)motionEnded:(UIEventSubtype)motion withEvent:(UIEvent *)event
+{
     
     if (event.type == UIEventTypeMotion && event.subtype == UIEventSubtypeMotionShake) {
         NSLog(@"📳 摇晃了手机");
@@ -19,17 +20,19 @@
     }
 }
 
-- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
+- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
+{
     
 }
 
--(void)showHBTester{
+- (void)showHBTester
+{
 
-    NOZLabCallBackObject * obj = [NOZLabCallBackObject notifyWithType:klab_notifytype_showlab];
+    NOZLabCallBackObject *obj = [NOZLabCallBackObject notifyWithType:klab_notifytype_showlab];
     if ([[NOZLaboratoryService sharedInstance].dataSource lab_shakeToShow]) {
         [[NSNotificationCenter defaultCenter] postNotificationName:klab_notify_name object:obj];
     }
-    if(NOZLaboratoryService.sharedInstance.delegate){
+    if (NOZLaboratoryService.sharedInstance.delegate) {
         [NOZLaboratoryService.sharedInstance.delegate lab_configSelectedWithNotifyObject:obj];
     }
     
@@ -43,10 +46,12 @@
 
 #pragma mark - viewcontroller cycle
 
-- (UIViewController *)noz_currentViewController{
+- (UIViewController *)noz_currentViewController
+{
     return [UIView noz_currentViewController];
 }
-+ (UIViewController *)noz_currentViewController{
++ (UIViewController *)noz_currentViewController
+{
     
     UIViewController *vc = [self currentVisiableRootViewController];
     
@@ -63,19 +68,19 @@
     
 }
 
-+ (UIViewController*) currentVisiableRootViewController{
++ (UIViewController *) currentVisiableRootViewController
+{
     
     __block UIViewController *result = nil;
     // Try to find the root view controller programmically
     // Find the top window (that is not an alert view or other window)
     UIWindow *topWindow = [[UIApplication sharedApplication] keyWindow];
-    if (topWindow.windowLevel != UIWindowLevelNormal)
-    {
+    if (topWindow.windowLevel != UIWindowLevelNormal) {
         NSArray *windows = [[UIApplication sharedApplication] windows];
-        for(topWindow in windows)
-        {
-            if (topWindow.windowLevel == UIWindowLevelNormal)
+        for (topWindow in windows) {
+            if (topWindow.windowLevel == UIWindowLevelNormal) {
                 break;
+            }
         }
     }
     

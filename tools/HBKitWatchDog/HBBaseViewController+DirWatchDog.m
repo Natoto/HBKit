@@ -97,12 +97,12 @@ static char const key_hbkit_watchdog = 'q';
     
 #else
     NSString *rootPath = [[NSBundle mainBundle] pathForResource:filename ofType:postfix inDirectory:directory];
-    if([postfix isEqualToString:@"plist"]){
+    if ([postfix isEqualToString:@"plist"]) {
         [self loadplistConfig:filename filepath:rootPath];
-    }else if([postfix isEqualToString:@"json"]){
+    } else if ([postfix isEqualToString:@"json"]) {
         [self loadjsonfileConfig:filename filepath:rootPath];
     }
-    else{
+    else {
         NSLog(@"[HBKIT] error: 不识别的文件格式 filename: %@ directory:%@",filename,directory);
     }
 #endif

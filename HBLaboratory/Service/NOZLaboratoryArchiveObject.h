@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 
 @interface NSString(hbcache)
-- (NSString*)md532BitLower;
+- (NSString *)md532BitLower;
 @end
 
 #pragma mark - 这个是基类，用于归档 打印 校验
@@ -25,7 +25,7 @@
  */
 @interface SODALaboratoryEntity:SODALaboratoryArchiveObject
 
-@property (nonatomic, strong) NSString * hiidoTestDomain;
+@property (nonatomic, strong) NSString *hiidoTestDomain;
 @property (nonatomic, assign) BOOL isConnecTestServer; 
 @end
  

@@ -21,15 +21,16 @@
 
 @implementation NOZLaboratoryController
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     
     [super viewDidLoad];
     
-    NSString * plistName = @"NOZLaboratoryViewController";
-    NSString * filepath = [[[NSBundle mainBundle] pathForResource:@"libresource.bundle" ofType:nil] stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.plist",plistName]];
+    NSString *plistName = @"NOZLaboratoryViewController";
+    NSString *filepath = [[[NSBundle mainBundle] pathForResource:@"libresource.bundle" ofType:nil] stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.plist",plistName]];
     [self loadplistConfig:plistName filepath:filepath];
     
-    if(NOZLaboratoryService.sharedInstance.dataSource && [NOZLaboratoryService.sharedInstance.dataSource respondsToSelector:@selector(lab_dictionary:)]){
+    if (NOZLaboratoryService.sharedInstance.dataSource && [NOZLaboratoryService.sharedInstance.dataSource respondsToSelector:@selector(lab_dictionary:)]) {
        self.dataDictionary = [NOZLaboratoryService.sharedInstance.dataSource lab_dictionary:self.dataDictionary];
     }
     [self loadCacheData];
@@ -37,10 +38,11 @@
 }
 
 
-- (void)loadCacheData{
+- (void)loadCacheData
+{
     
-    NSDictionary * dic = @{};
-    if([[NOZLaboratoryService sharedInstance].dataSource respondsToSelector:@selector(lab_userConfigDictionary)]){
+    NSDictionary *dic = @{};
+    if ([[NOZLaboratoryService sharedInstance].dataSource respondsToSelector:@selector(lab_userConfigDictionary)]) {
         dic = [[NOZLaboratoryService sharedInstance].dataSource lab_userConfigDictionary];
     }
     [self.dataDictionary enumerateKeysAndObjectsUsingBlock:^(id  _Nonnull key, HBCellStruct * obj, BOOL * _Nonnull stop) {
@@ -49,7 +51,7 @@
             obj.detailtitle = show?@"√":@"x";
             [self configcellstructs:obj];
         }
-        if(dic[obj.title] && [obj.cellclass isEqualToString:@"ShowValueTableViewCell"]){
+        if (dic[obj.title] && [obj.cellclass isEqualToString:@"ShowValueTableViewCell"]) {
             obj.detailtitle = dic[obj.title];
             obj.value = dic[obj.title];
         }
@@ -58,38 +60,41 @@
 }
 
 
--(void)configcellstructs:(HBCellStruct *)cs{
+- (void)configcellstructs:(HBCellStruct *)cs
+{
     
     if ([cs.title isEqualToString:@"切换开发测试环境"]) {
         bool show =  [[NOZLaboratoryService sharedInstance] e].isConnecTestServer;
         cs.detailtitle = show?@"√":@"x";
     }
-    else if([cs.title isEqualToString:@"海度测试服务器datatest.hiido.com"]){
-        NSString * show =  [[NOZLaboratoryService sharedInstance] e].hiidoTestDomain;
+    else if ([cs.title isEqualToString:@"海度测试服务器datatest.hiido.com"]) {
+        NSString *show =  [[NOZLaboratoryService sharedInstance] e].hiidoTestDomain;
         cs.detailtitle = show>0?@"√":@"x";
     }
 }
 
--(void)gotoNavViewController:(HBCellStruct *)cs{
+- (void)gotoNavViewController:(HBCellStruct *)cs
+{
     
     if (cs.value) {
         Class cls = NSClassFromString(cs.value);
         if (cls) {
-            UIViewController * ctr = [[cls alloc] init];
-            UINavigationController * nav = [[UINavigationController alloc] initWithRootViewController:ctr];
+            UIViewController *ctr = [[cls alloc] init];
+            UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:ctr];
             [self presentViewController:nav animated:YES completion:nil];
         }
     }
-    else{
+    else {
         NSLog(@"请填写value");
     }
 }
 
--(void)selectAction:(HBCellStruct *)cs{
+- (void)selectAction:(HBCellStruct *)cs
+{
     
     NSLog(@"select: %@",cs.title);
     
-    NOZLabCallBackObject * notify = [NOZLabCallBackObject notifyWithType:cs.title from:self cs:cs param:nil];
+    NOZLabCallBackObject *notify = [NOZLabCallBackObject notifyWithType:cs.title from:self cs:cs param:nil];
     
     if ([cs.title isEqualToString:@"切换测试服务器"]) {
         
@@ -98,18 +103,18 @@
         [[NOZLaboratoryService sharedInstance] e].isConnecTestServer =  show;
         cs.detailtitle = show?@"√":@"x";
         [self.tableView reloadData];
-    }else if ([cs.title isEqualToString:@"海度测试服务器datatest.hiido.com"]) {
+    } else if ([cs.title isEqualToString:@"海度测试服务器datatest.hiido.com"]) {
         
-            NSString * show =  [[NOZLaboratoryService sharedInstance] e].hiidoTestDomain;
+            NSString *show =  [[NOZLaboratoryService sharedInstance] e].hiidoTestDomain;
             show = show.length>0?@"":@"http://datatest.hiido.com/c.gif";
             [[NOZLaboratoryService sharedInstance] e].hiidoTestDomain =  show;
             cs.detailtitle = show.length>0?@"√":@"x";
             [self.tableView reloadData];
    }
-    else if([cs.title isEqualToString:@"通用UI库"]){
+    else if ([cs.title isEqualToString:@"通用UI库"]) {
         Class CLS = NSClassFromString(cs.value);
         if (CLS) {// NOZLabCommonUIController
-            UIViewController * ctr = [CLS new];
+            UIViewController *ctr = [CLS new];
             [self.navigationController pushViewController:ctr animated:YES];
         }
     } else if ([cs.title isEqualToString:@"清空缓存"]) {
@@ -124,7 +129,7 @@
                                                  reason:@"The crash is trigger by developer manual."
                                                userInfo:nil];
         @throw e;
-    }else if ([cs.cellclass isEqualToString:@"OnOffTableViewCell"]){
+    } else if ([cs.cellclass isEqualToString:@"OnOffTableViewCell"]) {
         
         BOOL show =[[NSUserDefaults standardUserDefaults] boolForKey:cs.title];
         show = !show;
@@ -133,7 +138,7 @@
         [self.tableView reloadData];
     }
     
-    if([cs.cellclass isEqualToString:@"ShowValueTableViewCell"]){
+    if ([cs.cellclass isEqualToString:@"ShowValueTableViewCell"]) {
         [UIPasteboard generalPasteboard].string = cs.value;
         NSLog(@"[LAB] 已复制 %@: %@",cs.title,cs.value);
     }
@@ -141,7 +146,8 @@
     
 }
 
--(void)backtoparent:(id)sender{
+- (void)backtoparent:(id)sender
+{
     [super backtoparent:sender];
    
 }
@@ -149,17 +155,19 @@
 
 #pragma mark - life cycle
 
-- (void)didReceiveMemoryWarning {
+- (void)didReceiveMemoryWarning
+{
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
 #pragma mark Route
 
--(void)openweburl:(HBCellStruct *)cs{
+- (void)openweburl:(HBCellStruct *)cs
+{
     
     if (@available(iOS 8.0, *)) {
-        UIAlertController * alertController = [UIAlertController alertControllerWithTitle: @"提示"
+        UIAlertController *alertController = [UIAlertController alertControllerWithTitle: @"提示"
                                                                                   message: @"请输入网址，然后点确认"
                                                                            preferredStyle:UIAlertControllerStyleAlert];
         [alertController addTextFieldWithConfigurationHandler:^(UITextField *textField) {
@@ -174,8 +182,8 @@
         }]];
         
         [alertController addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
-            NSArray * textfields = alertController.textFields;
-            UITextField * namefield = textfields[0];
+            NSArray *textfields = alertController.textFields;
+            UITextField *namefield = textfields[0];
             //        UITextField * passwordfiled = textfields[1];
             NSLog(@"input url: %@",namefield.text);
             cs.value = namefield.text;
@@ -188,11 +196,12 @@
 }
 
 
-- (void)dispatchNotifyObject:(HBCellStruct *)cs{
+- (void)dispatchNotifyObject:(HBCellStruct *)cs
+{
     
-    NOZLabCallBackObject * notify = [NOZLabCallBackObject notifyWithType:cs.title from:self cs:cs param:nil];
+    NOZLabCallBackObject *notify = [NOZLabCallBackObject notifyWithType:cs.title from:self cs:cs param:nil];
     [[NSNotificationCenter defaultCenter] postNotificationName:klab_notify_name object:notify];
-    if(NOZLaboratoryService.sharedInstance.delegate){
+    if (NOZLaboratoryService.sharedInstance.delegate) {
         [NOZLaboratoryService.sharedInstance.delegate lab_configSelectedWithNotifyObject:notify];
     }
 }
@@ -201,32 +210,34 @@
 
 #pragma mark - push
 
--(void)gotoPushViewController:(HBCellStruct *)cs{
+- (void)gotoPushViewController:(HBCellStruct *)cs
+{
     
     if (cs.value) {
         Class cls = NSClassFromString(cs.value);
         if (cls) {
-            UIViewController * ctr = [[cls alloc] init];
+            UIViewController *ctr = [[cls alloc] init];
             [self.navigationController pushViewController:ctr animated:YES];
         }
     }
-    else{
+    else {
         NSLog(@"请填写value");
     }
 }
 #pragma mark - present
 
--(void)gotoPresentNavViewController:(HBCellStruct *)cs{
+- (void)gotoPresentNavViewController:(HBCellStruct *)cs
+{
     
     if (cs.value) {
         Class cls = NSClassFromString(cs.value);
         if (cls) {
-            UIViewController * ctr = [[cls alloc] init];
-            UINavigationController * nav = [[UINavigationController alloc] initWithRootViewController:ctr];
+            UIViewController *ctr = [[cls alloc] init];
+            UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:ctr];
             [self presentViewController:nav animated:YES completion:nil];
         }
     }
-    else{
+    else {
         NSLog(@"请填写value");
     }
 }

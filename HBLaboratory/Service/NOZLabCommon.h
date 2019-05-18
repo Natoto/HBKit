@@ -11,7 +11,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface NOZLabCommon : NSObject
 
-+(void)exitApp;
++ (void)exitApp;
 
 + (void)clearCacheData;
 

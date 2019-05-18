@@ -8,7 +8,7 @@
 #import "OnOffTableViewCell.h"
 
 @interface OnOffTableViewCell()
-@property (nonatomic, strong) UISwitch * onOffswitch;
+@property (nonatomic, strong) UISwitch *onOffswitch;
 
 @end
 
@@ -22,30 +22,35 @@
     return self;
 }
 
-- (void)awakeFromNib {
+- (void)awakeFromNib
+{
     [super awakeFromNib];
     // Initialization code
 }
--(void)layoutSubviews{
+- (void)layoutSubviews
+{
     [super layoutSubviews];
     self.onOffswitch.center = CGPointMake(self.contentView.frame.size.width - 30, self.contentView.frame.size.height/2.0);
 }
 
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
+- (void)setSelected:(BOOL)selected animated:(BOOL)animated
+{
     [super setSelected:selected animated:animated];
 
     // Configure the view for the selected state
 }
 
--(void)setcelldetailtitle:(NSString *)detailtitle{
+- (void)setcelldetailtitle:(NSString *)detailtitle
+{
     
     if ([detailtitle isEqualToString:@"√"]) {
         self.onOffswitch.on = YES;
-    }else{
+    } else {
         self.onOffswitch.on = NO;
     }
 }
-- (UISwitch *)onOffswitch {
+- (UISwitch *)onOffswitch
+{
     if (!_onOffswitch) {
         _onOffswitch = [[UISwitch alloc] init];
         _onOffswitch.userInteractionEnabled = NO;
