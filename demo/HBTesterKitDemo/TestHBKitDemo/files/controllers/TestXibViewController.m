@@ -7,7 +7,12 @@
 //
 
 //#import "HBCellStruct.h"
-#import <HBTesterKit/HBTesterKit.h>//"HBKit.h"
+
+#if __has_include( <HBTesterKit/HBTesterKit.h>)
+#import <HBTesterKit/HBTesterKit.h>
+#elif  __has_include( <HBKit/HBKit.h>)
+#import <HBKit/HBKit.h>
+#endif//"HBKit.h"
 #import "TestXibViewController.h"
 
 #import "CF_SupporterTableViewCell.h"

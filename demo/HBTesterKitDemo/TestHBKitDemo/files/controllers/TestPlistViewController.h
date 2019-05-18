@@ -6,8 +6,11 @@
 //  Copyright © 2017年 YY.COM. All rights reserved.
 //
 
+#if __has_include( <HBTesterKit/HBTesterKit.h>)
 #import <HBTesterKit/HBTesterKit.h>
-
+#elif  __has_include( <HBKit/HBKit.h>)
+#import <HBKit/HBKit.h>
+#endif
 @interface TestPlistViewController : HBBaseTableViewController
 
 @end

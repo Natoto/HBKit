@@ -1,17 +1,51 @@
 ## HBKit 
 
-* The easiest way to create tableview 
-* 用法最简单的创建tableview新框架 
-
+*  create a list(tableview or collectionview) by plist or json file
+*  create a list by one line
 
 ## 用法
->* 添加主工程
-* pod 'HBKit'
-* pod 'HBKitRefresh'  #添加上下拉刷新
-* pod 'HBKitWatchDog' #添加watchdog 实时刷新 
-![HBKit 示例](https://github.com/Natoto/HBOKit/blob/master/sgdir.gif?raw=true)
+ 
+ ```
+ pod 'HBKit'
+```
 
-###从json中加载
+other pods based on HBKit
+
+```
+ pod 'HBKitRefresh'  #for pull refresh or load more 
+
+ pod 'HBKitWatchDog' #add watchdog to real refresh list
+
+ pod 'HBLaboratory' # laboratory 
+ 
+```
+
+[HBLaboratory](HBLaboratory/README.MD)
+
+[HBKitWatchDog](tools/HBKitWatchDog/README.MD)
+
+[HBKitRefresh](tools/HBKitRefresh/README.MD)
+
+
+
+![HBKit use case](HBKit/snapshoot/sgdir.gif)
+
+
+
+### load from plist
+
+```objc
+ 
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    // Do any additional setup after loading the view.
+    [self loadplistConfig:@"TestPlist" watch_directory:@"resource"];
+}
+
+```
+
+### laod from json file
 
 ```objc
  
@@ -22,88 +56,90 @@
 ```
 
 
-###代码加载
-```javascript
+### 代码加载
 
-@interface ViewController ()
+
+
+![HBKit 示例](HBKit/snapshoot/list.png)
+
+
+``` oc
+
+
+@interface RootViewController ()
 //step 1
-AS_CELL_STRUCT_COMMON(sys)
-AS_CELL_STRUCT_COMMON(xib)
-AS_CELL_STRUCT_COMMON(autoheight)
-AS_CELL_STRUCT_COMMON(refresh)
+ @property(nonatomic, retain) CELL_STRUCT *cell_struct_normal;
+ @property(nonatomic, retain) CELL_STRUCT *cell_struct_sys;
+ @property(nonatomic, retain) CELL_STRUCT *cell_struct_xib;
+ @property(nonatomic, retain) CELL_STRUCT *cell_struct_plist;
+ @property(nonatomic, retain) CELL_STRUCT *cell_struct_autoheight;
+ @property(nonatomic, retain) CELL_STRUCT *cell_struct_refresh;
+ @property(nonatomic, retain) CELL_STRUCT *cell_struct_normalcollection;
+ @property(nonatomic, retain) CELL_STRUCT *cell_struct_collection;
+ @property(nonatomic, retain) CELL_STRUCT *cell_struct_kvo;
+ @property(nonatomic, retain) CELL_STRUCT *cell_struct_drawcell;
+ @property(nonatomic, retain) CELL_STRUCT *cell_struct_copy;
+ @property(nonatomic, retain) CELL_STRUCT *cell_struct_testjson;
+
+@property(nonatomic, retain) CELL_STRUCT *cell_struct_testanode;
 
 @end
 
-@implementation ViewController
-//step 2
-GET_CELL_STRUCT_WITH(sys, HBTABLE-系统控件)
-GET_CELL_STRUCT_WITH(xib, HBTABLE-加载XIB)
-GET_CELL_STRUCT_WITH(autoheight, HBTABLE-自动高度)
-GET_CELL_STRUCT_WITH(refresh, HBTABLE-上下拉)
+
+@implementation RootViewController
+DEF_CELL_STRUCT_WITH(testanode, @"测试asyndisplaynode");
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    self.title = @"HBKit-快速开发引擎";
+    [self loadCellstructConfig];
+}
+
+- (void)loadCellstructConfig
+{
+    
+    NSInteger rowIndex = 0;
+    NSInteger sectionIndex = 0;
+    
+    self.cell_struct_normal.sectionheight = 30;
+    self.cell_struct_normal.sectiontitle = @"常规列表和瀑布流创建方法";
+    [self.dataDictionary setObject:self.cell_struct_normal forKey:KEY_INDEXPATH(sectionIndex, rowIndex++)];
+    [self.dataDictionary setObject:self.cell_struct_normalcollection forKey:KEY_INDEXPATH(sectionIndex, rowIndex++)];
+    
+    sectionIndex++,rowIndex = 0;
+    self.cell_struct_sys.sectionheight = 20;
+    self.cell_struct_sys.sectiontitle = @"HBKit列表和瀑布流创建方法";
+    
+    [self.dataDictionary setObject:self.cell_struct_sys forKey:KEY_INDEXPATH(sectionIndex, rowIndex++)];
+    [self.dataDictionary setObject:self.cell_struct_plist forKey:KEY_INDEXPATH(sectionIndex, rowIndex++)];
+    [self.dataDictionary setObject:self.cell_struct_testjson forKey:KEY_INDEXPATH(sectionIndex, rowIndex++)];
+    [self.dataDictionary setObject:self.cell_struct_xib forKey:KEY_INDEXPATH(sectionIndex, rowIndex++)]; 
+    [self.tableView reloadData];
+}
 
 /**
 *  响应的CELselect的方法
 */
 //step 3
-GET_CELL_SELECT_ACTION(cellstruct)
+
+- (IBAction)selectAction:(CELL_STRUCT *)cellstruct
 {
-	if(cellstruct == self.cell_struct_sys)
-	{
-		SystyleviewController * ctr = [[SystyleviewController alloc] init];
-		[self.navigationController pushViewController:ctr animated:YES];
-	}
-	else if(cellstruct == self.cell_struct_xib)
-	{
-		TESTXIBViewController * ctr = [[TESTXIBViewController alloc] init];
-		[self.navigationController pushViewController:ctr animated:YES];
-	}
+    if (cellstruct == self.cell_struct_sys) {
+        
+        TestSystyleviewController *ctr = [[TestSystyleviewController alloc] init];
+        [self.navigationController pushViewController:ctr animated:YES];
+    }
+    else if (cellstruct == self.cell_struct_xib) {
+        TestXibViewController *ctr = [[TestXibViewController alloc] init];
+        [self.navigationController pushViewController:ctr animated:YES];
+    }
 }
+
 //step4 OK
-```
-##系统风格
-```javascript
-- (void)viewDidLoad {
 
-	[super viewDidLoad];
-	self.title = @"系统TABLE STYLE";
-	for (int index = 0; index < 10; index ++) {
+``` 
 
-	NSString * title = [NSString stringWithFormat:@"cell %d",index];
-	NSString * detail = [NSString stringWithFormat:@"detail cell %d",index];
 
-	CELL_STRUCT * cellstruct = [CELL_STRUCT_Common cell_x_x_struct:title detailvalue:detail target:self selectAction:@selector(cellselect:)];
-	cellstruct.sectionheight = 40;
-	cellstruct.sectioncolor = value_cellstruct_blue;
-	cellstruct.sectiontitle = @"SECTION 0";
-
-	cellstruct.cellheight = 60;
-	cellstruct.picture = @"profile";
-	cellstruct.CellStyleValue = index%3;
-	cellstruct.accessory = index%2;
-	cellstruct.selectionStyle = index%2;
-	[cellstruct.dictionary setObject:HBRandomColor forKey:key_cellstruct_background];
-	[self.dataDictionary setObject:cellstruct forKey:KEY_INDEXPATH(0, index)];
-}
-
-	for (int index = 0; index < 10; index ++) {
-
-		NSString * title = [NSString stringWithFormat:@"cell %d",index];
-		NSString * detail = [NSString stringWithFormat:@"detail cell %d",index];
-
-		CELL_STRUCT * cellstruct = [CELL_STRUCT_Common cell_x_x_struct:title detailvalue:detail target:self selectAction:@selector(cellselect:)];
-		cellstruct.cellheight = 60;
-		cellstruct.sectionheight = 30;
-		cellstruct.sectiontitle = @"SECTION 1";
-		cellstruct.picture = @"profile";
-		cellstruct.CellStyleValue = index%3;
-		cellstruct.accessory = index%2;
-		cellstruct.selectionStyle = index%2;
-		[cellstruct.dictionary setObject:HBRandomColor forKey:key_cellstruct_background];
-		[self.dataDictionary setObject:cellstruct forKey:KEY_INDEXPATH(1, index)];
-		} 
-		// Do any additional setup after loading the view.
-	}
-
-```
 
 

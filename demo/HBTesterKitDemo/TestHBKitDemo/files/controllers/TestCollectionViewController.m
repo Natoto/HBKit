@@ -21,11 +21,8 @@
 {
     [super viewDidLoad];
     
-//    [self.collectionView registerNib:[UINib nibWithNibName:@"TestSectionCollectionReusableView" bundle:nil] forSupplementaryViewOfKind:HBWaterFallSectionHeader withReuseIdentifier:@"TestSectionCollectionReusableView"];
-    
     COLLECTIONVIEW_REGISTER_XIB_FORSUPPLEMENTARYVIEW(self.collectionView, @"TestSectionCollectionReusableView");
-//    COLLECTIONVIEW_REGISTER_CLASS_FORSUPPLEMENTARYVIEW(self.collectionView, @"Test2CollectionReusableView")
-    
+ 
     [self.collectionView registerClass:[Test2CollectionReusableView class] forSupplementaryViewOfKind:@"Test2CollectionReusableView" withReuseIdentifier:@"Test2CollectionReusableView"];
     
     COLLECTIONVIEW_REGISTER_XIB_CELLCLASS(self.collectionView, @"TestCollectionViewCell");

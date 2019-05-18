@@ -1,16 +1,23 @@
 PODS:
-  - HBTesterKit (1.0.1)
+  - HBKit (1.0.5)
+  - HBKitWatchDog (1.0.2):
+    - HBKit
 
 DEPENDENCIES:
-  - HBTesterKit (from `../../HBTesterKit.podspec`)
+  - HBKitWatchDog (from `../../HBKitWatchDog.podspec`)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - HBKit
 
 EXTERNAL SOURCES:
-  HBTesterKit:
-    :path: "../../HBTesterKit.podspec"
+  HBKitWatchDog:
+    :path: "../../HBKitWatchDog.podspec"
 
 SPEC CHECKSUMS:
-  HBTesterKit: ecd577889b759fe5bc249153119b0d1160048251
+  HBKit: b4c6f48e3a01a07220852031e714bebdd76b0b8f
+  HBKitWatchDog: efda3cef31d3fdf1a2528c8081a68e9369680fa8
 
-PODFILE CHECKSUM: 6229e2bd3e5b30618128e9fb53847d389c160a99
+PODFILE CHECKSUM: e460230e56fd5dc3c324c8f758fede76f9ee3fb5
 
 COCOAPODS: 1.6.1
