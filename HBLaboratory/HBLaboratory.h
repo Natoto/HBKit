@@ -27,8 +27,7 @@
 #elif  __has_include( <HBKit/HBKitWatchDog.h>)
 #import <HBKit/HBKitWatchDog.h>
 #endif
-
-#import "NOZLaboratoryController.h"
+ 
 #import "NOZLaboratoryService.h"
 #import "UIView+NOZViewController.h"
 #import "NozUserConfigViewController.h"
