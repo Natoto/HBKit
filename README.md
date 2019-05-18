@@ -3,7 +3,9 @@
 *  create a list(tableview or collectionview) by plist or json file
 *  create a list by one line
 
-## 用法
+## [中文文档](README-ZH.MD)
+
+## useage
  
  ```
  pod 'HBKit'
@@ -56,7 +58,7 @@ other pods based on HBKit
 ```
 
 
-### 代码加载
+### load by code
 
 
 
