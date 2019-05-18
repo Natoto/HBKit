@@ -74,9 +74,7 @@ typedef NS_ENUM(NSInteger, HBBaseUIButtonLayoutStyle) {
 
 /**
  *	功能:设置UIButton的布局，图片和文字按照指定方向显示
- *
- *	@param aLayoutStyle:参见HBBaseUIButtonLayoutStyle
- *	@param aSpacing:图片和文字之间的间隔
+ * 
  */
 - (void)hbbase_setLayout:(HBBaseUIButtonLayoutStyle )aLayoutStyle
           spacing:(CGFloat)aSpacing;

@@ -2,7 +2,7 @@
 
 Pod::Spec.new do |s|
   s.name             = "HBLaboratory"
-  s.version          = "1.0.0"
+  s.version          = "1.0.5"
   s.summary          = "实验室框架"
   s.homepage         = "https://github.com/Natoto/HBKit.git"
   s.license          = 'MIT'
