@@ -16,7 +16,7 @@ other pods based on HBKit
 ```
  pod 'HBKitRefresh'  #for pull refresh or load more 
 
- pod 'HBKitWatchDog' #add watchdog to real refresh list
+ pod 'HBKitWatchDog' #add watchdog to hot reload list
 
  pod 'HBLaboratory' # laboratory 
  
