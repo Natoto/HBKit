@@ -2,8 +2,7 @@ platform :ios,'7.0'
  
 
 target 'TestHBKitDemo' do  
-# pod 'HBTesterKit',:path=>"../../HBTesterKit.podspec"
-
+ pod 'HBKit',:path=>"../../HBKit.podspec"
  pod 'HBKitWatchDog',:path=>"../../HBKitWatchDog.podspec" #添加watchdog 实时刷新
 end
 #注释

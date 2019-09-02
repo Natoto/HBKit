@@ -7,7 +7,7 @@
 
 #import <Foundation/Foundation.h>
 
-#warning 使用之前注册collection cell
+//FIXME: 使用之前注册collection cell
 /*
  注册collection NIB CELL
  [self.collectionView registerNib:[UINib nibWithNibName:@"BaseXIBCollectionViewCell" bundle:nil] forCellWithReuseIdentifier:@"BaseXIBCollectionViewCell"];
@@ -44,7 +44,7 @@
  *
  *  @return columnCount
  */
-#warning  配置列数量 子类需要对其重载
+//FIXME:  配置列数量 子类需要对其重载
 /**
  *  配置最大列的值
  *

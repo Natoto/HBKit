@@ -1,6 +1,7 @@
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
 HEADER_SEARCH_PATHS = $(inherited) "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/HBKit" "${PODS_ROOT}/Headers/Public/HBKitWatchDog"
 LIBRARY_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/HBKit" "${PODS_CONFIGURATION_BUILD_DIR}/HBKitWatchDog"
+OTHER_CFLAGS = $(inherited) -isystem "${PODS_ROOT}/Headers/Public" -isystem "${PODS_ROOT}/Headers/Public/HBKit" -isystem "${PODS_ROOT}/Headers/Public/HBKitWatchDog"
 OTHER_LDFLAGS = $(inherited) -ObjC -l"HBKit" -l"HBKitWatchDog"
 PODS_BUILD_DIR = ${BUILD_DIR}
 PODS_CONFIGURATION_BUILD_DIR = ${PODS_BUILD_DIR}/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)

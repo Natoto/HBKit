@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
 s.name         = "HBKit"
-s.version      = "1.0.5"
+s.version      = "1.0.6"
 s.summary      = "create tableview fast."
 s.homepage     = "https://github.com/Natoto/HBKit.git"
 s.license      = "MIT"
