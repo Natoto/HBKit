@@ -6,7 +6,7 @@
 //  Copyright (c) 2014年 YY.COM All rights reserved.
 //
 #import "cell_struct_common.h"
-#import "CELL_STRUCT.h"
+#import "cell_struct.h"
 #import "HBBaseTableViewController.h"
 #import <objc/runtime.h>
 

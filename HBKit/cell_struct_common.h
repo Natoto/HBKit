@@ -7,16 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "CELL_STRUCT.h"
+#import "cell_struct.h"
 
 @class HBCellStruct;
 @class cell_struct;
  
-#undef AS_CELL_STRUCT_COMMON
-#define AS_CELL_STRUCT_COMMON(OBJ) @property(nonatomic,retain) cell_struct * cell_struct_##OBJ;
+#undef AS_cell_struct_COMMON
+#define AS_cell_struct_COMMON(OBJ) @property(nonatomic,retain) cell_struct * cell_struct_##OBJ;
 
-#undef GET_CELL_STRUCT_WITH
-#define GET_CELL_STRUCT_WITH(OBJ,TITLE) -(cell_struct *)cell_struct_##OBJ\
+#undef GET_cell_struct_WITH
+#define GET_cell_struct_WITH(OBJ,TITLE) -(cell_struct *)cell_struct_##OBJ\
 {\
 if (!_cell_struct_##OBJ) {\
 _cell_struct_##OBJ = [cell_struct cell_x_x_struct:@#TITLE detailvalue:nil target:self selectAction:@selector(selectAction:)];\

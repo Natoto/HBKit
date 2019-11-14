@@ -7,7 +7,7 @@
 //
 
 #import "HBKitDataModel.h"
-#import "CELL_STRUCT.h"
+#import "cell_struct.h"
 #import "cell_struct_common.h"
 
 //@implementation NSObject(hbkit)
@@ -127,14 +127,14 @@
  *  @param jsonfilepath  json文件存放的路径名
  */
 
-- (void)loadjsonfileConfig:(NSString *)jsonfilename configViewblock:(void (^)(CELL_STRUCT_ARRAY *vclist))configViewblock
+- (void)loadjsonfileConfig:(NSString *)jsonfilename configViewblock:(void (^)(cell_struct_ARRAY *vclist))configViewblock
 {
     [self loadjsonfileConfig:jsonfilename filepath:nil configViewblock:configViewblock];
 }
 
 - (void)loadjsonfileConfig:(NSString *)jsonfilename
                   filepath:(NSString *)filepath
-           configViewblock:(void (^)(CELL_STRUCT_ARRAY *vclist))configViewblock
+           configViewblock:(void (^)(cell_struct_ARRAY *vclist))configViewblock
 {
     if (!filepath) {
         filepath = [[NSBundle mainBundle] pathForResource:jsonfilename ofType:@"json"];
@@ -145,7 +145,7 @@
         NSLog(@"ERROR while loading from file: %@", error);
         // …
     } else {
-        CELL_STRUCT_ARRAY *vclist = [[CELL_STRUCT_ARRAY alloc] hb_initWithJSONData:[jsonstring dataUsingEncoding:NSUTF8StringEncoding]];
+        cell_struct_ARRAY *vclist = [[cell_struct_ARRAY alloc] hb_initWithJSONData:[jsonstring dataUsingEncoding:NSUTF8StringEncoding]];
         NSString *title = vclist.title;
         if (configViewblock) {
             configViewblock(vclist);

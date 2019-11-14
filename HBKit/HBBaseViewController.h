@@ -7,7 +7,7 @@
 //
  
 #import <UIKit/UIKit.h>
-#import "CELL_STRUCT.h"
+#import "cell_struct.h"
 #import "cell_struct_common.h"
 #import "HBKitDataModel.h"
 

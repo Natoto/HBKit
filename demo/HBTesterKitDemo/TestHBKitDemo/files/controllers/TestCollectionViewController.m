@@ -5,12 +5,12 @@
 //  Created by zeno on 15/12/14.
 //  Copyright © 2015年 YY.COM All rights reserved.
 //
-#import "HBCellStruct.h"
+#import "cell_struct.h"
 #import "TestCollectionViewController.h"
 #import "TestCollectionViewCell.h"
 #import "TestSectionCollectionReusableView.h"
 #import "Test2CollectionReusableView.h"
-#import "HBCellStruct_Common.h"
+#import "cell_struct_common.h"
 @interface TestCollectionViewController ()<HBCollectionViewControllerConfig,HBWaterFLayoutDelegate>
 
 @end
@@ -27,9 +27,9 @@
     
     COLLECTIONVIEW_REGISTER_XIB_CELLCLASS(self.collectionView, @"TestCollectionViewCell");
     for (int index = 0; index < 15; index ++) {
-        CELL_STRUCT *cellstruct = [CELL_STRUCT cell_x_x_struct:@"" detailvalue:@"" target:self selectAction:DEFAULT_CELL_SELECT_ACTION];
+        cell_struct *cellstruct = [cell_struct cell_x_x_struct:@"" detailvalue:@"" target:self selectAction:DEFAULT_CELL_SELECT_ACTION];
         cellstruct.cellclass = @"TestCollectionViewCell";
-        cellstruct.isXib = YES;
+//        cellstruct.isXib = YES;
         cellstruct.cellheight = 10*(index%5) + 50;
         cellstruct.sectionheight = 50;
         [cellstruct.dictionary setObject:[UIColor colorWithRed:arc4random_uniform(255)/255.0 green:arc4random_uniform(255)/255.0 blue:arc4random_uniform(255)/255.0 alpha:1] forKey:key_cellstruct_background];
@@ -37,9 +37,9 @@
     }
    
     for (int index = 0; index < 5; index ++) {
-        CELL_STRUCT *cellstruct = [CELL_STRUCT cell_x_x_struct:@"" detailvalue:@"" target:self selectAction:DEFAULT_CELL_SELECT_ACTION];
+        cell_struct *cellstruct = [cell_struct cell_x_x_struct:@"" detailvalue:@"" target:self selectAction:DEFAULT_CELL_SELECT_ACTION];
         cellstruct.cellclass = @"TestCollectionViewCell";
-        cellstruct.isXib = YES;
+//        cellstruct.isXib = YES;
         cellstruct.cellheight = 10*(index%5) + 50;
         cellstruct.sectionheight = 50;
         [cellstruct.dictionary setObject:[UIColor colorWithRed:arc4random_uniform(255)/255.0 green:arc4random_uniform(255)/255.0 blue:arc4random_uniform(255)/255.0 alpha:1] forKey:key_cellstruct_background];
@@ -47,9 +47,9 @@
     }
     
     for (int index = 0; index < 20; index ++) {
-        CELL_STRUCT *cellstruct = [CELL_STRUCT cell_x_x_struct:@"" detailvalue:@"" target:self selectAction:DEFAULT_CELL_SELECT_ACTION];
+        cell_struct *cellstruct = [cell_struct cell_x_x_struct:@"" detailvalue:@"" target:self selectAction:DEFAULT_CELL_SELECT_ACTION];
         cellstruct.cellclass = @"TestCollectionViewCell";
-        cellstruct.isXib =  YES;
+//        cellstruct.isXib =  YES;
         cellstruct.cellheight = 200;
         cellstruct.sectionheight = 50;
         [cellstruct.dictionary setObject:[UIColor colorWithRed:arc4random_uniform(255)/255.0 green:arc4random_uniform(255)/255.0 blue:arc4random_uniform(255)/255.0 alpha:1] forKey:key_cellstruct_background];

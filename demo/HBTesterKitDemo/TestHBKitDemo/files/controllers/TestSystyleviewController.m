@@ -26,14 +26,14 @@
     for (int index = 0; index < 10; index ++) {
         NSString *title = [NSString stringWithFormat:@"cell %d",index];
         NSString *detail = [NSString stringWithFormat:@"detail cell %d",index];
-        CELL_STRUCT *cellstruct = [self createcellstruct:title detail:detail index:index];
+        cell_struct *cellstruct = [self createcellstruct:title detail:detail index:index];
         [self.dataDictionary setObject:cellstruct forKey:KEY_INDEXPATH(0, index)];
     }
     
     for (int index = 0; index < 10; index ++) {
         NSString *title = [NSString stringWithFormat:@"cell %d",index];
         NSString *detail = [NSString stringWithFormat:@"detail cell %d",index];
-        CELL_STRUCT *cellstruct = [self createcellstruct:title detail:detail index:index];
+        cell_struct *cellstruct = [self createcellstruct:title detail:detail index:index];
         cellstruct.sectiontitle = [NSString stringWithFormat:@"SECTION 1"];
         [self.dataDictionary setObject:cellstruct forKey:KEY_INDEXPATH(1, index)];
     }
@@ -44,9 +44,9 @@
     // Do any additional setup after loading the view.
 }
 
-- (CELL_STRUCT *)createcellstruct:(NSString *)title detail:(NSString *)detail index:(int)index
+- (cell_struct *)createcellstruct:(NSString *)title detail:(NSString *)detail index:(int)index
 {
-    CELL_STRUCT *cellstruct = [CELL_STRUCT_Common cell_x_x_struct:title detailvalue:detail target:self selectAction:@selector(cellselect:)];
+    cell_struct *cellstruct = [cell_struct_common cell_x_x_struct:title detailvalue:detail target:self selectAction:@selector(cellselect:)];
     cellstruct.sectionheight = 40;
     cellstruct.sectioncolor = value_cellstruct_blue;
     cellstruct.sectiontitle = @"SECTION 0";
@@ -66,7 +66,7 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)cellselect:(CELL_STRUCT *)cellstruct
+- (void)cellselect:(cell_struct *)cellstruct
 {
    
 //    TestSystyleviewController * ctr = [[TestSystyleviewController alloc] init];

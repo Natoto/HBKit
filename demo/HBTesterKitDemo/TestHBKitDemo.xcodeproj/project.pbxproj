@@ -286,7 +286,7 @@
 				TargetAttributes = {
 					F8E911EC1DF0229D005D7766 = {
 						CreatedOnToolsVersion = 8.1;
-						DevelopmentTeam = 32M62TMXC7;
+						DevelopmentTeam = 622V7F9264;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -296,6 +296,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -514,7 +515,7 @@
 			baseConfigurationReference = 0CC19822A1EEC46C08557883 /* Pods-TestHBKitDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 32M62TMXC7;
+				DEVELOPMENT_TEAM = 622V7F9264;
 				INFOPLIST_FILE = TestHBKitDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -528,7 +529,7 @@
 			baseConfigurationReference = 6BAC933486A5C9F7E1D23884 /* Pods-TestHBKitDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 32M62TMXC7;
+				DEVELOPMENT_TEAM = 622V7F9264;
 				INFOPLIST_FILE = TestHBKitDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

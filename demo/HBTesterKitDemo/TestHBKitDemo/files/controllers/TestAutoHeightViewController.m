@@ -33,24 +33,24 @@
 - (void)cellstructDataChange
 {
     for (int index = 0; index < 10; index++) {
-        CELL_STRUCT *cellstruct = [self createcellstruct];
+        cell_struct *cellstruct = [self createcellstruct];
         [self.dataDictionary setObject:cellstruct forKey:KEY_INDEXPATH(0, index)];
     }
 }
 
-- (IBAction)cellselector:(CELL_STRUCT *)sender
+- (IBAction)cellselector:(cell_struct *)sender
 {
     
 }
-- (CELL_STRUCT *)createcellstruct
+- (cell_struct *)createcellstruct
 {
     int randnumber = arc4random_uniform(2);
     NSString *title = randnumber?[self teststring1]:[self teststring2];
-    CELL_STRUCT *cellstruct = [[CELL_STRUCT alloc] initWithtitle:title cellclass:@"CF_SupporterTableViewCell" placeholder:nil accessory:NO sel_selctor:@selector(cellselector:) delegate:self];
+    cell_struct *cellstruct = [[cell_struct alloc] initWithtitle:title cellclass:@"CF_SupporterTableViewCell" placeholder:nil accessory:NO sel_selctor:@selector(cellselector:) delegate:self];
     cellstruct.cellheight = [self.tableView hb_heightForCellWithIdentifier:@"CF_SupporterTableViewCell" configuration:^(HBBaseTableViewCell * cell) {
         [cell setcellTitle:title];
     }];//auto
-    cellstruct.isXib = YES;
+    cellstruct.xibvalue = @"CF_SupporterTableViewCell";
     return cellstruct;
 }
 

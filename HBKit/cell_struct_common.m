@@ -8,7 +8,7 @@
 
 #import "cell_struct_common.h"
 #import <HBKit/HBKit.h>
-#import "CELL_STRUCT.h"
+#import "cell_struct.h"
 #import "UIButton+HBKit.h" 
 @implementation cell_struct_common
 @end
@@ -159,49 +159,49 @@ DEF_CELL_XXXXXXX_XXXX
     }
     
     if ([key isEqualToString:value_cellstruct_blue]) {
-        return  CELL_STRUCT_COLOR(blue);
+        return  cell_struct_COLOR(blue);
     }
     if ([key isEqualToString:@"darkGray"]) {
-        return  CELL_STRUCT_COLOR(darkGray);
+        return  cell_struct_COLOR(darkGray);
     }
     if ([key isEqualToString:@"lightGray"]) {
-        return  CELL_STRUCT_COLOR(lightGray);
+        return  cell_struct_COLOR(lightGray);
     }
     else if ([key isEqualToString:value_cellstruct_white]) {
-        return CELL_STRUCT_COLOR(white);
+        return cell_struct_COLOR(white);
     }
     else if ([key isEqualToString:value_cellstruct_gray]) {
-        return CELL_STRUCT_COLOR(gray);
+        return cell_struct_COLOR(gray);
     }
     else if ([key isEqualToString:value_cellstruct_red]) {
-        return CELL_STRUCT_COLOR(red);
+        return cell_struct_COLOR(red);
     }
     else if ([key isEqualToString:value_cellstruct_green]) {
-        return CELL_STRUCT_COLOR(green);
+        return cell_struct_COLOR(green);
     }
     else if ([key isEqualToString:value_cellstruct_blue]) {
-        return CELL_STRUCT_COLOR(blue);
+        return cell_struct_COLOR(blue);
     }
     else if ([key isEqualToString:value_cellstruct_cyan]) {
-        return CELL_STRUCT_COLOR(cyan);
+        return cell_struct_COLOR(cyan);
     }
     else if ([key isEqualToString:value_cellstruct_yellow]) {
-        return CELL_STRUCT_COLOR(yellow);
+        return cell_struct_COLOR(yellow);
     }
     else if ([key isEqualToString:value_cellstruct_magenta]) {
-        return CELL_STRUCT_COLOR(magenta);
+        return cell_struct_COLOR(magenta);
     }
     else if ([key isEqualToString:value_cellstruct_orange]) {
-        return CELL_STRUCT_COLOR(orange);
+        return cell_struct_COLOR(orange);
     }
     else if ([key isEqualToString:value_cellstruct_purple]) {
-        return CELL_STRUCT_COLOR(purple);
+        return cell_struct_COLOR(purple);
     }
     else if ([key isEqualToString:value_cellstruct_brown]) {
-        return CELL_STRUCT_COLOR(brown);
+        return cell_struct_COLOR(brown);
     }
     else if ([key isEqualToString:value_cellstruct_clear]) {
-        return CELL_STRUCT_COLOR(clear);
+        return cell_struct_COLOR(clear);
     }
     
     return nil;

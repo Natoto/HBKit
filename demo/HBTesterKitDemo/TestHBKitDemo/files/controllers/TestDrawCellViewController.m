@@ -10,8 +10,8 @@
 #import "TestDrawCellViewController.h"
 #import "DrawCell.h"
 #import "HBTesterKit.h" 
-#import "HBCellStruct.h"
-#import "HBCellStruct_Common.h"
+#import "cell_struct.h"
+#import "cell_struct_common.h"
 
 @interface TestDrawCellViewController ()
 
@@ -24,7 +24,7 @@
     [super viewDidLoad];
     
     for (int index = 0; index < 100; index++) {
-        CELL_STRUCT *cellstruct = [CELL_STRUCT cell_x_x_struct:[NSString stringWithFormat:@"row %d",index] detailvalue:nil target:self selectAction:DEFAULT_CELL_SELECT_ACTION];
+        cell_struct *cellstruct = [cell_struct cell_x_x_struct:[NSString stringWithFormat:@"row %d",index] detailvalue:nil target:self selectAction:DEFAULT_CELL_SELECT_ACTION];
         cellstruct.cellclass = @"DrawCell";
         cellstruct.cellheight = 80.;
         [self.dataDictionary setObject:cellstruct forKey:KEY_INDEXPATH(0, index)];

@@ -100,7 +100,7 @@ static NSString * value_cellstruct_txtkeyboardtype_number          = @"number";
 static NSString * value_cellstruct_txtkeyboardtype_default         = @"default";
 
 
-#define CELL_STRUCT_COLOR(COLORKEY) [UIColor  COLORKEY##Color]
+#define cell_struct_COLOR(COLORKEY) [UIColor  COLORKEY##Color]
 
 #define DIC_OBJ_KEY(DIC,PARA) [DIC objectForKey:PARA]
 #define OBJ_NULL_DEFAULT(OBJ,VALUE) if (!OBJ) {\

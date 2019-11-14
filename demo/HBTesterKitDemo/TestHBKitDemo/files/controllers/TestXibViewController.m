@@ -6,7 +6,7 @@
 //  Copyright (c) 2015年 YY.COM All rights reserved.
 //
 
-//#import "HBCellStruct.h"
+//#import "cell_struct.h"
 
 #if __has_include( <HBTesterKit/HBTesterKit.h>)
 #import <HBTesterKit/HBTesterKit.h>
@@ -17,7 +17,7 @@
 
 #import "CF_SupporterTableViewCell.h"
 #import "CF_CrowdFoundHeaderCell.h"
-#import "HBCellStruct_Common.h"
+#import "cell_struct_common.h"
 
 
 @interface TestXibViewController ()
@@ -26,17 +26,17 @@
 @end
 
 @implementation TestXibViewController
-- (CELL_STRUCT *)cell_struct_sub1
+- (cell_struct *)cell_struct_sub1
 {\
     if (!_cell_struct_sub1) {\
-        _cell_struct_sub1 = [[CELL_STRUCT alloc] init];//[HBCellStruct cell_x_x_struct:@" " detailvalue:nil target:self selectAction:@selector(selectAction:)];
+        _cell_struct_sub1 = [[cell_struct alloc] init];//[HBCellStruct cell_x_x_struct:@" " detailvalue:nil target:self selectAction:@selector(selectAction:)];
     }\
     return _cell_struct_sub1;\
 }
-- (CELL_STRUCT *)cell_struct_sub2\
+- (cell_struct *)cell_struct_sub2\
 {\
     if (!_cell_struct_sub2) {\
-        _cell_struct_sub2 = [CELL_STRUCT cell_x_x_struct:@" " detailvalue:nil target:self selectAction:@selector(selectAction:)];\
+        _cell_struct_sub2 = [cell_struct cell_x_x_struct:@" " detailvalue:nil target:self selectAction:@selector(selectAction:)];\
     }\
     return _cell_struct_sub2;\
 }
@@ -65,12 +65,13 @@
     self.cell_struct_sub1.cellclass = @"CF_SupporterTableViewCell";
     self.cell_struct_sub1.cellheight = [self.tableView hb_heightForCellWithIdentifier:@"CF_SupporterTableViewCell" configuration:^(id cell) {
     }];//auto
-    self.cell_struct_sub1.isXib = YES;//must need
+    self.cell_struct_sub1.xibvalue = @"CF_SupporterTableViewCell";
+//    self.cell_struct_sub1.isXib = YES;//must need
     
     
     self.cell_struct_sub2.cellclass = @"CF_CrowdFoundHeaderCell";
     self.cell_struct_sub2.cellheight = [CF_CrowdFoundHeaderCell heightOfCell];
-    self.cell_struct_sub2.isXib = YES;//must need
+    self.cell_struct_sub2.xibvalue = @"CF_CrowdFoundHeaderCell";//must need
     self.cell_struct_sub2.accessory = NO;
     self.cell_struct_sub2.selectionStyle = NO;
     

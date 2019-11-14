@@ -101,7 +101,7 @@
 
 - (void)loadjsonfileConfig:(NSString *)jsonfilename filepath:(NSString *)filepath
 {
-    [self.datamodel loadjsonfileConfig:jsonfilename filepath:filepath configViewblock:^(CELL_STRUCT_ARRAY *vclist) {
+    [self.datamodel loadjsonfileConfig:jsonfilename filepath:filepath configViewblock:^(cell_struct_ARRAY *vclist) {
         NSString *title = vclist.title;
         if (title && [[title class] isSubclassOfClass:[NSString class]]) {
             self.title = title;

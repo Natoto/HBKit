@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "CELL_STRUCT.h"
+#import "cell_struct.h"
 #import "HBBaseTableViewController.h"
 
 @class HBBaseTableViewController;

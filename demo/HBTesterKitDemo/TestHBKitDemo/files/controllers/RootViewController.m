@@ -17,31 +17,31 @@
 #import "TestKVOViewController.h"
 #import "TestDrawCellViewController.h"
 #import "TestPlistViewController.h"
-#import "HBCellStruct_Common.h"
+#import "cell_struct_common.h"
 //#import "TestJsonViewController.h"
 //#import "TestAsynDisplayController.h"
 
 #import "AppDelegate.h"
 @interface RootViewController ()
 //step 1
- @property(nonatomic, retain) CELL_STRUCT *cell_struct_normal;
- @property(nonatomic, retain) CELL_STRUCT *cell_struct_sys;
- @property(nonatomic, retain) CELL_STRUCT *cell_struct_xib;
- @property(nonatomic, retain) CELL_STRUCT *cell_struct_plist;
- @property(nonatomic, retain) CELL_STRUCT *cell_struct_autoheight;
- @property(nonatomic, retain) CELL_STRUCT *cell_struct_refresh;
- @property(nonatomic, retain) CELL_STRUCT *cell_struct_normalcollection;
- @property(nonatomic, retain) CELL_STRUCT *cell_struct_collection;
- @property(nonatomic, retain) CELL_STRUCT *cell_struct_kvo;
- @property(nonatomic, retain) CELL_STRUCT *cell_struct_drawcell;
- @property(nonatomic, retain) CELL_STRUCT *cell_struct_copy;
- @property(nonatomic, retain) CELL_STRUCT *cell_struct_testjson;
+ @property(nonatomic, retain) cell_struct *cell_struct_normal;
+ @property(nonatomic, retain) cell_struct *cell_struct_sys;
+ @property(nonatomic, retain) cell_struct *cell_struct_xib;
+ @property(nonatomic, retain) cell_struct *cell_struct_plist;
+ @property(nonatomic, retain) cell_struct *cell_struct_autoheight;
+ @property(nonatomic, retain) cell_struct *cell_struct_refresh;
+ @property(nonatomic, retain) cell_struct *cell_struct_normalcollection;
+ @property(nonatomic, retain) cell_struct *cell_struct_collection;
+ @property(nonatomic, retain) cell_struct *cell_struct_kvo;
+ @property(nonatomic, retain) cell_struct *cell_struct_drawcell;
+ @property(nonatomic, retain) cell_struct *cell_struct_copy;
+ @property(nonatomic, retain) cell_struct *cell_struct_testjson;
 
-@property(nonatomic, retain) CELL_STRUCT *cell_struct_testanode;
+@property(nonatomic, retain) cell_struct *cell_struct_testanode;
 
 @end
 @implementation RootViewController
-DEF_CELL_STRUCT_WITH(testanode, @"测试asyndisplaynode");
+GET_cell_struct_WITH(testanode, @"测试asyndisplaynode");
 
 - (void)viewDidLoad
 {
@@ -95,7 +95,7 @@ DEF_CELL_STRUCT_WITH(testanode, @"测试asyndisplaynode");
  *  响应的CELselect的方法
  */
 //step 3
-- (IBAction)selectAction:(CELL_STRUCT *)cellstruct
+- (IBAction)selectAction:(cell_struct *)cellstruct
 {
     if (cellstruct == self.cell_struct_sys) {
         
@@ -139,7 +139,7 @@ DEF_CELL_STRUCT_WITH(testanode, @"测试asyndisplaynode");
         [self.navigationController   pushViewController:ctr animated:YES];
     }
     else if (cellstruct == self.cell_struct_copy) {
-        CELL_STRUCT *astruct = [self.cell_struct_copy copy];
+        cell_struct *astruct = [self.cell_struct_copy copy];
         NSLog(@"%@",astruct);
     } else if (cellstruct == self.cell_struct_testjson) {
 //        TestJsonViewController * ctr = [TestJsonViewController new];
@@ -158,87 +158,87 @@ DEF_CELL_STRUCT_WITH(testanode, @"测试asyndisplaynode");
 
 
 //step 2
-- (CELL_STRUCT *)cell_struct_normal\
+- (cell_struct *)cell_struct_normal\
 {\
     if (!_cell_struct_normal) {\
-        _cell_struct_normal = [CELL_STRUCT cell_x_x_struct:@"普通的列表写法" detailvalue:nil target:self selectAction:@selector(selectAction:)];\
+        _cell_struct_normal = [cell_struct cell_x_x_struct:@"普通的列表写法" detailvalue:nil target:self selectAction:@selector(selectAction:)];\
     }\
     return _cell_struct_normal;\
 }
-- (CELL_STRUCT *)cell_struct_sys\
+- (cell_struct *)cell_struct_sys\
 {\
     if (!_cell_struct_sys) {\
-        _cell_struct_sys = [CELL_STRUCT cell_x_x_struct:@"hbbasetableviewcell支持的属性" detailvalue:nil target:self selectAction:@selector(selectAction:)];\
+        _cell_struct_sys = [cell_struct cell_x_x_struct:@"hbbasetableviewcell支持的属性" detailvalue:nil target:self selectAction:@selector(selectAction:)];\
     }\
     return _cell_struct_sys;\
 }
-- (CELL_STRUCT *)cell_struct_xib\
+- (cell_struct *)cell_struct_xib\
 {\
     if (!_cell_struct_xib) {\
-        _cell_struct_xib = [CELL_STRUCT cell_x_x_struct:@"hbkit加载xib方式" detailvalue:nil target:self selectAction:@selector(selectAction:)];\
+        _cell_struct_xib = [cell_struct cell_x_x_struct:@"hbkit加载xib方式" detailvalue:nil target:self selectAction:@selector(selectAction:)];\
     }\
     return _cell_struct_xib;\
 }
-- (CELL_STRUCT *)cell_struct_plist\
+- (cell_struct *)cell_struct_plist\
 {\
     if (!_cell_struct_plist) {\
-        _cell_struct_plist = [CELL_STRUCT cell_x_x_struct:@"hbkit从plist文件加载" detailvalue:nil target:self selectAction:@selector(selectAction:)];\
+        _cell_struct_plist = [cell_struct cell_x_x_struct:@"hbkit从plist文件加载" detailvalue:nil target:self selectAction:@selector(selectAction:)];\
     }\
     return _cell_struct_plist;\
 }
-- (CELL_STRUCT *)cell_struct_autoheight\
+- (cell_struct *)cell_struct_autoheight\
 {\
     if (!_cell_struct_autoheight) {\
-        _cell_struct_autoheight = [CELL_STRUCT cell_x_x_struct:@"hbkit自动计算高度方式" detailvalue:nil target:self selectAction:@selector(selectAction:)];\
+        _cell_struct_autoheight = [cell_struct cell_x_x_struct:@"hbkit自动计算高度方式" detailvalue:nil target:self selectAction:@selector(selectAction:)];\
     }\
     return _cell_struct_autoheight;\
 }
-- (CELL_STRUCT *)cell_struct_refresh\
+- (cell_struct *)cell_struct_refresh\
 {\
     if (!_cell_struct_refresh) {\
-        _cell_struct_refresh = [CELL_STRUCT cell_x_x_struct:@"hbkitrefresh上下拉刷新" detailvalue:nil target:self selectAction:@selector(selectAction:)];\
+        _cell_struct_refresh = [cell_struct cell_x_x_struct:@"hbkitrefresh上下拉刷新" detailvalue:nil target:self selectAction:@selector(selectAction:)];\
     }\
     return _cell_struct_refresh;\
 }
-- (CELL_STRUCT *)cell_struct_normalcollection\
+- (cell_struct *)cell_struct_normalcollection\
 {\
     if (!_cell_struct_normalcollection) {\
-        _cell_struct_normalcollection = [CELL_STRUCT cell_x_x_struct:@"uicollectionview" detailvalue:nil target:self selectAction:@selector(selectAction:)];\
+        _cell_struct_normalcollection = [cell_struct cell_x_x_struct:@"uicollectionview" detailvalue:nil target:self selectAction:@selector(selectAction:)];\
     }\
     return _cell_struct_normalcollection;\
 }
-- (CELL_STRUCT *)cell_struct_collection\
+- (cell_struct *)cell_struct_collection\
 {\
     if (!_cell_struct_collection) {\
-        _cell_struct_collection = [CELL_STRUCT cell_x_x_struct:@"hbbasecollectionview" detailvalue:nil target:self selectAction:@selector(selectAction:)];\
+        _cell_struct_collection = [cell_struct cell_x_x_struct:@"hbbasecollectionview" detailvalue:nil target:self selectAction:@selector(selectAction:)];\
     }\
     return _cell_struct_collection;\
 };
-- (CELL_STRUCT *)cell_struct_kvo\
+- (cell_struct *)cell_struct_kvo\
 {\
     if (!_cell_struct_kvo) {\
-        _cell_struct_kvo = [CELL_STRUCT cell_x_x_struct:@"cellstruct属性kvo" detailvalue:nil target:self selectAction:@selector(selectAction:)];\
+        _cell_struct_kvo = [cell_struct cell_x_x_struct:@"cellstruct属性kvo" detailvalue:nil target:self selectAction:@selector(selectAction:)];\
     }\
     return _cell_struct_kvo;\
 }
-- (CELL_STRUCT *)cell_struct_drawcell\
+- (cell_struct *)cell_struct_drawcell\
 {\
     if (!_cell_struct_drawcell) {\
-        _cell_struct_drawcell = [CELL_STRUCT cell_x_x_struct:@" Drawcell" detailvalue:nil target:self selectAction:@selector(selectAction:)];\
+        _cell_struct_drawcell = [cell_struct cell_x_x_struct:@" Drawcell" detailvalue:nil target:self selectAction:@selector(selectAction:)];\
     }\
     return _cell_struct_drawcell;\
 }
-- (CELL_STRUCT *)cell_struct_copy\
+- (cell_struct *)cell_struct_copy\
 {\
     if (!_cell_struct_copy) {\
-        _cell_struct_copy = [CELL_STRUCT cell_x_x_struct:@"cellstruct拷贝" detailvalue:nil target:self selectAction:@selector(selectAction:)];\
+        _cell_struct_copy = [cell_struct cell_x_x_struct:@"cellstruct拷贝" detailvalue:nil target:self selectAction:@selector(selectAction:)];\
     }\
     return _cell_struct_copy;\
 }
-- (CELL_STRUCT *)cell_struct_testjson\
+- (cell_struct *)cell_struct_testjson\
 {\
     if (!_cell_struct_testjson) {\
-        _cell_struct_testjson = [CELL_STRUCT cell_x_x_struct:@"hbkit从json文件中加载" detailvalue:nil target:self selectAction:@selector(selectAction:)];\
+        _cell_struct_testjson = [cell_struct cell_x_x_struct:@"hbkit从json文件中加载" detailvalue:nil target:self selectAction:@selector(selectAction:)];\
     }\
     return _cell_struct_testjson;\
 }

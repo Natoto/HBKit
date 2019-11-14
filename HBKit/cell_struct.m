@@ -1,5 +1,5 @@
 //
-//  CELL_STRUCT.m
+//  cell_struct.m
 //  JXL
 //
 //  Created by BooB on 15-4-15.
@@ -149,12 +149,12 @@
 
 @end
 
-@interface CELL_STRUCT_ARRAY()
+@interface cell_struct_ARRAY()
 
 @property (nonatomic, strong) NSMutableArray<HBCellStruct *> *array;
 @end
 
-@implementation CELL_STRUCT_ARRAY
+@implementation cell_struct_ARRAY
 
 - (id)init
 {

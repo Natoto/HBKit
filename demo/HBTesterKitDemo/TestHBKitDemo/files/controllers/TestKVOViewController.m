@@ -13,7 +13,7 @@
 @interface TestKVOViewController () {
     FBKVOController *_KVOController1;
 }
-@property(nonatomic, retain) CELL_STRUCT *cell_struct_cell0;
+@property(nonatomic, retain) cell_struct *cell_struct_cell0;
 @end
 
 @implementation TestKVOViewController
