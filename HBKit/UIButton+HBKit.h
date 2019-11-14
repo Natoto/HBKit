@@ -15,43 +15,43 @@ typedef NS_ENUM(NSInteger, HBBaseUIButtonLayoutStyle) {
 };
 
 @interface UIButton(PENG)
--(void)setTitle:(NSString *)title;
--(void)setSelectedTitle:(NSString *)title;
--(void)setTitleColor:(UIColor *)color;
--(void)setTitleSelectedColor:(UIColor *)color;
--(void)setFont:(UIFont *)font;
--(void)setlayercolor:(UIColor *)color;
--(void)setBackgroundImage:(UIColor *)backgroundColor;
--(void)setSelectBackgroundImage:(UIColor *)backgroundColor;
--(void)setDisableBackgroundImage:(UIColor *)backgroundColor;
+-(void)cs_setTitle:(NSString *)title;
+-(void)cs_setSelectedTitle:(NSString *)title;
+-(void)cs_setTitleColor:(UIColor *)color;
+-(void)cs_setTitleSelectedColor:(UIColor *)color;
+-(void)cs_setFont:(UIFont *)font;
+-(void)cs_setlayercolor:(UIColor *)color;
+-(void)cs_setBackgroundImage:(UIColor *)backgroundColor;
+-(void)cs_setSelectBackgroundImage:(UIColor *)backgroundColor;
+-(void)cs_setDisableBackgroundImage:(UIColor *)backgroundColor;
 
-+ (UIButton *)CreateButtonWithFrame:(CGRect)frame;
++ (UIButton *)cs_CreateButtonWithFrame:(CGRect)frame;
 
-+ (UIButton *)CreateButtonWithFrame:(CGRect)frame
++ (UIButton *)cs_CreateButtonWithFrame:(CGRect)frame
                            andImage:(UIImage *)image;
 
-+ (UIButton *)CreateButtonWithFrame:(CGRect)frame
++ (UIButton *)cs_CreateButtonWithFrame:(CGRect)frame
                            andimage:(NSString *)imagename;
 
-+ (UIButton *)CreateButtonWithFrame:(CGRect)frame
++ (UIButton *)cs_CreateButtonWithFrame:(CGRect)frame
                              andTxt:(NSString *)TXT;
 
-+ (UIButton *)CreateButtonWithFrame:(CGRect)frame
++ (UIButton *)cs_CreateButtonWithFrame:(CGRect)frame
                              andTxt:(NSString *)TXT
                            txtcolor:(UIColor *)color;
 
 
-+ (UIButton *)CreateButtonWithFrame:(CGRect)frame
++ (UIButton *)cs_CreateButtonWithFrame:(CGRect)frame
                              andTxt:(NSString *)TXT
                            andImage:(UIImage *)image;
 
 
-+ (UIButton *)CreateButtonWithFrame:(CGRect)frame
++ (UIButton *)cs_CreateButtonWithFrame:(CGRect)frame
                            andimage:(NSString *)imagename
                         selectImage:(NSString *)selectimage;
 
 
-+ (UIButton *)CreateButtonWithFrame:(CGRect)frame
++ (UIButton *)cs_CreateButtonWithFrame:(CGRect)frame
                              andTxt:(NSString *)TXT
                            txtcolor:(UIColor *)color
                                 tag:(NSInteger)tag
@@ -59,7 +59,7 @@ typedef NS_ENUM(NSInteger, HBBaseUIButtonLayoutStyle) {
                              action:(SEL)action;
 
 
-+ (UIButton *)CreateButtonWithFrame:(CGRect)frame
++ (UIButton *)cs_CreateButtonWithFrame:(CGRect)frame
                              andTxt:(NSString *)txt
                          andTxtSize:(NSInteger)txtsize
                            andImage:(UIImage *)image
@@ -69,12 +69,14 @@ typedef NS_ENUM(NSInteger, HBBaseUIButtonLayoutStyle) {
                           superview:(UIView *)superview
                                 tag:(NSInteger)tag;
 //加下划线
--(void)setUnderlineStyleSingle:(NSString *)text;
+-(void)cs_setUnderlineStyleSingle:(NSString *)text;
 
 
 /**
  *	功能:设置UIButton的布局，图片和文字按照指定方向显示
- * 
+ *
+ *	@param aLayoutStyle:参见HBBaseUIButtonLayoutStyle
+ *	@param aSpacing:图片和文字之间的间隔
  */
 - (void)hbbase_setLayout:(HBBaseUIButtonLayoutStyle )aLayoutStyle
           spacing:(CGFloat)aSpacing;

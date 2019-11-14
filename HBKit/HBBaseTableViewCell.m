@@ -5,9 +5,9 @@
 //  Created by nonato on 14-11-25.
 //  Copyright (c) 2014年 YY.COM All rights reserved.
 //
-#import "HBCellStruct_KEY.h"
+#import "cell_struct_key.h"
 #import "HBBaseTableViewCell.h"
-#import "HBCellStruct_Common.h"
+#import "cell_struct_common.h"
 #import <objc/runtime.h>
 
 @interface HBCirclePoint : UIView
@@ -20,7 +20,7 @@
 
 @interface HBBaseTableViewCell()
 @property(nonatomic, strong) HBRedPoint *redPoint;
-
+@property (nonatomic, strong) NSMutableDictionary *dictionary;
 @end
 @implementation HBBaseTableViewCell
 @synthesize indexPath = _indexPath;
@@ -33,8 +33,7 @@
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier plistdic:(NSDictionary *)plistdic
 {
     self = [self initWithStyle:style reuseIdentifier:reuseIdentifier];
-    if (self) { 
-    }
+ 
     return self;
 }
 
@@ -128,11 +127,11 @@
         NSString *toplayerinset = self.dictionary[key_cellstruct_toplayerinsets];
         if (toplayerinset) {
             UIEdgeInsets  insets  = UIEdgeInsetsFromString(toplayerinset);
-            CGRect  layerframe = CGRectMake(insets.left, insets.top, self.bounds.size.width - insets.left - insets.right, 0.5);
+            CGRect  layerframe = CGRectMake(insets.left, insets.top, [UIScreen mainScreen].bounds.size.width - insets.left - insets.right, 0.5);
            self.toplayer.frame = layerframe;
         }
         else {
-            CGRect  layerframe = CGRectMake(0, 0, self.bounds.size.width, 0.5);
+            CGRect  layerframe = CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 0.5);
             self.toplayer.frame = layerframe;
         }
      }
@@ -182,11 +181,7 @@
 - (void)setIndexPath:(NSIndexPath *)indexPath
 {
     _indexPath = indexPath;
-    if (self.RoundCircleType) {
-        if (_indexPath.row) {
-            
-        }
-    }
+  
 }
 - (void)setcelldictionary:(NSMutableDictionary *)dictionary
 {
@@ -199,7 +194,7 @@
     if ([[bgcolor class] isSubclassOfClass:[NSString class]]) {
         NSString *bgcolorstring= [dictionary objectForKey:key_cellstruct_background];
         bgcolorstring = (bgcolorstring && bgcolorstring.length)?bgcolorstring:@"white";
-        self.contentView.backgroundColor = [CELL_STRUCT colorWithStructKey:bgcolorstring];
+        self.contentView.backgroundColor = [cell_struct cell_colorWithStructKey:bgcolorstring];
         self.backgroundColor = self.contentView.backgroundColor;
     }
     NSString *titltfontname = dictionary[key_cellstruct_titleFontFamily];
@@ -248,7 +243,7 @@
 {}
 
 
-- (void)setcellPicture:(NSString *)profile
+- (void)setcellProfile:(NSString *)profile
 {
     if ([profile hasPrefix:@"http://"] || [profile hasPrefix:@"https://"]) {//如果是网络图片 就加载网络图片
 //        [self.imageView hb_setImageWithURL:[NSURL URLWithString:profile] placeholderImage:[UIImage imageFileNamed:@"big_icon"] options:0 completed:nil];
@@ -263,7 +258,7 @@
 {
     if (picturecolor) {
         if (self.imageView) {
-            UIColor *color = [CELL_STRUCT colorWithStructKey:picturecolor];
+            UIColor *color = [cell_struct cell_colorWithStructKey:picturecolor];
             self.imageView.backgroundColor = color;
             self.imageView.contentMode = UIViewContentModeScaleAspectFit;
         }
@@ -281,7 +276,7 @@
 }
 - (void)setcellTitleColor:(NSString *)color
 {
-    UIColor *titlecolor = [CELL_STRUCT colorWithStructKey:color] ;
+    UIColor *titlecolor = [cell_struct cell_colorWithStructKey:color] ;
     if (titlecolor) {
         self.textLabel.textColor = titlecolor;
     }
@@ -345,7 +340,10 @@
 
 #pragma mark -  UIView(HBBASECELL)
 
-@implementation UIView(HBBASECELL)
+#define DEF_UIVIEWHBCELL @implementation UIView(HBBASECELL)
+
+DEF_UIVIEWHBCELL
+
 @dynamic toplayer;
 @dynamic bottomlayer;
 

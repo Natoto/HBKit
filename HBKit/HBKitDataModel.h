@@ -8,29 +8,24 @@
 
 #import <Foundation/Foundation.h>
 
-
 @class CELL_STRUCT_ARRAY;
-@class HBCellStruct;
 
 @interface HBKitDataModel : NSObject
 
-@property(nonatomic, strong) NSMutableDictionary<NSString *,HBCellStruct *> *dataDictionary;
-@property(nonatomic, strong) NSMutableDictionary *viewConfigDictionary;
-
+- (void)setDataDictionary:(NSMutableDictionary *)dataDictionary;
+- (NSMutableDictionary *)dataDictionary;
+- (NSMutableDictionary *)viewConfigDictionary;
 /**
  *  从PLIST 文件中加载配置信息
  *
  *  @param plistname plist文件的名字
  */
 - (void)loadplistConfig:(NSString *)plistname
-       configViewblock:(void(^)(NSMutableDictionary * dataDictionary))configViewblock;
-
+        configViewblock:(void (^)(NSMutableDictionary *dataDictionary))configViewblock;
 
 - (void)loadplistConfig:(NSString *)plistname
-              filepath:(NSString *)filepath
-       configViewblock:(void(^)(NSMutableDictionary * dataDictionary))configViewblock;
-
-
+               filepath:(NSString *)filepath
+        configViewblock:(void (^)(NSMutableDictionary *dataDictionary))configViewblock;
 
 /**
  *  从PLIST 文件中加载配置信息放到一个字典中而不是直接对datadictionary赋值
@@ -46,9 +41,9 @@
  */
 
 - (void)loadjsonfileConfig:(NSString *)jsonfilename
-          configViewblock:(void(^)(CELL_STRUCT_ARRAY * vclist))configViewblock;
+           configViewblock:(void (^)(CELL_STRUCT_ARRAY *vclist))configViewblock;
 
 - (void)loadjsonfileConfig:(NSString *)jsonfilename
-                 filepath:(NSString *)filepath
-          configViewblock:(void(^)(CELL_STRUCT_ARRAY * vclist))configViewblock;
+                  filepath:(NSString *)filepath
+           configViewblock:(void (^)(CELL_STRUCT_ARRAY *vclist))configViewblock;
 @end

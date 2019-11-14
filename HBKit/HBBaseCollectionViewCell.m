@@ -2,23 +2,20 @@
 //  BaseCollectionViewCell.m
 //  PENG
 //
-//  Created by BOOB on 15/10/20.
+//  Created by 星盛 on 15/10/20.
 //  Copyright © 2015年 YY.COM All rights reserved.
 //
 
 #import "HBBaseCollectionViewCell.h"
-#import "HBCellStruct.h"
-#import "HBCellStruct_KEY.h"
+#import "cell_struct_common.h"
+#import "cell_struct_key.h"
 #import "UIButton+HBKit.h"
-#import "HBCellStruct_Common.h" 
-
 @interface HBBaseCollectionViewCell()
 @property (nonatomic, weak) IBOutlet UIButton *btn_title;
 
+@property (nonatomic, retain) NSMutableDictionary *dictionary;
 @end
 @implementation HBBaseCollectionViewCell
-
-
 - (void)setcelldictionary:(NSMutableDictionary *)dictionary
 {
     _dictionary = dictionary;
@@ -30,7 +27,7 @@
     if ([[bgcolor class] isSubclassOfClass:[NSString class]]) {
         NSString *bgcolorstring= [dictionary objectForKey:key_cellstruct_background];
         bgcolorstring = (bgcolorstring && bgcolorstring.length)?bgcolorstring:@"white";
-        self.contentView.backgroundColor = [CELL_STRUCT colorWithStructKey:bgcolorstring];
+        self.contentView.backgroundColor = [cell_struct cell_colorWithStructKey:bgcolorstring];
         self.backgroundColor = self.contentView.backgroundColor;
     }
 }
@@ -50,16 +47,16 @@
 }
 - (void)setcellTitleColor:(NSString *)color
 {
-    UIColor *titlecolor = [CELL_STRUCT colorWithStructKey:color] ;
+    UIColor *titlecolor = [cell_struct cell_colorWithStructKey:color] ;
     if (titlecolor) {
-        [self.btn_title setTitleColor:titlecolor];
+        [self.btn_title cs_setTitleColor:titlecolor];
     }
     else {
-        [self.btn_title setTitleColor :[UIColor blackColor]];
+        [self.btn_title cs_setTitleColor :[UIColor blackColor]];
     }
 }
 
-- (void)setcellPicture:(NSString *)profile
+- (void)setcellProfile:(NSString *)profile
 {
     if (profile) {
         [self.btn_title setImage:[UIImage imageNamed:profile] forState:UIControlStateNormal];
@@ -92,5 +89,5 @@
 - (void)setcelldetailtitle:(NSString *)detail
 {}
 - (void)setcellValue:(NSString *)value
-{} 
+{}
 @end

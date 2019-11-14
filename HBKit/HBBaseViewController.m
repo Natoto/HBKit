@@ -7,46 +7,54 @@
 //
 #import "HBBaseViewController.h"
 #import "UIButton+HBKit.h"
-#import "HBCellStruct.h"
-#import "HBKitDataModel.h" 
-#import "HBCellStruct_Common.h"
+#import "cell_struct_common.h"
+#import "HBKitDataModel.h"
 
-#define HB_UIColorWithRGB(r, g, b) [UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:1]
-
+#define HB_UIColorWithRGB(r, g, b) [UIColor colorWithRed:r / 255.0 green:g / 255.0 blue:b / 255.0 alpha:1]
 
 @implementation BackGroundView
+//-(void)setImage:(UIImage *)image
+//{
+//    _image = image;
+//    [self setNeedsDisplay];
+//}
+//- (void)drawRect:(CGRect)rect {
+//
+//    [super drawRect:rect];
+//    [self.image drawInRect:CGRectMake(0, -10, rect.size.width, rect.size.height + 10)];
+//    // Drawing code
+//}
 @end
 
 @interface HBBaseViewController ()
 @property (nonatomic, strong) HBKitDataModel *datamodel;
+@property(nonatomic, strong) NSMutableDictionary *dataDictionary;
 @end
 
-
 @implementation HBBaseViewController
-
-- (void)otherConfigCellStruct:(HBCellStruct *)cs
-{
-}
 
 - (HBKitDataModel *)datamodel
 {
     if (!_datamodel) {
-        _datamodel  = [HBKitDataModel new];
+        _datamodel = [HBKitDataModel new];
     }
     return _datamodel;
 }
+
 - (void)setDataDictionary:(NSMutableDictionary *)dataDictionary
 {
     [self.datamodel setDataDictionary:dataDictionary];
 }
 
 - (void)configcellstructs
-{};
+{
+}
 
 - (NSMutableDictionary *)dataDictionary
 {
-    return  self.datamodel.dataDictionary;
+    return self.datamodel.dataDictionary;
 }
+
 /**
  *  从PLIST 文件中加载配置信息
  *
@@ -59,9 +67,8 @@
 
 - (void)loadplistConfig:(NSString *)plistname filepath:(NSString *)filepath
 {
-    __weak typeof(self) weakself = self;
-    [self.datamodel loadplistConfig:plistname filepath:filepath  configViewblock:^(NSMutableDictionary *dic) {
-         [weakself loadplistviewConfig:dic];
+    [self.datamodel loadplistConfig:plistname filepath:filepath configViewblock:^(NSMutableDictionary *dic) {
+        [self loadplistviewConfig:dic];
     }];
 }
 
@@ -75,15 +82,16 @@
 {
     return [self loadplistConfigToDictionary:plistname filepath:nil];
 }
+
 - (NSMutableDictionary *)loadplistConfigToDictionary:(NSString *)plistname filepath:(NSString *)filepath
 {
-  return  [self.datamodel loadplistConfigToDictionary:plistname filepath:filepath];
+    return [self.datamodel loadplistConfigToDictionary:plistname filepath:filepath];
 }
 
 /**
  *  从json文件中配置信息
  *
- *  @param jsonfilename  json文件存放的路径名
+ *  @param jsonfilepath  json文件存放的路径名
  */
 
 - (void)loadjsonfileConfig:(NSString *)jsonfilename
@@ -93,82 +101,66 @@
 
 - (void)loadjsonfileConfig:(NSString *)jsonfilename filepath:(NSString *)filepath
 {
-    __weak __typeof(self)weakSelf = self;
     [self.datamodel loadjsonfileConfig:jsonfilename filepath:filepath configViewblock:^(CELL_STRUCT_ARRAY *vclist) {
         NSString *title = vclist.title;
         if (title && [[title class] isSubclassOfClass:[NSString class]]) {
-            weakSelf.title = title;
+            self.title = title;
         }
         NSString *backgroundcolor = vclist.backgroundcolor;
         if (backgroundcolor && [[backgroundcolor class] isSubclassOfClass:[NSString class]]) {
-            weakSelf.view.backgroundColor = [CELL_STRUCT_Common colorWithStructKey:backgroundcolor];
+            self.view.backgroundColor = [cell_struct_common cell_colorWithStructKey:backgroundcolor];
         }
         NSString *backgroundimage  = vclist.backgroundimage;
         if (backgroundimage && [[backgroundimage class] isSubclassOfClass:[NSString class]]) {
-            [weakSelf changeBackGroundWithBackImage:[UIImage imageNamed:backgroundimage]];
+            [self changeBackGroundWithBackImage:[UIImage imageNamed:backgroundimage]];
         }
     }];
-    
 }
 
 - (void)loadplistviewConfig:(NSDictionary *)dic
 {
-    self.viewConfigDictionary = dic;
     NSString *title = [dic objectForKey:@"title"];
     if (title && [[title class] isSubclassOfClass:[NSString class]]) {
         self.title = title;
     }
     NSString *backgroundcolor = [dic objectForKey:@"backgroundcolor"];
     if (backgroundcolor && [[backgroundcolor class] isSubclassOfClass:[NSString class]]) {
-        self.view.backgroundColor = [CELL_STRUCT_Common colorWithStructKey:backgroundcolor];
+        self.view.backgroundColor = [cell_struct_common cell_colorWithStructKey:backgroundcolor];
     }
-    NSString *backgroundimage  = [dic objectForKey:@"backgroundimage"];
+    NSString *backgroundimage = [dic objectForKey:@"backgroundimage"];
     if (backgroundimage && [[backgroundimage class] isSubclassOfClass:[NSString class]]) {
         [self changeBackGroundWithBackImage:[UIImage imageNamed:backgroundimage]];
     }
-    
 }
-
 
 - (void)setShowBackItem:(BOOL)showBackItem
 {
     _showBackItem = showBackItem;
-    if (_showBackItem) {
-        UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithTitle:@"返回" style:UIBarButtonItemStylePlain target:self action:@selector(backtoparent:)];
-        self.navigationItem.leftBarButtonItem = item;
-    }
-    else {
-        self.navigationItem.leftBarButtonItem = nil;
-    }
 }
 
 - (void)dealloc
 {
-    NSLog(@"%@ dealloc",NSStringFromClass([self class]));
-}
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-    self.view.backgroundColor = [UIColor colorWithRed:239./255. green:239./255. blue:239./255. alpha:1];
-    [self viewOtherConfig];
+    NSLog(@"%s", __func__);
 }
 
-- (void)viewOtherConfig
+- (void)viewDidLoad
 {
-    
+    [super viewDidLoad]; //默认两行
+    self.view.backgroundColor = [UIColor colorWithRed:239. / 255. green:239. / 255. blue:239. / 255. alpha:1];
 }
- 
+
+- (IBAction)hbNavigationbartitleTap:(id)sender
+{
+}
+
 - (void)setStatusBarStyleDefault:(BOOL)statusBarStyleDefault
 {
     _statusBarStyleDefault = statusBarStyleDefault;
     if (self.statusBarStyleDefault) {
         [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault];
-    }
-    else
-    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+    } else [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
     [self setNeedsStatusBarAppearanceUpdate];
 }
-
 
 - (void)viewWillAppear:(BOOL)animated
 {
@@ -190,7 +182,6 @@
 
 - (void)changeFaceStyle:(int)style view:(UIView *)View
 {
-    
 }
 
 - (void)userDefaultBackground
@@ -224,7 +215,7 @@
     [self.view sendSubviewToBack:imageview];
 }
 
-- (void)changeBackGroundWithBackImgName:(NSString *)imgname ofType:(NSString *)type
+- (void)changeBackGroundWithBackimg:(NSString *)imgname ofType:(NSString *)type
 {
     NSString *imagePath = [[NSBundle mainBundle] pathForResource:imgname ofType:type];
     UIImage *img = [UIImage imageWithContentsOfFile:imagePath];
@@ -238,11 +229,11 @@
     imageview.frame = CGRectMake(0, -20, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height + 20);
     [self.view sendSubviewToBack:imageview];
 }
-- (void)changeBackGroundWithBackImgName:(NSString *)imgname
-{
-    [self changeBackGroundWithBackImgName:imgname ofType:@"png"];
-}
 
+- (void)changeBackGroundWithBackimg:(NSString *)imgname
+{
+    [self changeBackGroundWithBackimg:imgname ofType:@"png"];
+}
 
 - (void)showhbnavigationbarBackItem:(BOOL)show
 {
@@ -251,30 +242,22 @@
                                                                                 style:UIBarButtonItemStylePlain
                                                                                target:self
                                                                                action:@selector(backtoparent:)];
-    }
-    else {
+    } else {
         self.navigationItem.leftBarButtonItem = nil;
     }
+    //TODO:设置返回键
+    //    [self.navigationbar lpf_setleftBarButtonItemWithImage:[UIImage imageNamed:@"white_back_btn"] target:self selector:@selector(backtoparent:)];
 }
-
 
 - (IBAction)backtoparent:(id)sender animate:(BOOL)animate
 {
-    if (self.navigationController.childViewControllers.count >1 && self.navigationController.topViewController == self) {
+    if (self.navigationController.childViewControllers.count > 1 && self.navigationController.topViewController == self) {
         [self.navigationController popViewControllerAnimated:animate];
         return;
     }
-    
-    UIViewController *vc = self;
-    
-    while (vc.presentingViewController) {
-        vc = vc.presentingViewController;
-    }
-    
-    if (vc) {
+    if (self.presentingViewController) {
         [self dismissViewControllerAnimated:animate completion:NULL];
     }
-    
 }
 
 - (IBAction)backtoparent:(id)sender

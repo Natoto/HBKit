@@ -7,28 +7,36 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "HBBaseTableViewCell.h" 
-#import "HBBaseViewController.h" 
-#import "HBCellStruct.h"
-#import "UITableView+autoHeight.h"
-#import "HBTableViewModel.h"
+#import "HBBaseTableViewCell.h"
+#import "HBBaseViewController.h"
+#import "cell_struct_common.h"
+
 //#if __has_include(<MJRefresh/MJRefresh.h>)
 
+static NSString *notify_basetableview_tap = @"basetableview_tap";
+static NSString *notify_basetableview_sender = @"BaseViewController";
+static int TAG_TABLEVIEW = 1521;
 
-@interface HBBaseTableViewController : HBBaseViewController<UITableViewDataSource,UITableViewDelegate>
+//注册cell
+#define TABLEVIEW_REGISTERXIBCELL_CLASS(TABLEVIEW, CELLCLSSTR) { [TABLEVIEW registerClass:NSClassFromString(CELLCLSSTR) forCellReuseIdentifier:CELLCLSSTR]; \
+                                                                 [TABLEVIEW registerNib:[UINib nibWithNibName:CELLCLSSTR bundle:nil] forCellReuseIdentifier:CELLCLSSTR]; }
+
+#undef TABLEVIEW_REGISTER_CELLCLASS
+#define TABLEVIEW_REGISTER_CELLCLASS(TABLEVIEW, CELLCLSSTR)    { [TABLEVIEW registerClass:NSClassFromString(CELLCLSSTR) forCellReuseIdentifier:CELLCLSSTR]; }
+
+#undef TABLEVIEW_CELL_SEPARATOR_NONE
+#define TABLEVIEW_CELL_SEPARATOR_NONE self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+
+@interface HBBaseTableViewController : HBBaseViewController<UITableViewDataSource, UITableViewDelegate>
 @property (nonatomic, strong) UITableView *tableView;
 //不自动配置tableview
-@property (nonatomic, assign) BOOL                       noAutoConfigTableView;
+@property (nonatomic, assign) BOOL noAutoConfigTableView;
 //点击之后不自动变回未选状态
-@property (nonatomic, assign) BOOL                       nodeselectRow;
-
-
+@property (nonatomic, assign) BOOL nodeselectRow;
 
 - (void)viewDidCurrentView;
 
 - (CGRect)adjustContentOffSet:(CGFloat)top bottom:(CGFloat)bottom;
-
-- (CGRect)adjustContentOffLeft:(CGFloat)left right:(CGFloat)right;
 
 - (void)observeTapgesture;
 
@@ -38,8 +46,10 @@
 /**
  * 配置顶部navigationbar 和 tableview的位置
  */
-- (void)tableViewDefaultConfigWithTitle:(NSString *)title;
+- (void)TableViewDefaultConfigWithTitle:(NSString *)title;
 
+///半屏模式
+- (CGRect)adjustContentOffLeft:(CGFloat)left right:(CGFloat)right;
 /**
  * 使用默认配置 供子类调用
  */
@@ -53,9 +63,19 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section;
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath;
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath;
-
-
+- (HBBaseTableViewCell *)getcellWithIndexPath:(NSIndexPath *)indexPath;
+- (void)drawCell:(HBBaseTableViewCell *)cell withIndexPath:(NSIndexPath *)indexPath;
 @end
 
- 
+@interface  UITableView (HBTemplateLayoutCell)
 
+/**
+ *  计算CELL的高度 实现的方法需要在cell的具体实现里面重载sizeThatFit:
+ *
+ *  @param identifier    identifier
+ *  @param configuration cell加载数据的
+ *
+ *  @return 高度
+ */
+- (CGFloat)hb_heightForCellWithIdentifier:(NSString *)identifier configuration:(void (^)(id cell))configuration;
+@end

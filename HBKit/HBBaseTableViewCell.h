@@ -16,17 +16,17 @@
 __MOTHOD\
 @end
 
-#define NO_DEFAULT_TITLE_PROFILE -(void)setcellPicture:(NSString *)profile{}
+#define NO_DEFAULT_TITLE_PROFILE -(void)setcellProfile:(NSString *)profile{}
 #define NO_DEFAULT_TITLE -(void)setcellTitle:(NSString *)title{}
 #define NO_DEFAULT_PLACEHOLDER  -(void)setcelldetailtitle:(NSString *)detailtitle{}
 
 #define HBLOG(SS) NSLog(@"%@",SS);
 
 #import <UIKit/UIKit.h>
-#import "HBCellStruct_KEY.h"
-#import "HBBaseCellProtocol.h"
+#import "cell_struct_key.h"
+#import "HBBaseProtocol.h"
 
-@interface HBBaseTableViewCell : UITableViewCell<HBBaseCellProtocol>
+@interface HBBaseTableViewCell : UITableViewCell<HBBaseProtocol>
  
 @property (nonatomic, assign) BOOL showNewMsg;
 @property (nonatomic, assign) BOOL showTopLine;
@@ -42,8 +42,8 @@ __MOTHOD\
 @property (nonatomic, assign) NSInteger           numberOfLines;
 @property (nonatomic, strong) NSIndexPath *indexPath;
 @property (nonatomic, strong) NSString *subvalue2;
-@property (nonatomic, strong) NSMutableDictionary *dictionary;
 
+- (NSMutableDictionary *)dictionary;
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier plistdic:(NSDictionary *)plistdic;
 
@@ -52,7 +52,8 @@ __MOTHOD\
 
 
 
-@interface UIView(HBBASECELL)
+#define AS_UIVIEWHBCELL @interface UIView(HBBASECELL)
+AS_UIVIEWHBCELL
 @property(nonatomic, retain) UIView *toplayer;
 @property(nonatomic, retain) UIView *bottomlayer;
 
