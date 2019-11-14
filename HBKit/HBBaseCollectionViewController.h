@@ -7,7 +7,7 @@
 //
 #import "HBCollectionFallFLayout.h"
 #import "HBBaseViewController.h"
-
+#import "HBCProtocol.h"
 #warning 使用之前注册collection cell
 /*
 注册collection NIB CELL
@@ -33,44 +33,6 @@
 #define COLLECTIONVIEW_REGISTER_CELLCLASS(COLLECTIONVIEW,CELLCLSSTR) \
 [COLLECTIONVIEW registerClass:NSClassFromString(CELLCLSSTR) forCellWithReuseIdentifier:CELLCLSSTR];
 
-
-
-@protocol HBCollectionViewControllerConfig <NSObject>
-@required
-/**
- *  自己配置列数量需要对其重写
- *
- *  @return columnCount
- */
-#warning  配置列数量 子类需要对其重载
-/**
- *  配置最大列的值
- *
- *  @return 列数目
- */
-- (NSInteger)configColumnCount;
-//配置偏移量需要重载
-/**
- *  配置collectionView距上左下右的距离
- *
- *  @return  UIEdgeInsets
- */
-- (UIEdgeInsets)configSectionInset;
-
-- (UIEdgeInsets)configInsetForSectionAtIndex:(NSInteger)section;
-
-/**
- *  配置列(左右)之间的间距
- *
- */
-- (CGFloat)configMinimumColumnSpacing;
-/**
- *  配置行(上下)之间的间距
- *
- *  @return 间距
- */
-- (CGFloat)configMinimumInteritemSpacing;
-@end
 
 @interface HBBaseCollectionViewController : HBBaseViewController<
 UICollectionViewDataSource,
